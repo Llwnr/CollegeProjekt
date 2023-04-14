@@ -10,6 +10,7 @@ public class BallDash : MonoBehaviour
     [SerializeField]private KeyCode dashKey;
 
     private float hDir, vDir;
+    private Vector2 dirToDash = Vector2.zero;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -21,16 +22,15 @@ public class BallDash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetDirection();
-        if(Input.GetKeyDown(dashKey)){
-            rb.AddForce(new Vector2(hDir, vDir)*dashForce, ForceMode2D.Impulse);
+        //Dash at direction pointed by mouse
+        if(Input.GetMouseButtonDown(0)){
+            rb.velocity = Vector2.zero;
+            dirToDash = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)*10f;
+            dirToDash = dirToDash.normalized;
+            Debug.Log(dirToDash);
+            rb.AddForce(dirToDash*dashForce, ForceMode2D.Impulse);
             AddSpeedLimit();
         }
-    }
-
-    void GetDirection(){
-        hDir = Input.GetAxisRaw("Horizontal");
-        vDir = Input.GetAxisRaw("Vertical");
     }
 
     void AddSpeedLimit(){

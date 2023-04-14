@@ -13,8 +13,6 @@ public class LimitBallSpeed : MonoBehaviour
     [SerializeField]private List<SpeedLimiter> speedLimiters = new List<SpeedLimiter>();
     [SerializeField]private float highestSpeed;
 
-    [SerializeField]private float slowdownFactor;
-
     private void Start() {
         origSpeedLimit = GetComponent<BallMovement>().GetNormalMoveSpeed();
         rb = GetComponent<Rigidbody2D>();
@@ -33,8 +31,6 @@ public class LimitBallSpeed : MonoBehaviour
     }
 
     private void ManageSpeedLimiters(){
-        //Slowdown ball
-        rb.velocity *= 1-slowdownFactor;
         //Set the highest speed limit as default
         float highestLimit = origSpeedLimit;
         for(int i=0; i<speedLimiters.Count; i++){

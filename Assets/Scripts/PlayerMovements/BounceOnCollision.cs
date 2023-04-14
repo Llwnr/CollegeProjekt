@@ -7,34 +7,68 @@ public class BounceOnCollision : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 velocityOnHit;
     [SerializeField]private float bounceDuration;
+    [SerializeField]private float maxBounceSpeed;
+    private float bounceTimer;
+    private bool isBouncing = false;
+
+    [Header ("Camera Shake")]
+    [SerializeField]private float shakeIntensity;
+    [SerializeField]private float duration;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
+        bounceTimer = bounceDuration;
     }
     private void Update() {
         velocityOnHit = rb.velocity;
+
+        //Slowly reduce bounce velocity. Also don't let player dash for a while after impact
+        if(isBouncing){
+            bounceTimer -= Time.deltaTime;
+            SlowdownBounceSpeed();
+            DisableDash();
+        }
+        if(bounceTimer < 0){
+            isBouncing = false;
+            EnableDash();
+        }
+    }
+
+    void SlowdownBounceSpeed(){
+        rb.velocity *= 0.85f;
+        Debug.Log("Slowingdown Bounce");
+    }
+
+    void DisableDash(){
+        GetComponent<BallDash>().enabled = false;
+    }
+    void EnableDash(){
+        GetComponent<BallDash>().enabled = true;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.transform.CompareTag("Enemy")){
+            //Bounce
             float speed = velocityOnHit.magnitude;
-            Debug.Log(speed);
             Vector2 dir = Vector2.Reflect(velocityOnHit.normalized, other.contacts[0].normal);
 
-            rb.velocity = dir * speed;
+            rb.velocity = dir * speed + dir*4f;
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
-            AddLimiter();
-            StartCoroutine(SlowDownBounce());
+            ShakeScreen(Mathf.Max(shakeIntensity * 0.05f * speed, shakeIntensity), Mathf.Max(duration*speed*0.05f, duration));
+
+            AddMaxSpeedLimiter();
+            isBouncing = true;
+            bounceTimer = bounceDuration;
         }
     }
 
-    void AddLimiter(){
-        GetComponent<LimitBallSpeed>().AddSpeedLimiter(20, bounceDuration);
+    void AddMaxSpeedLimiter(){
+        //Don't let player be limited to base movement speed limit when bouncing
+        GetComponent<LimitBallSpeed>().AddSpeedLimiter(maxBounceSpeed, bounceDuration);
     }
 
-    IEnumerator SlowDownBounce(){
-        rb.velocity *= 0.85f;
-        yield return null;
-        StartCoroutine(SlowDownBounce());
+    void ShakeScreen(float shakeIntensity, float duration){
+        CinemachineShake.instance.ShakeCamera(shakeIntensity, duration);
     }
 }
