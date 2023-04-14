@@ -32,6 +32,10 @@ public class BallDash : MonoBehaviour
         }
     }
 
+    public float GetSpeed(){
+        return rb.velocity.magnitude;
+    }
+
     void AddSpeedLimit(){
         GetComponent<LimitBallSpeed>().AddSpeedLimiter(maxDashSpeed, duration);
     }
