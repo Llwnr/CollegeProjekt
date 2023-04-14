@@ -27,7 +27,6 @@ public class BallDash : MonoBehaviour
             rb.velocity = Vector2.zero;
             dirToDash = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)*10f;
             dirToDash = dirToDash.normalized;
-            Debug.Log(dirToDash);
             rb.AddForce(dirToDash*dashForce, ForceMode2D.Impulse);
             AddSpeedLimit();
         }

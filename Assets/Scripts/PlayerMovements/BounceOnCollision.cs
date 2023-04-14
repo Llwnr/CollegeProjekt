@@ -20,8 +20,6 @@ public class BounceOnCollision : MonoBehaviour
         bounceTimer = bounceDuration;
     }
     private void Update() {
-        velocityOnHit = rb.velocity;
-
         //Slowly reduce bounce velocity. Also don't let player dash for a while after impact
         if(isBouncing){
             bounceTimer -= Time.deltaTime;
@@ -34,9 +32,12 @@ public class BounceOnCollision : MonoBehaviour
         }
     }
 
+    private void FixedUpdate() {
+        velocityOnHit = rb.velocity;
+    }
+
     void SlowdownBounceSpeed(){
-        rb.velocity *= 0.85f;
-        Debug.Log("Slowingdown Bounce");
+        if(Mathf.Abs(rb.velocity.magnitude) > 0.1f)rb.velocity *= 0.85f;
     }
 
     void DisableDash(){
@@ -50,12 +51,13 @@ public class BounceOnCollision : MonoBehaviour
         if(other.transform.CompareTag("Enemy")){
             //Bounce
             float speed = velocityOnHit.magnitude;
+            Debug.Log("Spd: "+speed);
             Vector2 dir = Vector2.Reflect(velocityOnHit.normalized, other.contacts[0].normal);
-
             rb.velocity = dir * speed + dir*4f;
+            Debug.Log(rb.velocity);
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
-            ShakeScreen(Mathf.Max(shakeIntensity * 0.05f * speed, shakeIntensity), Mathf.Max(duration*speed*0.05f, duration));
+            ShakeScreen(Mathf.Max(shakeIntensity * 0.08f * speed, shakeIntensity), Mathf.Max(duration*speed*0.05f, duration));
 
             AddMaxSpeedLimiter();
             isBouncing = true;
