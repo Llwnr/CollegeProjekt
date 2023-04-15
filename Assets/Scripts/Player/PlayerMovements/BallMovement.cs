@@ -13,7 +13,7 @@ public class BallMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    private float hDir, vDir;
+    private float hDir = 0, vDir = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +25,17 @@ public class BallMovement : MonoBehaviour
     {
         //Get the direction to move to
         GetDirection();
-        MoveBall();
+        
+        
+        
         //Slowdown ball when there's no input
         if(hDir == 0 && vDir == 0){
             rb.velocity *= 1-slowdownFactor;
         }
+    }
+
+    private void FixedUpdate() {
+        MoveBall();
         LookAtMousePos();
     }
 
@@ -45,7 +51,7 @@ public class BallMovement : MonoBehaviour
     }
 
     void MoveBall(){
-        rb.AddForce(new Vector2(hDir, vDir)*moveSpeed);
+        rb.AddForce(new Vector2(hDir, vDir)*moveSpeed, ForceMode2D.Force);
     }
 
     public float GetNormalMoveSpeed(){

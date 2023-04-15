@@ -19,23 +19,32 @@ public class LimitBallSpeed : MonoBehaviour
     }
 
     private void Update() {
+        ReduceDurationOfLimiters();
+    }
+
+    private void FixedUpdate() {
         ManageSpeedLimiters();
     }
 
     public void AddSpeedLimiter(float speedLimit, float duration){
-        speedLimiters.Add(new SpeedLimiter(speedLimit, duration, this));
+        SpeedLimiter newLimit = new SpeedLimiter(speedLimit, duration, this);
+        speedLimiters.Add(newLimit);
     }
 
     public void RemoveASpeedLimiter(SpeedLimiter speedLimiter){
         speedLimiters.Remove(speedLimiter);
     }
 
+    void ReduceDurationOfLimiters(){
+        for(int i=0; i<speedLimiters.Count; i++){
+            speedLimiters[i].ReduceDuration();
+        }
+    }
+
     private void ManageSpeedLimiters(){
         //Set the highest speed limit as default
         float highestLimit = origSpeedLimit;
         for(int i=0; i<speedLimiters.Count; i++){
-            //Run the script's update function since its not a monobehaviour
-            speedLimiters[i].ReduceDuration();
             if(speedLimiters[i].speedLimit > highestLimit){
                 highestLimit = speedLimiters[i].speedLimit;
             }

@@ -51,10 +51,8 @@ public class BounceOnCollision : MonoBehaviour
         if(other.transform.CompareTag("Enemy")){
             //Bounce
             float speed = velocityOnHit.magnitude;
-            Debug.Log("Spd: "+speed);
             Vector2 dir = Vector2.Reflect(velocityOnHit.normalized, other.contacts[0].normal);
             rb.velocity = dir * speed + dir*4f;
-            Debug.Log(rb.velocity);
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
             ShakeScreen(Mathf.Max(shakeIntensity * 0.08f * speed, shakeIntensity), Mathf.Max(duration*speed*0.05f, duration));
