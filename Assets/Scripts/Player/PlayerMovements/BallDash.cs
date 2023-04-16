@@ -26,8 +26,6 @@ public class BallDash : MonoBehaviour
 
     private TrailRenderer dashTrail;
 
-    private float prevFrameSpeed;
-
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -66,10 +64,6 @@ public class BallDash : MonoBehaviour
         }
     }
 
-    private void LateUpdate() {
-        prevFrameSpeed = rb.velocity.magnitude;
-    }
-
     void Dash(){
         rb.velocity = Vector2.zero;
         dirToDash = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)*10f;
@@ -79,7 +73,7 @@ public class BallDash : MonoBehaviour
         isDashing = true;
 
         DisplayDashTrails();
-        SetDashColor();
+        //SetDashColor();
     }
 
     void DashEnd(){
@@ -111,10 +105,6 @@ public class BallDash : MonoBehaviour
     void ResetExtraForcesFromCharge(){
         extraForce = 0;
         extraSpeed = 0;
-    }
-
-    public float GetSpeed(){
-        return prevFrameSpeed;
     }
 
     public float GetMaxCharge(){

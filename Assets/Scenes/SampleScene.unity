@@ -317,9 +317,12 @@ GameObject:
   - component: {fileID: 187936705}
   - component: {fileID: 187936709}
   - component: {fileID: 187936710}
+  - component: {fileID: 187936716}
   - component: {fileID: 187936713}
   - component: {fileID: 187936712}
   - component: {fileID: 187936715}
+  - component: {fileID: 187936718}
+  - component: {fileID: 187936717}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -631,6 +634,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef501e4dd82ffe4408d0a89c17d9e5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &187936716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187936704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d78777c4a4788145989e4a8e540ad22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &187936717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187936704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff8eddcd9265d14fa151efb234102c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraMoveSpeed: 3
+--- !u!114 &187936718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187936704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1534410798bcd3845a1bde94ad349de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,8 +1210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57ed373fa3826745b5c45372f8023d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  electron: {fileID: 5477711098660444350, guid: 769bc7b093426954d8de59080c35706d,
-    type: 3}
+  electron:
+  - {fileID: 5477711098660444350, guid: 61c04d7437f97b5488925fefb52c505e, type: 3}
+  - {fileID: 5477711098660444350, guid: 769bc7b093426954d8de59080c35706d, type: 3}
+  - {fileID: 5477711098660444350, guid: 9f914d9f5127c9a488ace444bf509c1b, type: 3}
   electronCount: 0
   speedThreshold: 15
 --- !u!114 &1353761594

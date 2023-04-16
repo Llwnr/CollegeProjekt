@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GiveElectrons : MonoBehaviour
 {
-    [SerializeField]private GameObject electron;
+    [SerializeField]private List<GameObject> electron = new List<GameObject>();
     [SerializeField]private int electronCount;
 
     [SerializeField]private float speedThreshold;
@@ -19,16 +19,17 @@ public class GiveElectrons : MonoBehaviour
 
     void ManageElectronGeneration(Transform other){
         if(other.CompareTag("Player")){
-            int totalElectronCount = (int)(other.transform.GetComponent<BallDash>().GetSpeed()/speedThreshold) + electronCount;
+            int totalElectronCount = (int)(other.transform.GetComponent<SpeedInfo>().GetSpeed()/speedThreshold) + electronCount;
             ThrowElectrons(totalElectronCount);
         }
     }
 
     void ThrowElectrons(int electronCount){
         for(int i=0; i<electronCount; i++){
+            int randomIndex = Random.Range(0, electron.Count);
             Vector3 dir = Random.insideUnitCircle;
             while(dir.magnitude < 0.4f) dir = Random.insideUnitCircle;
-            GameObject newElectron = Instantiate(electron, transform.position+dir*3, Quaternion.identity);
+            GameObject newElectron = Instantiate(electron[randomIndex], transform.position+dir*3, Quaternion.identity);
             GetComponent<RotateElectrons>().AddElectronToRotate(newElectron.transform);
         }
     }

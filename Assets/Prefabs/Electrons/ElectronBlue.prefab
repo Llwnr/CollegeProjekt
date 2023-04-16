@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1084877043638718444}
   - component: {fileID: 8328931979624946274}
   m_Layer: 0
-  m_Name: Electron
+  m_Name: ElectronBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e189ae444a2c2d84892b15038b3d4a24, type: 3}
-  m_Color: {r: 1, g: 0.43434054, b: 0, a: 1}
+  m_Color: {r: 0.05352974, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4852adac560360b4e80c5810bd48fd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  electronType: 1

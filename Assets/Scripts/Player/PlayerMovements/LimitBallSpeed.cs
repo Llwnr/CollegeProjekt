@@ -6,7 +6,7 @@ public class LimitBallSpeed : MonoBehaviour
 {
     private Rigidbody2D rb;
     //The one with the highest speed limit is prioritized
-    private float origSpeedLimit;
+    private float moveSpeedLimit;
     //Various speed limits from various sources
     //Movespeed may have speed limit of 8, dash may be of 40, bounce of 20 etc
     //Prioritize the highest one as long as its duration is greater than zero
@@ -14,7 +14,6 @@ public class LimitBallSpeed : MonoBehaviour
     [SerializeField]private float highestSpeed;
 
     private void Start() {
-        origSpeedLimit = GetComponent<BallMovement>().GetNormalMoveSpeed();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -43,7 +42,8 @@ public class LimitBallSpeed : MonoBehaviour
 
     private void ManageSpeedLimiters(){
         //Set the highest speed limit as default
-        float highestLimit = origSpeedLimit;
+        moveSpeedLimit = GetComponent<BallMovement>().GetNormalMoveSpeed();
+        float highestLimit = moveSpeedLimit;
         for(int i=0; i<speedLimiters.Count; i++){
             if(speedLimiters[i].speedLimit > highestLimit){
                 highestLimit = speedLimiters[i].speedLimit;

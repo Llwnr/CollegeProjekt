@@ -7,6 +7,7 @@ public class BallMovement : MonoBehaviour
     [Header ("Move Speed")]
     [SerializeField]private float moveSpeed;
     [SerializeField]private float maxMoveSpeed;
+    private float extraMoveSpeed = 0;
 
     [Header ("Slowdown Factor")]
     [SerializeField]private float slowdownFactor;
@@ -55,6 +56,10 @@ public class BallMovement : MonoBehaviour
     }
 
     public float GetNormalMoveSpeed(){
-        return maxMoveSpeed;
+        return maxMoveSpeed+extraMoveSpeed;
+    }
+
+    public void SetExtraMoveSpeed(float amt){
+        extraMoveSpeed = amt;
     }
 }
