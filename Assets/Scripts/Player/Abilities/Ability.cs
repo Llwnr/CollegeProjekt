@@ -9,7 +9,7 @@ public abstract class Ability : ScriptableObject {
     protected AbilityManager abilityManager;
     protected GameObject player;
 
-    private void Awake() {
+    private void OnEnable() {
         player = GameObject.FindWithTag("Player");
         abilityManager = GameObject.FindWithTag("Player").GetComponent<AbilityManager>();
     }

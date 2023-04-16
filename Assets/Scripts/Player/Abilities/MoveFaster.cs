@@ -10,6 +10,7 @@ public class MoveFaster : Ability
     private TrailRenderer trailRenderer;
 
     private bool keepShowingTrail = false;
+    [SerializeField]private float dashLength = 0.08f;
     private float dashEndTimer = 0;
 
     [SerializeField]private float buffDuration;
@@ -44,7 +45,8 @@ public class MoveFaster : Ability
         if(keepShowingTrail && !player.GetComponent<BallDash>().IsBallDashing()){
             DisplaySpeedUpTrail();
             ManageTrailColor();
-        }else if(player.GetComponent<BallDash>().IsBallDashing()) dashEndTimer = 0;
+        }
+        else if(player.GetComponent<BallDash>().IsBallDashing()) dashEndTimer = 0;
     }
 
     IEnumerator DeactivateSoon(){
@@ -54,6 +56,7 @@ public class MoveFaster : Ability
 
     void DisplaySpeedUpTrail(){
         trailRenderer.emitting = true;
+        trailRenderer.time = dashLength;
     }
 
     void ManageTrailColor(){

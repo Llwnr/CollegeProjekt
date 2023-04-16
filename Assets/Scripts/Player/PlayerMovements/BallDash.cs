@@ -26,6 +26,7 @@ public class BallDash : MonoBehaviour
 
     private TrailRenderer dashTrail;
     private Gradient origDashColor;
+    private float origDashLength;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class BallDash : MonoBehaviour
 
         origColor = GetComponent<SpriteRenderer>().color;
         origDashColor = dashTrail.colorGradient;
+        origDashLength = dashTrail.time;
     }
 
     void ResetDuration(){
@@ -86,6 +88,7 @@ public class BallDash : MonoBehaviour
 
     public void DisplayDashTrails(){
         dashTrail.colorGradient = origDashColor;
+        dashTrail.time = origDashLength;
         dashTrail.emitting = true;
     }
     public void StopDashTrails(){
