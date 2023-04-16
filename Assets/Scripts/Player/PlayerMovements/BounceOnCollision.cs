@@ -16,6 +16,7 @@ public class BounceOnCollision : MonoBehaviour
     [SerializeField]private float duration;
 
     private void Start() {
+        Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
         bounceTimer = bounceDuration;
     }
@@ -37,7 +38,7 @@ public class BounceOnCollision : MonoBehaviour
     }
 
     void SlowdownBounceSpeed(){
-        if(Mathf.Abs(rb.velocity.magnitude) > 0.1f)rb.velocity *= 0.85f;
+        if(Mathf.Abs(rb.velocity.magnitude) > 0.1f)rb.velocity *= 0.82f;
     }
 
     void DisableDash(){
@@ -60,6 +61,12 @@ public class BounceOnCollision : MonoBehaviour
             AddMaxSpeedLimiter();
             isBouncing = true;
             bounceTimer = bounceDuration;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.transform.CompareTag("Enemy")){
+            ShakeScreen(shakeIntensity*3f, duration*2f);
         }
     }
 

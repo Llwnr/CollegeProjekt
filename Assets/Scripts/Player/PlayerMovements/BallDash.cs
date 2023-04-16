@@ -21,7 +21,12 @@ public class BallDash : MonoBehaviour
     [SerializeField]private float maxExtraSpeed, maxExtraForce;
     [SerializeField]private int framesForMaxCharge;//Number of frames taken to reach max charge
 
+    private Color origColor;
+    [SerializeField]private Color dashColor;
+
     private TrailRenderer dashTrail;
+
+    private float prevFrameSpeed;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -31,6 +36,8 @@ public class BallDash : MonoBehaviour
         dashTrail = GetComponent<TrailRenderer>();
         StopDashTrails();
         ResetDuration();
+
+        origColor = GetComponent<SpriteRenderer>().color;
     }
 
     void ResetDuration(){
@@ -59,6 +66,10 @@ public class BallDash : MonoBehaviour
         }
     }
 
+    private void LateUpdate() {
+        prevFrameSpeed = rb.velocity.magnitude;
+    }
+
     void Dash(){
         rb.velocity = Vector2.zero;
         dirToDash = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)*10f;
@@ -68,10 +79,12 @@ public class BallDash : MonoBehaviour
         isDashing = true;
 
         DisplayDashTrails();
+        SetDashColor();
     }
 
     void DashEnd(){
         StopDashTrails();
+        DisableDashColor();
         isDashing = false;
     }
 
@@ -101,7 +114,7 @@ public class BallDash : MonoBehaviour
     }
 
     public float GetSpeed(){
-        return rb.velocity.magnitude;
+        return prevFrameSpeed;
     }
 
     public float GetMaxCharge(){
@@ -109,6 +122,14 @@ public class BallDash : MonoBehaviour
     }
     public float GetCurrentCharge(){
         return extraSpeed;
+    }
+
+    //To change the color when dashing
+    public void SetDashColor(){
+        GetComponent<SpriteRenderer>().color = dashColor;
+    }
+    public void DisableDashColor(){
+        GetComponent<SpriteRenderer>().color = origColor;
     }
 
     
