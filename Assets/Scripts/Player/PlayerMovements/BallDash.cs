@@ -25,10 +25,11 @@ public class BallDash : MonoBehaviour
     [SerializeField]private Color dashColor;
 
     private TrailRenderer dashTrail;
+    private Gradient origDashColor;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         dashTrail = GetComponent<TrailRenderer>();
@@ -36,6 +37,7 @@ public class BallDash : MonoBehaviour
         ResetDuration();
 
         origColor = GetComponent<SpriteRenderer>().color;
+        origDashColor = dashTrail.colorGradient;
     }
 
     void ResetDuration(){
@@ -82,10 +84,11 @@ public class BallDash : MonoBehaviour
         isDashing = false;
     }
 
-    void DisplayDashTrails(){
+    public void DisplayDashTrails(){
+        dashTrail.colorGradient = origDashColor;
         dashTrail.emitting = true;
     }
-    void StopDashTrails(){
+    public void StopDashTrails(){
         dashTrail.emitting = false;
     }
 
@@ -120,6 +123,10 @@ public class BallDash : MonoBehaviour
     }
     public void DisableDashColor(){
         GetComponent<SpriteRenderer>().color = origColor;
+    }
+
+    public bool IsBallDashing(){
+        return isDashing;
     }
 
     

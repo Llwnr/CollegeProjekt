@@ -8,13 +8,21 @@ using Unity.Burst;
 
 public class RotateElectrons : MonoBehaviour
 {
+    public static RotateElectrons instance {get; private set;}
+
+    
     [SerializeField]private Vector2 rotateOffset;
     [SerializeField]private float rotateSpeed;
     private Vector2 rotateAmt;
 
     private List<Transform> electrons = new List<Transform>();
-
     private void Awake() {
+        if(instance != null){
+            Debug.LogError("More than one rotate electrons");
+            return;
+        }
+        instance = this;
+
         rotateAmt = rotateOffset*rotateSpeed;
     }
 

@@ -14,4 +14,10 @@ public class AbilityManager : MonoBehaviour
         abilities.Remove(ability);
         ability.Deactivate();
     }
+
+    private void Update() {
+        for(int i=0; i<abilities.Count; i++){
+            abilities[i].OnUpdate();
+        }
+    }
 }

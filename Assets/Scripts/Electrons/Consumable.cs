@@ -12,6 +12,7 @@ public class Consumable : MonoBehaviour
     [SerializeField]private ElectronType electronType;
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Player")){
+            other.transform.GetComponent<ElectronHolder>().AddElectron(electronType);
             gameObject.SetActive(false);
         }
     }

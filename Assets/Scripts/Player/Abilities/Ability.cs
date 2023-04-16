@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ability : MonoBehaviour
-{
+public abstract class Ability : ScriptableObject {
     public new string name {get; private set;}
     public string description{get; private set;}
     
@@ -15,13 +14,7 @@ public abstract class Ability : MonoBehaviour
         abilityManager = GameObject.FindWithTag("Player").GetComponent<AbilityManager>();
     }
 
-    //Subscribe or unsubscribe to ability manager
-    public virtual void OnEnable(){
-        abilityManager.AddAbility(this);
-    }
-    public virtual void OnDisable() {
-        abilityManager.RemoveAbility(this);
-    }
+    public abstract void OnUpdate();
 
     public abstract void Activate();
     public abstract void Deactivate();
