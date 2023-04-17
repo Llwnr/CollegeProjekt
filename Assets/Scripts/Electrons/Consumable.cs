@@ -16,4 +16,5 @@ public class Consumable : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
 }

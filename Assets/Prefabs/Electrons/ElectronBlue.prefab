@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5477711098660444348}
   - component: {fileID: 5477711098660444351}
   - component: {fileID: -1653612523667693482}
+  - component: {fileID: -2490480220486134172}
   - component: {fileID: 8328931979624946274}
+  - component: {fileID: -9051329144708854409}
   m_Layer: 0
   m_Name: ElectronBlue
   m_TagString: Untagged
@@ -101,7 +103,28 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.8
+--- !u!50 &-2490480220486134172
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477711098660444350}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &8328931979624946274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,3 +138,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   electronType: 1
+--- !u!114 &-9051329144708854409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477711098660444350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42962a998bc98004eaa3565738662439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

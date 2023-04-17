@@ -46,4 +46,13 @@ public class ElectronHolder : MonoBehaviour
                 return false;
         }
     }
+
+    public int GetMyElectronCount(Consumable.ElectronType electronType){
+        switch(electronType){
+            case Consumable.ElectronType.red:
+                return redElectrons;
+            default:
+                return 0;
+        }
+    }
 }

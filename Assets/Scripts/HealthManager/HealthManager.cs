@@ -6,7 +6,25 @@ public class HealthManager : MonoBehaviour, IDamagable
 {
     [SerializeField]private float hp;
     private float maxHp;
-    // Start is called before the first frame update
+
+    //Observer pattern.
+    //Subscribers are: DmgPopup
+    private List<IOnDamage> observers = new List<IOnDamage>();
+
+    public void AddObserver(IOnDamage observer){
+        observers.Add(observer);
+    }
+    public void RemoveObserver(IOnDamage observer){
+        observers.Remove(observer);
+    }
+
+    public void NotifyObservers(float dmgAmt){
+        for(int i=0; i<observers.Count; i++){
+            observers[i].ActivateWhenDamaged(dmgAmt);
+        }
+    }
+
+
     void Awake()
     {
         maxHp = hp;
@@ -14,6 +32,7 @@ public class HealthManager : MonoBehaviour, IDamagable
 
     public void DealDamage(float dmgAmt){
         hp -= dmgAmt;
+        NotifyObservers(dmgAmt);
         if(hp < 0){
             gameObject.SetActive(false);
         }
