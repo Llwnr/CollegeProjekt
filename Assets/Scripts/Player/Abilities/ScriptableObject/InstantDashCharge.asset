@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   description: 
-  buffDuration: 2
+  buffDuration: 1
   electronToConsume: 0
