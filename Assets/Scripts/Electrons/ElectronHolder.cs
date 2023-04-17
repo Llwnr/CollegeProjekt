@@ -21,4 +21,29 @@ public class ElectronHolder : MonoBehaviour
                 break;
         }
     }
+
+    public bool TakeElectron(Consumable.ElectronType electronType){
+        switch(electronType){
+            case Consumable.ElectronType.blue:
+                if(blueElectrons > 0){
+                    blueElectrons--;
+                    return true;
+                }
+                return false;
+            case Consumable.ElectronType.red:
+                if(redElectrons > 0){
+                    redElectrons--;
+                    return true;
+                }
+                return false;
+            case Consumable.ElectronType.orange:
+                if(orangeElectrons > 0){
+                    orangeElectrons--;
+                    return true;
+                }
+                return false;
+            default:
+                return false;
+        }
+    }
 }

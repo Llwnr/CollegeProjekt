@@ -95,12 +95,17 @@ public class BallDash : MonoBehaviour
         dashTrail.emitting = false;
     }
 
-    void ChargeForce(){
+    public void ChargeForce(){
         extraSpeed += maxExtraSpeed / (1+framesForMaxCharge);
         extraForce += maxExtraForce / (1+framesForMaxCharge);
         //Also limit it
         if(extraSpeed > maxExtraSpeed) extraSpeed = maxExtraSpeed;
         if(extraForce > maxExtraForce) extraForce = maxExtraForce;
+    }
+
+    public void SetChargeToMax(){
+        extraSpeed = maxExtraSpeed;
+        extraForce = maxExtraForce;
     }
 
     void AddSpeedLimit(){

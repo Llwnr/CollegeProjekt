@@ -20,4 +20,8 @@ public class AbilityManager : MonoBehaviour
             abilities[i].OnUpdate();
         }
     }
+
+    public List<Ability> GetMyAbilities(){
+        return abilities;
+    }
 }

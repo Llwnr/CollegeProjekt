@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48796d2f16176184cb0477dc94e2824c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
+  moveSpeed: 70
   maxMoveSpeed: 4
   slowdownFactor: 0.2
 --- !u!212 &187936706
@@ -671,9 +671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e464aeb4ff12b846a44150cf3ea81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueElectrons: 0
-  redElectrons: 0
-  orangeElectrons: 0
+  blueElectrons: 10
+  redElectrons: 10
+  orangeElectrons: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -23431,4 +23431,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f290f2fda50ec4f975dee4ad102dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityToGive: {fileID: 11400000, guid: e4443ab8ce1cc884cb5315f71ab63768, type: 2}
+  abilityToGive: {fileID: 11400000, guid: bd16acc5ed09151488d33ad251c1a7bc, type: 2}

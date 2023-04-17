@@ -13,12 +13,11 @@ public class MoveFaster : Ability
     [SerializeField]private float dashLength = 0.08f;
     private float dashEndTimer = 0;
 
-    [SerializeField]private float buffDuration;
-    private float durationTimer;
+    
     //Main function
     public override void Activate()
     {
-        durationTimer = buffDuration;
+        base.Activate();
         player.GetComponent<BallMovement>().SetExtraMoveSpeed(extraMoveSpeed);
         //Set trail color when moving with buff
         trailRenderer = player.GetComponent<TrailRenderer>();
@@ -37,11 +36,7 @@ public class MoveFaster : Ability
     }
 
     public override void OnUpdate() {
-        durationTimer -= Time.deltaTime;
-        //End buff when duration ends
-        if(durationTimer < 0){
-            player.GetComponent<AbilityManager>().RemoveAbility(this);
-        }
+        base.OnUpdate();
         if(keepShowingTrail && !player.GetComponent<BallDash>().IsBallDashing()){
             DisplaySpeedUpTrail();
             ManageTrailColor();

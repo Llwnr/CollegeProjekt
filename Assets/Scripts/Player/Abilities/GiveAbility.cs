@@ -5,10 +5,21 @@ using UnityEngine;
 public class GiveAbility : MonoBehaviour
 {
     [SerializeField]private Ability abilityToGive;
+    private GameObject player;
+
+    private void Awake() {
+        player = GameObject.FindWithTag("Player");
+    }
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.N)){
-            GiveMyAbility(GameObject.FindWithTag("Player"));
+        if(Input.GetKeyDown(KeyCode.T)){
+            //Check if the ability already exists and the electron required is satisfied
+            AbilityManager abilityManager = player.GetComponent<AbilityManager>();
+            if(!abilityManager.GetMyAbilities().Contains(abilityToGive) && player.GetComponent<ElectronHolder>().TakeElectron(abilityToGive.electronToConsume)){
+                Debug.Log("Ability Given");
+                GiveMyAbility(player);
+            }
+            
         }
     }
 
