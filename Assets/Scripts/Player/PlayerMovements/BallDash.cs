@@ -20,6 +20,7 @@ public class BallDash : MonoBehaviour
     [SerializeField]private float extraForce = 0;
     [SerializeField]private float maxExtraSpeed, maxExtraForce;
     [SerializeField]private int framesForMaxCharge;//Number of frames taken to reach max charge
+    private int reduceFramesForMaxCharge;//Will make the charge happen faster
 
     private Color origColor;
     [SerializeField]private Color dashColor;
@@ -117,11 +118,6 @@ public class BallDash : MonoBehaviour
         if(extraForce > maxExtraForce) extraForce = maxExtraForce;
     }
 
-    public void SetChargeToMax(){
-        extraSpeed = maxExtraSpeed;
-        extraForce = maxExtraForce;
-    }
-
     void AddSpeedLimit(){
         //Give the max speed limit into clamping equation when dashing, so that it isn't capped out by base movement's 3 move speed
         GetComponent<LimitBallSpeed>().AddSpeedLimiter(maxDashSpeed+extraSpeed, duration);
@@ -150,6 +146,14 @@ public class BallDash : MonoBehaviour
     public bool IsBallDashing(){
         return isDashing;
     }
+
+    //BUFFS ARE HERE:
+    //INSTANT CHARGE
+    public void SetChargeToMax(){
+        extraSpeed = maxExtraSpeed;
+        extraForce = maxExtraForce;
+    }
+    //Increase charge speed
 
     
 }

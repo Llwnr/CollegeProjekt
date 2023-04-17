@@ -18,9 +18,9 @@ public class HealthManager : MonoBehaviour, IDamagable
         observers.Remove(observer);
     }
 
-    public void NotifyObservers(float dmgAmt){
+    public void NotifyObservers(float dmgAmt, Transform myTransform){
         for(int i=0; i<observers.Count; i++){
-            observers[i].ActivateWhenDamaged(dmgAmt);
+            observers[i].ActivateWhenDamaged(dmgAmt, myTransform);
         }
     }
 
@@ -32,7 +32,7 @@ public class HealthManager : MonoBehaviour, IDamagable
 
     public void DealDamage(float dmgAmt){
         hp -= dmgAmt;
-        NotifyObservers(dmgAmt);
+        NotifyObservers(dmgAmt, transform);
         if(hp < 0){
             gameObject.SetActive(false);
         }
