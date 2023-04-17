@@ -83,13 +83,21 @@ public class BallDash : MonoBehaviour
 
         DisplayDashTrails();
         //SetDashColor();
-        animator.Play("DashAnim");
+        animator.Play("DashStart");
     }
 
     void DashEnd(){
         StopDashTrails();
         DisableDashColor();
         isDashing = false;
+        animator.Play("DashEnd");
+    }
+
+    //Stop dash when colliding with enemy
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.transform.tag=="Enemy"){
+            DashEnd();
+        }
     }
 
     public void DisplayDashTrails(){
