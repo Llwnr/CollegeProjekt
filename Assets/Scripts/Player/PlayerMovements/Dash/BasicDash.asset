@@ -20,3 +20,4 @@ MonoBehaviour:
   maxExtraSpeed: 30
   maxExtraForce: 24
   isGoThrough: 0
+  dashIcon: {fileID: 21300000, guid: 6e25b872aa7ba484abe1745576acd7a1, type: 3}

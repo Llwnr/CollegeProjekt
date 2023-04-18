@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DashSelectionManager : MonoBehaviour
 {
     [SerializeField]private List<DashProperty> dashProperties;
     private BallDash ballDash;
     private int index = 0;
+
+    [SerializeField]private Image dashIconHolder;
 
     private void Start() {
         ballDash = GetComponent<BallDash>();
@@ -25,6 +28,7 @@ public class DashSelectionManager : MonoBehaviour
 
         DashProperty dash = dashProperties[index];
         ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge);
+        SetDashIcon(dash.dashIcon);
         
         ManageDashGoThroughObjects(dash);
     }
@@ -41,5 +45,10 @@ public class DashSelectionManager : MonoBehaviour
     void SetFirstDashType(){
         DashProperty dash = dashProperties[0];
         ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge);
+        SetDashIcon(dash.dashIcon);
+    }
+
+    void SetDashIcon(Sprite sprite){
+        dashIconHolder.sprite = sprite;
     }
 }

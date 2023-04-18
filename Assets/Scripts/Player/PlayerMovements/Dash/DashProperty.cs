@@ -11,4 +11,5 @@ public class DashProperty : ScriptableObject {
     public int framesForMaxCharge;
     public float maxExtraSpeed, maxExtraForce;
     public bool isGoThrough;
+    public Sprite dashIcon;
 }
