@@ -13,7 +13,7 @@ public class RotateElectrons : MonoBehaviour
     
     [SerializeField]private Vector2 rotateOffset;
     [SerializeField]private float rotateSpeed;
-    private Vector2 rotateAmt;
+    private Vector3 rotateAmt;
 
     private List<Transform> electrons = new List<Transform>();
     private void Awake() {
@@ -43,8 +43,8 @@ public class RotateElectrons : MonoBehaviour
     }
 
     void RotateMyElectrons(){
-        for(int i=0; i<electrons.Count; i++){
-            electrons[i].Rotate(rotateAmt);
+        foreach(Transform electron in electrons){
+            electron.localEulerAngles += rotateAmt;
         }
     }
 

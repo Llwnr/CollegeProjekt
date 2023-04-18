@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4852adac560360b4e80c5810bd48fd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inconsumableDuration: 0.15
   electronType: 1
 --- !u!114 &-9051329144708854409
 MonoBehaviour:

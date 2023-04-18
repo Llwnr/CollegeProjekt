@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MoveFaster", menuName = "CollegeProjekt/MoveFaster", order = 0)]
+[CreateAssetMenu(fileName = "MoveFaster", menuName = "CollegeProjekt/Abilities/MoveFaster", order = 0)]
 public class MoveFaster : Ability
 {
     [SerializeField]private float extraMoveSpeed;

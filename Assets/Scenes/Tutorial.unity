@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 187936705}
   - component: {fileID: 187936709}
   - component: {fileID: 187936710}
+  - component: {fileID: 187936722}
   - component: {fileID: 187936716}
   - component: {fileID: 187936713}
   - component: {fileID: 187936720}
@@ -346,7 +347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 70
   maxMoveSpeed: 4
-  slowdownFactor: 0.2
 --- !u!212 &187936706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187936704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 2.636, y: 0.997, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -449,6 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highestSpeed: 0
+  slowdownFactor: 0.2
 --- !u!114 &187936710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,9 +462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79813bf16e6744b45a4ce245ebfc0fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 40
-  maxDashSpeed: 20
-  duration: 0.1
+  dashForce: 50
+  maxDashSpeed: 24
+  duration: 0.11
   extraSpeed: 0
   extraForce: 0
   maxExtraSpeed: 30
@@ -479,7 +480,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 187936704}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 0506eba0f6c288743b88e64792692aa3, type: 2}
+  m_Material: {fileID: 6200000, guid: b46fa91423bdd6f4785c61698d4f2767, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -587,7 +588,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.45660377, b: 0.45660377, a: 0.41568628}
+      key0: {r: 1, g: 0.3433962, b: 0.3433962, a: 0.41568628}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -708,6 +709,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDmg: 3
+--- !u!114 &187936722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187936704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aea7d97aa30b6844ac2aebd0c64e4ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashProperties:
+  - {fileID: 11400000, guid: 27a94786dafa83d4ca99934ea012e3e3, type: 2}
+  - {fileID: 11400000, guid: f8136c361410da242a471f55091472fb, type: 2}
 --- !u!1 &227237970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,7 +1923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalPosition: {x: 2.636, y: 0.997, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1998,7 +2014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1127447139
 Grid:
   m_ObjectHideFlags: 0
@@ -2315,7 +2331,7 @@ Transform:
   m_GameObject: {fileID: 1353761589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.02, y: 0, z: -1}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1945199984}
@@ -2339,7 +2355,7 @@ MonoBehaviour:
   - {fileID: 5477711098660444350, guid: 769bc7b093426954d8de59080c35706d, type: 3}
   - {fileID: 5477711098660444350, guid: 9f914d9f5127c9a488ace444bf509c1b, type: 3}
   electronCount: 0
-  speedThreshold: 12
+  speedThreshold: 9
 --- !u!114 &1353761595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,7 +2368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcae72ab680ce9f4eaa35ed0ea61792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 500
+  hp: 2000
 --- !u!114 &1353761596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24297,7 +24313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399593646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11}
+  m_LocalPosition: {x: 2.636, y: 0.997, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Invincible", menuName = "CollegeProjekt/Invincible", order = 0)]
+[CreateAssetMenu(fileName = "Invincible", menuName = "CollegeProjekt/Abilities/Invincible", order = 0)]
 public class Invincible : Ability
 {
     public override void Activate()

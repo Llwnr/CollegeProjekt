@@ -9,9 +9,6 @@ public class BallMovement : MonoBehaviour
     [SerializeField]private float maxMoveSpeed;
     private float extraMoveSpeed = 0;
 
-    [Header ("Slowdown Factor")]
-    [SerializeField]private float slowdownFactor;
-
     private Rigidbody2D rb;
 
     private float hDir = 0, vDir = 0;
@@ -26,13 +23,6 @@ public class BallMovement : MonoBehaviour
     {
         //Get the direction to move to
         GetDirection();
-        
-        
-        
-        //Slowdown ball when there's no input
-        if(hDir == 0 && vDir == 0){
-            rb.velocity *= 1-slowdownFactor;
-        }
     }
 
     private void FixedUpdate() {

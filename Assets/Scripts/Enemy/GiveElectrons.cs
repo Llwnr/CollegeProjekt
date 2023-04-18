@@ -30,7 +30,7 @@ public class GiveElectrons : MonoBehaviour
             Vector3 dir = Random.insideUnitCircle;
             while(dir.magnitude < 0.4f) dir = Random.insideUnitCircle;
             GameObject newElectron = Instantiate(electron[randomIndex], transform.position+dir, Quaternion.identity);
-            newElectron.GetComponent<Rigidbody2D>().AddForce(dir*5, ForceMode2D.Impulse);
+            newElectron.GetComponent<Rigidbody2D>().AddForce(dir*4, ForceMode2D.Impulse);
             RotateElectrons.instance.AddElectronToRotate(newElectron.transform);
         }
     }

@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     [SerializeField]private float baseDmg;
     private SpeedInfo playerSpeedInfo;
+    private BallDash ballDash;
 
     //Electron buffs
     private ElectronHolder electronHolder;
@@ -19,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     private void Awake() {
         electronHolder = GetComponent<ElectronHolder>();
         playerSpeedInfo = GetComponent<SpeedInfo>();
+        ballDash = GetComponent<BallDash>();
     }
 
     private void Update() {
@@ -31,7 +33,8 @@ public class PlayerStats : MonoBehaviour
 
     //Calculate damage after buffs and when on high speed
     public float GetMyMaxDamage(){
-        highSpeedBuff = 1 + (playerSpeedInfo.GetSpeed() * 0.1f * 0.1f);
+        //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
+        highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.25f);
         finalDmg = (baseDmg + redElectronExtraDmg)*highSpeedBuff;
         return finalDmg;
     }

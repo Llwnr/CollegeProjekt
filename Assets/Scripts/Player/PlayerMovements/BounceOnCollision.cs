@@ -26,10 +26,12 @@ public class BounceOnCollision : MonoBehaviour
             bounceTimer -= Time.deltaTime;
             SlowdownBounceSpeed();
             DisableDash();
+            EnableStun();
         }
         if(bounceTimer < 0){
             isBouncing = false;
             EnableDash();
+            DisableStun();
         }
     }
 
@@ -47,6 +49,13 @@ public class BounceOnCollision : MonoBehaviour
     void EnableDash(){
         GetComponent<BallDash>().enabled = true;
     }
+    //Don't let player move for a while when colliding
+    void EnableStun(){
+        GetComponent<BallMovement>().enabled = false;
+    }
+    void DisableStun(){
+        GetComponent<BallMovement>().enabled = true;
+    }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.transform.CompareTag("Enemy")){
@@ -56,7 +65,7 @@ public class BounceOnCollision : MonoBehaviour
             rb.velocity = dir * speed + dir*4f;
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
-            ShakeScreen(Mathf.Max(shakeIntensity * 0.08f * speed, shakeIntensity), Mathf.Max(duration*speed*0.05f, duration));
+            StartScreenShake(speed);
 
             AddMaxSpeedLimiter();
             isBouncing = true;
@@ -64,9 +73,14 @@ public class BounceOnCollision : MonoBehaviour
         }
     }
 
+    void StartScreenShake(float ballSpeed){
+        ShakeScreen(Mathf.Max(shakeIntensity * 0.08f * ballSpeed, shakeIntensity), Mathf.Max(duration*ballSpeed*0.05f, duration));
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Enemy")){
-            ShakeScreen(shakeIntensity*3f, duration*2f);
+            float speed = velocityOnHit.magnitude;
+            StartScreenShake(speed);
         }
     }
 

@@ -33,6 +33,16 @@ public class BallDash : MonoBehaviour
     private Animator animator;
 
     private Rigidbody2D rb;
+
+    //To allow different types of dashes
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge){
+        this.dashForce = dashForce;
+        this.maxDashSpeed = maxDashSpeed;
+        this.duration = duration;
+        this.maxExtraSpeed = maxExtraSpeed;
+        this.maxExtraForce = maxExtraForce;
+        this.framesForMaxCharge = framesForMaxCharge;
+    }
     // Start is called before the first frame update
     void Awake()
     {
@@ -75,12 +85,16 @@ public class BallDash : MonoBehaviour
     }
 
     void Dash(){
+        //Limit to maximum values incase maximum values change when dash property changes
+        ChargeForce();
+
         rb.velocity = Vector2.zero;
         dirToDash = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)*10f;
         dirToDash = dirToDash.normalized;
         rb.AddForce(dirToDash*(dashForce+extraForce), ForceMode2D.Impulse);
 
         isDashing = true;
+        ResetDuration();
 
         DisplayDashTrails();
         //SetDashColor();
@@ -120,7 +134,12 @@ public class BallDash : MonoBehaviour
 
     void AddSpeedLimit(){
         //Give the max speed limit into clamping equation when dashing, so that it isn't capped out by base movement's 3 move speed
-        GetComponent<LimitBallSpeed>().AddSpeedLimiter(maxDashSpeed+extraSpeed, duration);
+        GetComponent<LimitBallSpeed>().AddSpeedLimiter(GetSpeedLimit(), duration);
+    }
+
+    public float GetSpeedLimit(){
+        //Get maximum dash speed limit
+        return maxDashSpeed+maxExtraSpeed;
     }
 
     void ResetExtraForcesFromCharge(){

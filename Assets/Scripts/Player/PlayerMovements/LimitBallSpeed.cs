@@ -13,12 +13,26 @@ public class LimitBallSpeed : MonoBehaviour
     [SerializeField]private List<SpeedLimiter> speedLimiters = new List<SpeedLimiter>();
     [SerializeField]private float highestSpeed;
 
+    [Header ("Slowdown Factor")]
+    [SerializeField]private float slowdownFactor;
+
+    private float hDir, vDir;
+
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
         ReduceDurationOfLimiters();
+    }
+
+    void SlowDownBall(){
+        hDir = Input.GetAxisRaw("Horizontal");
+        vDir = Input.GetAxisRaw("Vertical");
+        //Slowdown ball when there's no input
+        if(hDir == 0 && vDir == 0){
+            rb.velocity *= 1-slowdownFactor;
+        }
     }
 
     private void FixedUpdate() {
@@ -52,11 +66,9 @@ public class LimitBallSpeed : MonoBehaviour
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, highestLimit);
         highestSpeed = highestLimit;
 
-        //Also disable movement when external forces are being applied
+        //Only slowdown when moving normally
         if(speedLimiters.Count == 0){
-            GetComponent<BallMovement>().enabled = true;
-        }else{
-            GetComponent<BallMovement>().enabled = false;
+            SlowDownBall();
         }
     }
 
