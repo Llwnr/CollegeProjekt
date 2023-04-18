@@ -22,14 +22,14 @@ public class DashSelectionManager : MonoBehaviour
         }
     }
     
-    //Change the dash type based on the dash properties defined in the scriptable object
+    //Change the dash type based on the list of dash properties defined in the scriptable object
     public void ChangeDashType(){
         index = (index+1)%dashProperties.Count;
 
         DashProperty dash = dashProperties[index];
         ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge);
         SetDashIcon(dash.dashIcon);
-        
+
         ManageDashGoThroughObjects(dash);
     }
 

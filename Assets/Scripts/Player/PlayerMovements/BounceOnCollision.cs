@@ -28,6 +28,7 @@ public class BounceOnCollision : MonoBehaviour
             DisableDash();
             EnableStun();
         }
+        //Enable player to move/dash after bounce stun ends
         if(bounceTimer < 0){
             isBouncing = false;
             EnableDash();
@@ -61,12 +62,14 @@ public class BounceOnCollision : MonoBehaviour
         if(other.transform.CompareTag("Enemy")){
             //Bounce
             float speed = velocityOnHit.magnitude;
+            //Bounce in the correct angle and direction
             Vector2 dir = Vector2.Reflect(velocityOnHit.normalized, other.contacts[0].normal);
             rb.velocity = dir * speed + dir*4f;
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
             StartScreenShake(speed);
 
+            //Set bounce's max speed limit
             AddMaxSpeedLimiter();
             isBouncing = true;
             bounceTimer = bounceDuration;

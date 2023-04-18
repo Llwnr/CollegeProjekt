@@ -10,6 +10,7 @@ public class LimitBallSpeed : MonoBehaviour
     //Various speed limits from various sources
     //Movespeed may have speed limit of 8, dash may be of 40, bounce of 20 etc
     //Prioritize the highest one as long as its duration is greater than zero
+    //Will limit the player's speed based on the highest speedLimit. So, even if movespeed limit is 8, if dashing, limit upto 40
     [SerializeField]private List<SpeedLimiter> speedLimiters = new List<SpeedLimiter>();
     [SerializeField]private float highestSpeed;
 
@@ -26,15 +27,6 @@ public class LimitBallSpeed : MonoBehaviour
         ReduceDurationOfLimiters();
     }
 
-    void SlowDownBall(){
-        hDir = Input.GetAxisRaw("Horizontal");
-        vDir = Input.GetAxisRaw("Vertical");
-        //Slowdown ball when there's no input
-        if(hDir == 0 && vDir == 0){
-            rb.velocity *= 1-slowdownFactor;
-        }
-    }
-
     private void FixedUpdate() {
         ManageSpeedLimiters();
     }
@@ -49,6 +41,7 @@ public class LimitBallSpeed : MonoBehaviour
     }
 
     void ReduceDurationOfLimiters(){
+        //Reduce duration of all the limiters based on real time.
         for(int i=0; i<speedLimiters.Count; i++){
             speedLimiters[i].ReduceDuration();
         }
@@ -66,14 +59,24 @@ public class LimitBallSpeed : MonoBehaviour
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, highestLimit);
         highestSpeed = highestLimit;
 
-        //Only slowdown when moving normally
+        //Only slowdown when moving normally. i.e. when there are no speed limiters(speed limit from ballmovement is just default and not included in the list)
         if(speedLimiters.Count == 0){
             SlowDownBall();
         }
     }
 
+    void SlowDownBall(){
+        hDir = Input.GetAxisRaw("Horizontal");
+        vDir = Input.GetAxisRaw("Vertical");
+        //Slowdown ball when there's no input
+        if(hDir == 0 && vDir == 0){
+            rb.velocity *= 1-slowdownFactor;
+        }
+    }
+
     private void LateUpdate() {
         for(int i=0; i<speedLimiters.Count; i++){
+            //Removes the speed limiter when its duration ends
             if(speedLimiters[i].RemoveWhenTimerEnds()){
                 i--;
             }

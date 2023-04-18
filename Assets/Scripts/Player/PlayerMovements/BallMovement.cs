@@ -46,10 +46,12 @@ public class BallMovement : MonoBehaviour
     }
 
     public float GetNormalMoveSpeed(){
+        //Return normal or basic movement speed of player when its not dashing or being knocked back
         return maxMoveSpeed+extraMoveSpeed;
     }
 
     public void SetExtraMoveSpeed(float amt){
+        //For some buffs. Basically increase movespeed
         extraMoveSpeed = amt;
     }
 }

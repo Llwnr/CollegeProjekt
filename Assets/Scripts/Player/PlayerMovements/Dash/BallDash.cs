@@ -133,7 +133,7 @@ public class BallDash : MonoBehaviour
     }
 
     void AddSpeedLimit(){
-        //Give the max speed limit into clamping equation when dashing, so that it isn't capped out by base movement's 3 move speed
+        //Give the max speed limit into clamping equation when dashing, so that it isn't capped out by base movement's move speed
         GetComponent<LimitBallSpeed>().AddSpeedLimiter(GetSpeedLimit(), duration);
     }
 
