@@ -22,6 +22,13 @@ public class BallDash : MonoBehaviour
     [SerializeField]private int framesForMaxCharge;//Number of frames taken to reach max charge
     private int reduceFramesForMaxCharge;//Will make the charge happen faster
 
+    //For dash ability
+    [SerializeField]private Ability abilityToGive;
+
+    public Ability GetDashAbility(){
+        return abilityToGive;
+    }
+
     private Color origColor;
     [SerializeField]private Color dashColor;
 
@@ -35,13 +42,14 @@ public class BallDash : MonoBehaviour
     private Rigidbody2D rb;
 
     //To allow different types of dashes
-    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier){
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability){
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
         this.duration = duration;
         this.maxExtraSpeed = maxExtraSpeed;
         this.maxExtraForce = maxExtraForce;
         this.framesForMaxCharge = framesForMaxCharge;
+        this.abilityToGive = ability;
         //Give the dash's dmg multiplier to player stats for damage calculation
         GetComponent<PlayerStats>().SetDashDmgMultiplier(dashDmgMultiplier);
     }

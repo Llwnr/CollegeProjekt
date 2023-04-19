@@ -27,7 +27,7 @@ public class DashSelectionManager : MonoBehaviour
         index = (index+1)%dashProperties.Count;
 
         DashProperty dash = dashProperties[index];
-        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier);
+        SetDashProperty(dash);
         SetDashIcon(dash.dashIcon);
 
         ManageDashGoThroughObjects(dash);
@@ -42,9 +42,13 @@ public class DashSelectionManager : MonoBehaviour
         }
     }
 
+    void SetDashProperty(DashProperty dash){
+        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier, dash.dashAbility);
+    }
+
     void SetFirstDashType(){
         DashProperty dash = dashProperties[0];
-        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier);
+        SetDashProperty(dash);
         SetDashIcon(dash.dashIcon);
     }
 

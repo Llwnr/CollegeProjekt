@@ -14,4 +14,5 @@ public class DashProperty : ScriptableObject {
     public bool isGoThrough;
     public Sprite dashIcon;
     public float dashDmgMultiplier;
+    public Ability dashAbility;
 }

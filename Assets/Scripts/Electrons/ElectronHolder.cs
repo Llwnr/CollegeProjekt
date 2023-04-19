@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ElectronHolder : MonoBehaviour
 {
     [SerializeField]private int blueElectrons, redElectrons, orangeElectrons = 0;
-    [SerializeField]private Sprite blue, red, orange;
+    [SerializeField]private Color blue, red, orange;
 
     public void AddElectron(Consumable.ElectronType electronType){
         switch(electronType){
@@ -84,7 +84,7 @@ public class ElectronHolder : MonoBehaviour
         }
     }
 
-    public Sprite GetMyElectronIcon(Consumable.ElectronType electronType){
+    public Color GetMyElectronColor(Consumable.ElectronType electronType){
         switch(electronType){
             case Consumable.ElectronType.red:
                 return red;
@@ -93,7 +93,7 @@ public class ElectronHolder : MonoBehaviour
             case Consumable.ElectronType.orange:
                 return orange;
             default:
-                return null;
+                return red;
         }
     }
 }

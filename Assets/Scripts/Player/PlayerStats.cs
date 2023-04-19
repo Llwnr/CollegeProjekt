@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     //Electron buffs
     private ElectronHolder electronHolder;
     //Red electron increases base dmg by a little bit
-    private float redElectronExtraDmg;
+    private float blueElectronExtraDmg;
     //Automatically consume red electron for extra damage multiplier
     private float consumedRedElectronMultiplier = 1;
 
@@ -29,7 +29,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     private void Update() {
-        redElectronExtraDmg = electronHolder.GetMyElectronCount(Consumable.ElectronType.red);
+        blueElectronExtraDmg = electronHolder.GetMyElectronCount(Consumable.ElectronType.blue);
 
         if(electronHolder.CanTakeElectron(Consumable.ElectronType.red)){
             //Debug.Log("Enraged");
@@ -51,13 +51,13 @@ public class PlayerStats : MonoBehaviour
         ConsumeRedElectronForMultiplier();
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.25f);
-        finalDmg = (baseDmg + redElectronExtraDmg*0.8f)*highSpeedBuff*dashDmgMultiplier*consumedRedElectronMultiplier;
+        finalDmg = (baseDmg)*highSpeedBuff*dashDmgMultiplier*consumedRedElectronMultiplier + blueElectronExtraDmg*consumedRedElectronMultiplier;
         return finalDmg;
     }
 
     void ConsumeRedElectronForMultiplier(){
         if(electronHolder.TakeElectron(Consumable.ElectronType.red)){
-            consumedRedElectronMultiplier = 1.8f;
+            consumedRedElectronMultiplier = 1.75f;
         }else{
             consumedRedElectronMultiplier = 1;
         }

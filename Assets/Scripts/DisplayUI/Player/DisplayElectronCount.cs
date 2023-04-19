@@ -12,6 +12,7 @@ public class DisplayElectronCount : MonoBehaviour
     //The info box to create/update to show electron count
     [SerializeField]private GameObject electronInfoBox;
     private List<GameObject> infoBoxes = new List<GameObject>();
+    [SerializeField]private Sprite electronIconSprite;
 
     private void Start() {
         CreateInfoBoxesForEachElectron();
@@ -37,8 +38,9 @@ public class DisplayElectronCount : MonoBehaviour
             TextMeshProUGUI textBox = infoBoxes[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             Image electronIcon = infoBoxes[i].transform.GetChild(0).GetComponent<Image>();
             Consumable.ElectronType electronType = electronTypes[i];
-            textBox.text = " : " + electronHolder.GetMyElectronCount(electronType);
-            electronIcon.sprite = electronHolder.GetMyElectronIcon(electronType);
+            textBox.text = electronHolder.GetMyElectronCount(electronType).ToString();
+            electronIcon.sprite = electronIconSprite;
+            electronIcon.color = electronHolder.GetMyElectronColor(electronType);
         }
     }
 }

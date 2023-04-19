@@ -16,11 +16,11 @@ MonoBehaviour:
   description: 
   abilityIcon: {fileID: 0}
   buffDuration: 2
-  electronToConsume: 0
-  extraMoveSpeed: 5
+  electronToConsume: 2
+  extraMoveSpeed: 4
   buffMoveColor:
     serializedVersion: 2
-    key0: {r: 0.09620428, g: 0, b: 1, a: 0.22352941}
+    key0: {r: 0.09620428, g: 0, b: 1, a: 0.13725491}
     key1: {r: 1, g: 1, b: 1, a: 0.15686275}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -47,4 +47,4 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  dashLength: 0.08
+  trailLength: 0.07

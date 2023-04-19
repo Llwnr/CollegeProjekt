@@ -10,7 +10,7 @@ public class MoveFaster : Ability
     private TrailRenderer trailRenderer;
 
     private bool keepShowingTrail = false;
-    [SerializeField]private float dashLength = 0.08f;
+    [SerializeField]private float trailLength = 0.02f;
     private float dashEndTimer = 0;
 
     
@@ -52,7 +52,7 @@ public class MoveFaster : Ability
 
     void DisplaySpeedUpTrail(){
         trailRenderer.emitting = true;
-        trailRenderer.time = dashLength;
+        trailRenderer.time = trailLength;
     }
 
     void ManageTrailColor(){

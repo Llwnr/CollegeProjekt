@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187936704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.636, y: 0.997, z: -1}
+  m_LocalPosition: {x: 2.636, y: 0.997, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -472,6 +472,7 @@ MonoBehaviour:
   maxExtraSpeed: 30
   maxExtraForce: 30
   framesForMaxCharge: 30
+  abilityToGive: {fileID: 0}
   dashColor: {r: 1, g: 0.37169808, b: 0.37169808, a: 1}
 --- !u!58 &187936711
 CircleCollider2D:
@@ -559,11 +560,11 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.7
+    widthMultiplier: 0.8
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -678,9 +679,9 @@ MonoBehaviour:
   blueElectrons: 2
   redElectrons: 2
   orangeElectrons: 2
-  blue: {fileID: 21300000, guid: e189ae444a2c2d84892b15038b3d4a24, type: 3}
-  red: {fileID: 21300000, guid: e189ae444a2c2d84892b15038b3d4a24, type: 3}
-  orange: {fileID: 21300000, guid: 41842964c48860f46b45e7b3d5986e07, type: 3}
+  blue: {r: 0, g: 0.048322916, b: 1, a: 1}
+  red: {r: 1, g: 0, b: 0, a: 1}
+  orange: {r: 1, g: 0.49646854, b: 0, a: 1}
 --- !u!95 &187936720
 Animator:
   serializedVersion: 4
@@ -1929,7 +1930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.636, y: 0.997, z: -11}
+  m_LocalPosition: {x: 2.636, y: 0.997, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1971,8 +1972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -80}
-  m_SizeDelta: {x: 800, y: 160}
+  m_AnchoredPosition: {x: 300, y: -80}
+  m_SizeDelta: {x: 600, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &743620651
 MonoBehaviour:
@@ -1994,7 +1995,7 @@ MonoBehaviour:
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 140, y: 140}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 20, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -2014,6 +2015,7 @@ MonoBehaviour:
   electronTypes: 
   electronInfoBox: {fileID: 1321897040138647570, guid: a11dc09a9889179428cb99cadcae6e33,
     type: 3}
+  electronIconSprite: {fileID: 21300000, guid: 18efc3dc47ca48141937ae495410c9e1, type: 3}
 --- !u!1 &871816660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,7 +2095,7 @@ GameObject:
   - component: {fileID: 1127447140}
   - component: {fileID: 1127447139}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: BackgroundTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2176,9 +2178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 2
   m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 1
-  m_YDamping: 0.6
-  m_ZDamping: 1
+  m_XDamping: 0.7
+  m_YDamping: 0.5
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -2540,7 +2542,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -24397,7 +24399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399593646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.636, y: 0.997, z: -11}
+  m_LocalPosition: {x: 2.636, y: 0.997, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25021,4 +25023,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f290f2fda50ec4f975dee4ad102dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityToGive: {fileID: 11400000, guid: bd16acc5ed09151488d33ad251c1a7bc, type: 2}
+  ballDash: {fileID: 187936710}
