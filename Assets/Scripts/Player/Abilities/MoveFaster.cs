@@ -41,6 +41,7 @@ public class MoveFaster : Ability
             DisplaySpeedUpTrail();
             ManageTrailColor();
         }
+        //To wait few frames before changing trail color after dashing ends
         else if(player.GetComponent<BallDash>().IsBallDashing()) dashEndTimer = 0;
     }
 

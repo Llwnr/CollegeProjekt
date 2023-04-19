@@ -17,6 +17,7 @@ public class BounceOnCollision : MonoBehaviour
 
     private void Start() {
         Application.targetFrameRate = 60;
+        Debug.Log("Setting up application framerate from here");
         rb = GetComponent<Rigidbody2D>();
         bounceTimer = bounceDuration;
     }

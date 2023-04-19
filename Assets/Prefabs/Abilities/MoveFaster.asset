@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff8eddcd9265d14fa151efb234102c5, type: 3}
   m_Name: MoveFaster
   m_EditorClassIdentifier: 
-  extraMoveSpeed: 3
+  name: 
+  description: 
+  abilityIcon: {fileID: 0}
+  buffDuration: 2
+  electronToConsume: 0
+  extraMoveSpeed: 5
   buffMoveColor:
     serializedVersion: 2
     key0: {r: 0.09620428, g: 0, b: 1, a: 0.22352941}
@@ -42,4 +47,4 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  buffDuration: 2
+  dashLength: 0.08

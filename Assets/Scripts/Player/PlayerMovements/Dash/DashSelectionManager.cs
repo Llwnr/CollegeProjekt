@@ -17,7 +17,7 @@ public class DashSelectionManager : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetKeyDown(KeyCode.Space)){
             ChangeDashType();
         }
     }
@@ -27,7 +27,7 @@ public class DashSelectionManager : MonoBehaviour
         index = (index+1)%dashProperties.Count;
 
         DashProperty dash = dashProperties[index];
-        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge);
+        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier);
         SetDashIcon(dash.dashIcon);
 
         ManageDashGoThroughObjects(dash);
@@ -44,7 +44,7 @@ public class DashSelectionManager : MonoBehaviour
 
     void SetFirstDashType(){
         DashProperty dash = dashProperties[0];
-        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge);
+        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier);
         SetDashIcon(dash.dashIcon);
     }
 

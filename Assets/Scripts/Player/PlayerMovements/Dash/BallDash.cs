@@ -35,13 +35,15 @@ public class BallDash : MonoBehaviour
     private Rigidbody2D rb;
 
     //To allow different types of dashes
-    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge){
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier){
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
         this.duration = duration;
         this.maxExtraSpeed = maxExtraSpeed;
         this.maxExtraForce = maxExtraForce;
         this.framesForMaxCharge = framesForMaxCharge;
+        //Give the dash's dmg multiplier to player stats for damage calculation
+        GetComponent<PlayerStats>().SetDashDmgMultiplier(dashDmgMultiplier);
     }
     // Start is called before the first frame update
     void Awake()

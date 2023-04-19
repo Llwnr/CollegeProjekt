@@ -6,6 +6,8 @@ public abstract class Ability : ScriptableObject {
     public new string name;
     public string description;
 
+    public Sprite abilityIcon;
+
     //Duration
     public float buffDuration;
     protected float durationTimer;
