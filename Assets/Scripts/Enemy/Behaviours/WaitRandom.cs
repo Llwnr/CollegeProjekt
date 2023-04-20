@@ -8,7 +8,9 @@ public class WaitRandom : ActionNode
 {
     public float minDuration, maxDuration;
     private float duration;
+    
     protected override void OnStart() {
+        context.transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         duration = Random.Range(minDuration, maxDuration);
     }
 
