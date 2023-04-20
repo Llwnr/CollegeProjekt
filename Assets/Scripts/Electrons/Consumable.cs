@@ -8,7 +8,8 @@ public class Consumable : MonoBehaviour
     public enum ElectronType{
         red,
         blue,
-        orange
+        orange,
+        green
     }
     [SerializeField]private ElectronType electronType;
     private void OnTriggerEnter2D(Collider2D other) {
@@ -31,6 +32,13 @@ public class Consumable : MonoBehaviour
     IEnumerator EnableBeingConsumed(){
         yield return new WaitForSeconds(inconsumableDuration);
         GetComponent<Collider2D>().enabled = true;
+    }
+
+    private void OnDestroy() {
+        //Activate electron functions when consumed
+        if(electronType == ElectronType.green){
+            GameObject.FindWithTag("Player").GetComponent<HealthManager>().Heal(5);
+        }
     }
 
 

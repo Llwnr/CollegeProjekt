@@ -26,7 +26,7 @@ public class GiveElectrons : MonoBehaviour
 
     void ThrowElectrons(int electronCount){
         for(int i=0; i<electronCount; i++){
-            int randomIndex = Random.Range(0, electron.Count);
+            int randomIndex = Mathf.CeilToInt(Random.Range(0, electron.Count));
             Vector3 dir = Random.insideUnitCircle;
             while(dir.magnitude < 0.4f) dir = Random.insideUnitCircle;
             GameObject newElectron = Instantiate(electron[randomIndex], transform.position+dir, Quaternion.identity);

@@ -44,4 +44,9 @@ public class HealthManager : MonoBehaviour, IDamagable
     public float GetMaxHp(){
         return maxHp;
     }
+
+    public void Heal(float healAmt){
+        hp += healAmt;
+        if(hp > maxHp) hp = maxHp;
+    }
 }

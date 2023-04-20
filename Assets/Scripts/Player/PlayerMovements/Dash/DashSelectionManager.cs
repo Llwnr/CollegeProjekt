@@ -29,21 +29,10 @@ public class DashSelectionManager : MonoBehaviour
         DashProperty dash = dashProperties[index];
         SetDashProperty(dash);
         SetDashIcon(dash.dashIcon);
-
-        ManageDashGoThroughObjects(dash);
-    }
-
-    void ManageDashGoThroughObjects(DashProperty dash){
-        //Can the ball dash through enemies?
-        if(dash.isGoThrough){
-            ballDash.GetComponent<Collider2D>().isTrigger = true;
-        }else{
-            ballDash.GetComponent<Collider2D>().isTrigger = false;
-        }
     }
 
     void SetDashProperty(DashProperty dash){
-        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier, dash.dashAbility);
+        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier, dash.dashAbility, dash.isGoThrough);
     }
 
     void SetFirstDashType(){

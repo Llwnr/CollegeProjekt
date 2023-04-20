@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ElectronHolder : MonoBehaviour
 {
-    [SerializeField]private int blueElectrons, redElectrons, orangeElectrons = 0;
-    [SerializeField]private Color blue, red, orange;
+    [SerializeField]private int blueElectrons, redElectrons, orangeElectrons, greenElectrons = 0;
+    [SerializeField]private Color blue, red, orange, green;
 
     public void AddElectron(Consumable.ElectronType electronType){
         switch(electronType){
@@ -18,6 +18,9 @@ public class ElectronHolder : MonoBehaviour
                 break;
             case Consumable.ElectronType.orange:
                 orangeElectrons++;
+                break;
+            case Consumable.ElectronType.green:
+                greenElectrons++;
                 break;
             default:
                 break;
@@ -44,6 +47,12 @@ public class ElectronHolder : MonoBehaviour
                     return true;
                 }
                 return false;
+            case Consumable.ElectronType.green:
+                if(greenElectrons > 0){
+                    greenElectrons--;
+                    return true;
+                }
+                return false;
             default:
                 return false;
         }
@@ -66,6 +75,11 @@ public class ElectronHolder : MonoBehaviour
                     return true;
                 }
                 return false;
+            case Consumable.ElectronType.green:
+                if(greenElectrons > 0){
+                    return true;
+                }
+                return false;
             default:
                 return false;
         }
@@ -79,6 +93,8 @@ public class ElectronHolder : MonoBehaviour
                 return blueElectrons;
             case Consumable.ElectronType.orange:
                 return orangeElectrons;
+            case Consumable.ElectronType.green:
+                return greenElectrons;
             default:
                 return 0;
         }
@@ -92,6 +108,8 @@ public class ElectronHolder : MonoBehaviour
                 return blue;
             case Consumable.ElectronType.orange:
                 return orange;
+            case Consumable.ElectronType.green:
+                return green;
             default:
                 return red;
         }
