@@ -37,7 +37,7 @@ public class Consumable : MonoBehaviour
     private void OnDestroy() {
         //Activate electron functions when consumed
         if(electronType == ElectronType.green){
-            GameObject.FindWithTag("Player").GetComponent<HealthManager>().Heal(5);
+            GameObject.FindWithTag("Player").GetComponent<HealthManager>().Heal(10);
         }
     }
 

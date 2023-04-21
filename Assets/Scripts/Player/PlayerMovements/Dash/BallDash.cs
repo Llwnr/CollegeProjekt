@@ -36,7 +36,7 @@ public class BallDash : MonoBehaviour
     [SerializeField]private Color dashColor;
 
     private TrailRenderer dashTrail;
-    private Gradient origDashColor;
+    private Gradient dashTrailColor;
     private float origDashLength;
 
     //Animation manager
@@ -45,7 +45,7 @@ public class BallDash : MonoBehaviour
     private Rigidbody2D rb;
 
     //To allow different types of dashes
-    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, bool isGoThrough){
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, bool isGoThrough, Gradient dashColor){
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
         this.duration = duration;
@@ -54,6 +54,7 @@ public class BallDash : MonoBehaviour
         this.framesForMaxCharge = framesForMaxCharge;
         this.abilityToGive = ability;
         this.isGoThrough = isGoThrough;
+        this.dashTrailColor = dashColor;
         //Give the dash's dmg multiplier to player stats for damage calculation
         GetComponent<PlayerStats>().SetDashDmgMultiplier(dashDmgMultiplier);
     }
@@ -66,7 +67,6 @@ public class BallDash : MonoBehaviour
         ResetDuration();
 
         origColor = GetComponent<SpriteRenderer>().color;
-        origDashColor = dashTrail.colorGradient;
         origDashLength = dashTrail.time;
 
         animator = GetComponent<Animator>();
@@ -102,9 +102,9 @@ public class BallDash : MonoBehaviour
     void ManageGoThroughObjects(){
         Collider2D myCollider = GetComponent<Collider2D>();
         if(isDashing && isGoThrough){
-            myCollider.enabled = false;
+            myCollider.isTrigger = true;
         }else{
-            myCollider.enabled = true;
+            myCollider.isTrigger = false;
         }
     }
 
@@ -140,7 +140,7 @@ public class BallDash : MonoBehaviour
     }
 
     public void DisplayDashTrails(){
-        dashTrail.colorGradient = origDashColor;
+        dashTrail.colorGradient = dashTrailColor;
         dashTrail.time = origDashLength;
         dashTrail.emitting = true;
     }

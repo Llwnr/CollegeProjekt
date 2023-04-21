@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
+    [SerializeField]private float dmgAmt;
     private void OnCollisionEnter2D(Collision2D other) {
         DamageTarget(other.gameObject);
     }
@@ -14,7 +15,7 @@ public class DamagePlayer : MonoBehaviour
 
     void DamageTarget(GameObject other){
         if(other.CompareTag("Player")){
-            other.GetComponent<IDamagable>().DealDamage(5);
+            other.GetComponent<IDamagable>().DealDamage(dmgAmt);
         }
     }
 }

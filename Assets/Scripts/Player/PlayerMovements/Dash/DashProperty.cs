@@ -15,4 +15,5 @@ public class DashProperty : ScriptableObject {
     public Sprite dashIcon;
     public float dashDmgMultiplier;
     public Ability dashAbility;
+    public Gradient dashColor;
 }

@@ -18,17 +18,18 @@ MonoBehaviour:
   - rid: 3614959397080137737
   - rid: 3614959397080137738
   - rid: 3614959397080137739
-  - rid: 3614959397080137740
-  - rid: 3614959397080137741
   - rid: 3614959397080137742
   - rid: 3614959397080137743
   - rid: 3614959397080137744
+  - rid: 3614959415011311616
+  - rid: 3614959415011311617
+  - rid: 3614959415011311619
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: -2.4, y: -126.4, z: 0}
-  viewScale: {x: 1, y: 1, z: 1}
+  viewPosition: {x: 245.6, y: 39.2, z: 0}
+  viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
     RefIds:
@@ -75,48 +76,19 @@ MonoBehaviour:
         description: 
         drawGizmos: 0
         children:
-        - rid: 3614959397080137740
-        - rid: 3614959397080137741
+        - rid: 3614959415011311616
+        - rid: 3614959415011311617
+        - rid: 3614959415011311619
+        - rid: 3614959397080137744
         - rid: 3614959397080137742
         - rid: 3614959397080137743
-        - rid: 3614959397080137744
-    - rid: 3614959397080137740
-      type: {class: PickRandomPos, ns: , asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: 3f55990daa0b5354fb17ba2854b01bdd
-        position: {x: -255.28, y: 307.19998}
-        blackboard:
-          direction: {x: 0, y: 0, z: 0}
-          moveToPosition: {x: 0, y: 0, z: 0}
-        description: 
-        drawGizmos: 0
-        rangeX: 3
-        rangeY: 3
-        currentPos: {x: 0, y: 0, z: 0}
-    - rid: 3614959397080137741
-      type: {class: MoveAtDir, ns: , asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: 4cf9bd198980cf04fa0f967151edf151
-        position: {x: -102.399994, y: 309.19998}
-        blackboard:
-          direction: {x: 0, y: 0, z: 0}
-          moveToPosition: {x: 0, y: 0, z: 0}
-        description: 
-        drawGizmos: 0
-        moveSpeed: 5000
-        maxSpeed: 3
-        duration: 1
     - rid: 3614959397080137742
       type: {class: TargetPlayer, ns: , asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
         guid: b05c3710f406adc47b6b933293e5e2f9
-        position: {x: 55.200043, y: 309.19998}
+        position: {x: 159.86125, y: 339.1306}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -128,7 +100,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: b49d4e57ae078c04c96e1e21e4240cc0
-        position: {x: 209.20001, y: 309.8}
+        position: {x: 314.26117, y: 339.1306}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -136,18 +108,62 @@ MonoBehaviour:
         drawGizmos: 0
         bullet: {fileID: 7839815524136982913, guid: 8e3a4cfefe6088b48a00cc0049aaa718,
           type: 3}
-        shootForce: 10
+        shootForce: 7
     - rid: 3614959397080137744
       type: {class: WaitRandom, ns: , asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
         guid: 20c8f70a230b43a42b9212f35c2ac518
-        position: {x: 369.528, y: 314.4}
+        position: {x: -0.9388368, y: 339.9306}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        minDuration: 2
-        maxDuration: 3
+        minDuration: 0.5
+        maxDuration: 1.2
+    - rid: 3614959415011311616
+      type: {class: WaitRandom, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: e04e1ee33beac434d9cee2094c7940d0
+        position: {x: -468.30008, y: 338.71002}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        minDuration: 0.5
+        maxDuration: 2
+    - rid: 3614959415011311617
+      type: {class: PickRandomPos, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 55aba09851b0c59468f909398169d108
+        position: {x: -311.38254, y: 340.63504}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        rangeX: 2
+        rangeY: 2
+        currentPos: {x: 0, y: 0, z: 0}
+    - rid: 3614959415011311619
+      type: {class: MoveAtDir, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: f19831497cc8a8b46800fb5c33b297b4
+        position: {x: -153.74751, y: 343.70502}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        moveSpeed: 5000
+        maxSpeed: 2.5
+        duration: 1.5
