@@ -22,9 +22,6 @@ public class BallDash : MonoBehaviour
     [SerializeField]private int framesForMaxCharge;//Number of frames taken to reach max charge
     private int reduceFramesForMaxCharge;//Will make the charge happen faster
 
-    //For ball to go through objects while dashing
-    private bool isGoThrough;
-
     //For dash ability
     [SerializeField]private Ability abilityToGive;
 
@@ -45,7 +42,7 @@ public class BallDash : MonoBehaviour
     private Rigidbody2D rb;
 
     //To allow different types of dashes
-    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, bool isGoThrough, Gradient dashColor){
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, Gradient dashColor){
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
         this.duration = duration;
@@ -53,7 +50,6 @@ public class BallDash : MonoBehaviour
         this.maxExtraForce = maxExtraForce;
         this.framesForMaxCharge = framesForMaxCharge;
         this.abilityToGive = ability;
-        this.isGoThrough = isGoThrough;
         this.dashTrailColor = dashColor;
         //Give the dash's dmg multiplier to player stats for damage calculation
         GetComponent<PlayerStats>().SetDashDmgMultiplier(dashDmgMultiplier);
@@ -95,16 +91,6 @@ public class BallDash : MonoBehaviour
         if(durationTimer < 0){
             ResetDuration();
             DashEnd();
-        }
-        ManageGoThroughObjects();
-    }
-
-    void ManageGoThroughObjects(){
-        Collider2D myCollider = GetComponent<Collider2D>();
-        if(isDashing && isGoThrough){
-            myCollider.isTrigger = true;
-        }else{
-            myCollider.isTrigger = false;
         }
     }
 
