@@ -8,7 +8,7 @@ public class CameraRangeExtendByMouse : MonoBehaviour
     private CinemachineTransposer vCamTransposer;
     private Transform player;
     private Vector3 cameraPos;
-    [SerializeField]private Vector3 offset;
+    [SerializeField]private Vector2 offset;
     [SerializeField]private float offsetMultiplier;
     // Start is called before the first frame update
     void Awake()
@@ -22,8 +22,8 @@ public class CameraRangeExtendByMouse : MonoBehaviour
     {
         cameraPos = player.transform.position;
         offset = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - cameraPos).normalized;
-        offset.z = -10;
         //if(Mathf.Abs(offset.x) < 0.01f && Mathf.Abs(offset.y) < 0.01f) return;
         vCamTransposer.m_FollowOffset = offset*offsetMultiplier;
+        vCamTransposer.m_FollowOffset.z = -10;
     }
 }

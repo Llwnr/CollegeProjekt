@@ -1297,6 +1297,50 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &63774176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63774177}
+  - component: {fileID: 63774178}
+  m_Layer: 0
+  m_Name: DashChangeTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &63774177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63774176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.39522725, y: -1.8722808, z: -12.043747}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227831514}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &63774178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63774176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8df23aade43074fb7f1958ede08c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &130500760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1539,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1002090581}
+  - {fileID: 1958523445}
+  - {fileID: 63774177}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60358,8 +60404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c319500f346ab824586fd74ec63f9e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
-  offsetMultiplier: 5
+  offset: {x: 0, y: 0}
+  offsetMultiplier: 1.5
 --- !u!1001 &954803934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60864,8 +60910,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -60929,6 +60975,9 @@ MonoBehaviour:
   tutorialTexts:
   - WASD to move. Move mouse to aim
   - Click to dash. Hold to charge dash
+  - Press Space to change your dash type
+  - Hitting enemies at high speed will drop electrons. These provide many benefits
+  - Right click to activate your special ability
   triggers: {fileID: 0}
 --- !u!1001 &1603964490
 PrefabInstance:
@@ -61015,13 +61064,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1603964490}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1675606676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3360294590374952195, guid: b9f366522475167479b99e918dd101f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1603964490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1786551537 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3360294590374952208, guid: b9f366522475167479b99e918dd101f1,
     type: 3}
   m_PrefabInstance: {fileID: 1603964490}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1675606676}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcae72ab680ce9f4eaa35ed0ea61792e, type: 3}
@@ -61033,7 +61088,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1603964490}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1675606676}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e464aeb4ff12b846a44150cf3ea81c6, type: 3}
@@ -61045,9 +61100,65 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1603964490}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1675606676}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79813bf16e6744b45a4ce245ebfc0fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1786551562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675606676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2156fff02294c4b46b97c9a4a4382655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1958523444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1958523445}
+  - component: {fileID: 1958523446}
+  m_Layer: 0
+  m_Name: DashTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958523445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958523444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227831514}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958523446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958523444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663f0c7fa8b037a4d9a8422b5f2436ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

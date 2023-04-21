@@ -31,4 +31,8 @@ public class TutorialManager : MonoBehaviour
         textBox.text = tutorialTexts[index];
         index++;
     }
+
+    public int GetIndex(){
+        return index;
+    }
 }

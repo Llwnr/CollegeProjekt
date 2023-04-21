@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: InstantDashCharge
   m_EditorClassIdentifier: 
   name: 
-  description: 
+  description: Instant Max Dash Charge
   abilityIcon: {fileID: 0}
   buffDuration: 1
   electronToConsume: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MoveFaster
   m_EditorClassIdentifier: 
   name: 
-  description: 
+  description: Move Speed++
   abilityIcon: {fileID: 0}
   buffDuration: 2
   electronToConsume: 2
