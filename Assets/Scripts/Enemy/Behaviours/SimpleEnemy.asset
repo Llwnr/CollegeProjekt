@@ -28,7 +28,7 @@ MonoBehaviour:
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 245.6, y: 39.2, z: 0}
+  viewPosition: {x: 383.2, y: 62.4, z: 0}
   viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
   references:
     version: 2
@@ -166,4 +166,5 @@ MonoBehaviour:
         drawGizmos: 0
         moveSpeed: 5000
         maxSpeed: 2.5
-        duration: 1.5
+        minDuration: 1.2
+        maxDuration: 2

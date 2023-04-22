@@ -11,8 +11,8 @@ public class MoveAtDir : ActionNode
 
     public float moveSpeed, maxSpeed;
 
-    public float duration;
-    private float durationTimer;
+    public float minDuration, maxDuration;
+    private float duration;
 
     private Vector2 dir;
     protected override void OnStart() {
@@ -20,7 +20,7 @@ public class MoveAtDir : ActionNode
         rb = myTransform.GetComponent<Rigidbody2D>();
         rb.WakeUp();
         dir = (blackboard.moveToPosition - myTransform.position).normalized;
-        durationTimer = duration;
+        duration = Random.Range(minDuration, maxDuration);
     }
 
     protected override void OnStop() {
@@ -29,8 +29,8 @@ public class MoveAtDir : ActionNode
     }
 
     protected override State OnUpdate() {
-        durationTimer -= Time.deltaTime;
-        if(durationTimer < 0){
+        duration -= Time.deltaTime;
+        if(duration < 0){
             return State.Success;
         }
         rb.AddForce(dir*moveSpeed, ForceMode2D.Force);
