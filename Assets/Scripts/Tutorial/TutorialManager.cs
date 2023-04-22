@@ -7,6 +7,7 @@ public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager instance {get; private set;}
 
+    [TextArea]
     [SerializeField]private string[] tutorialTexts;
     [SerializeField]private GameObject triggers;
     private TextMeshProUGUI textBox;

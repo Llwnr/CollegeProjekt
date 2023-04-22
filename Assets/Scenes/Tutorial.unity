@@ -1541,9 +1541,54 @@ Transform:
   - {fileID: 1002090581}
   - {fileID: 1958523445}
   - {fileID: 63774177}
+  - {fileID: 290400748}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &290400747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 290400748}
+  - component: {fileID: 290400749}
+  m_Layer: 0
+  m_Name: SpecialAbilityTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &290400748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290400747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227831514}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &290400749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290400747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e106e038f7ea046be28668a02f26a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &303506689
 GameObject:
   m_ObjectHideFlags: 0
@@ -60975,9 +61020,12 @@ MonoBehaviour:
   tutorialTexts:
   - WASD to move. Move mouse to aim
   - Click to dash. Hold to charge dash
-  - Press Space to change your dash type
+  - 'Press Space to change your dash type.
+
+    Do this a couple more times to continue'
   - Hitting enemies at high speed will drop electrons. These provide many benefits
-  - Right click to activate your special ability
+  - Right click to activate your special ability. Consumes orange electron.
+  - All done here! Have fun
   triggers: {fileID: 0}
 --- !u!1001 &1603964490
 PrefabInstance:

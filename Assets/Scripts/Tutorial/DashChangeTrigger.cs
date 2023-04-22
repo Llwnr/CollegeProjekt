@@ -11,7 +11,7 @@ public class DashChangeTrigger : MonoBehaviour
             dashChangedCount++;
         }
 
-        if(dashChangedCount > 3){
+        if(dashChangedCount > 2){
             TutorialManager.instance.UpdateText();
             gameObject.SetActive(false);
         }
