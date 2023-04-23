@@ -1389,6 +1389,7 @@ GameObject:
   - component: {fileID: 730568673}
   - component: {fileID: 730568674}
   - component: {fileID: 730568672}
+  - component: {fileID: 730568675}
   m_Layer: 0
   m_Name: Enemyv2
   m_TagString: Untagged
@@ -1498,6 +1499,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &730568675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730568670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f4eb0d69028af4fbe6600f45155091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 0
+  dirNew: {x: 0, y: 0}
+  offset: 90
 --- !u!1 &871816660
 GameObject:
   m_ObjectHideFlags: 0

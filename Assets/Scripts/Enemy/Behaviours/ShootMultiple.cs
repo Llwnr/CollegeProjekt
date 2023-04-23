@@ -10,8 +10,10 @@ public class ShootMultiple : ActionNode
     public float shootForce;
     public float spreadAngle;
     public int numOfBullets;
-    public float offset;
+
+    private Vector2 targetDir;
     protected override void OnStart() {
+        targetDir = GameObject.FindWithTag("Player").transform.position - context.transform.position;
     }
 
     protected override void OnStop() {
@@ -19,19 +21,18 @@ public class ShootMultiple : ActionNode
 
     protected override State OnUpdate() {
         int indexDivisor = numOfBullets/2;
-        Vector3 spreadDir = Vector3.zero;
+        Vector2 spreadDir = Vector2.zero;
         float newSpreadAngle;
         for(int i=0; i<numOfBullets; i++){
-            float playerTargetAngle = Mathf.Atan2(blackboard.direction.y, blackboard.direction.x) * Mathf.Rad2Deg;
-            newSpreadAngle = playerTargetAngle + spreadAngle * (i-indexDivisor) + offset;
-            spreadDir = new Vector2(Mathf.Sin(Mathf.Deg2Rad * newSpreadAngle), Mathf.Cos(Mathf.Deg2Rad * newSpreadAngle));
+            //Find angle to player
+            float playerTargetAngle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
+            //Spread it
+            newSpreadAngle = playerTargetAngle + spreadAngle * (i-indexDivisor);
+
+            spreadDir = new Vector2(Mathf.Cos(Mathf.Deg2Rad * newSpreadAngle), Mathf.Sin(Mathf.Deg2Rad * newSpreadAngle));
             GameObject newBullet = GameObject.Instantiate(bullet, context.transform.position, Quaternion.identity);
             Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
             rb.AddForce((spreadDir)*shootForce, ForceMode2D.Impulse);
-            Debug.Log("P Target angle: " + playerTargetAngle);
-            Debug.Log("Angle: " + newSpreadAngle);
-            Vector3 targetDir = new Vector2(Mathf.Sin(playerTargetAngle), Mathf.Cos(playerTargetAngle));
-            Debug.DrawLine(context.transform.position, context.transform.position+targetDir, Color.red, 10);
         }
         return State.Success;
     }

@@ -158,7 +158,6 @@ MonoBehaviour:
         shootForce: 7
         spreadAngle: 10
         numOfBullets: 5
-        offset: 180
     - rid: 3614959460502208520
       type: {class: TargetPlayer, ns: , asm: Assembly-CSharp}
       data:
