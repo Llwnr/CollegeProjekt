@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4984705589631547165}
   - component: {fileID: -8017955482752556191}
   m_Layer: 7
-  m_Name: SimpleEnemy
+  m_Name: AdvancedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 4984705589631547158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4984705590113980755}
@@ -190,7 +190,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 400586ae982eeae4faa1d3e69c03dc5e, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 38f32443fb12f4142b502154ea9f728f, type: 2}
+  tree: {fileID: 11400000, guid: 565b3f5c0ccf9b4449326d705908e0a6, type: 2}
 --- !u!114 &4984705589631547165
 MonoBehaviour:
   m_ObjectHideFlags: 0

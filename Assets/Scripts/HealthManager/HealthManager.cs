@@ -7,6 +7,11 @@ public class HealthManager : MonoBehaviour, IDamagable
     [SerializeField]private float hp;
     private float maxHp;
 
+    private bool isInvincible = false;
+    public void SetInvincible(bool value){
+        isInvincible = value;
+    }
+
     //Observer pattern.
     //Subscribers are: DmgPopup
     private List<IOnDamage> observers = new List<IOnDamage>();
@@ -31,6 +36,9 @@ public class HealthManager : MonoBehaviour, IDamagable
     }
 
     public void DealDamage(float dmgAmt){
+        if(isInvincible){
+            return;
+        }
         hp -= dmgAmt;
         NotifyObservers(dmgAmt, transform);
         if(hp < 0){

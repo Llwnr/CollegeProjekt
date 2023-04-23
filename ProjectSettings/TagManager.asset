@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - PreventTouching
+  - DmgPopupCanvas
   layers:
   - Default
   - TransparentFX

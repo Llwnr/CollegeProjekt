@@ -6,7 +6,11 @@ using TMPro;
 public class DmgPopupManager : MonoBehaviour, IOnDamage
 {
     [SerializeField]private GameObject textBox;
-    [SerializeField]private Transform myCanvas;
+    private Transform myCanvas;
+
+    private void Awake() {
+        myCanvas = GameObject.FindWithTag("DmgPopupCanvas").transform;
+    }
 
     private void OnEnable() {
         GetComponent<HealthManager>().AddObserver(this);
