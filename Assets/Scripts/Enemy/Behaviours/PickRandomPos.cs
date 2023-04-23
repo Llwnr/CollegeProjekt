@@ -13,7 +13,6 @@ public class PickRandomPos : ActionNode
     }
 
     protected override void OnStop() {
-        Debug.Log(blackboard.moveToPosition);
     }
 
     protected override State OnUpdate() {
