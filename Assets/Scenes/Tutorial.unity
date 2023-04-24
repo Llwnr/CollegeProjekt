@@ -60928,7 +60928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASD to move
+  m_text: 'WASD to move '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -60955,8 +60955,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -61019,11 +61019,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialTexts:
   - WASD to move. Move mouse to aim
-  - Click to dash. Hold to charge dash
+  - 'Click to dash. Hold to charge dash.
+
+    You are immune to damage when dashing.'
   - 'Press Space to change your dash type.
 
     Do this a couple more times to continue'
-  - Hitting enemies at high speed will drop electrons. These provide many benefits
+  - "Hitting enemies at high speed will drop electrons. \n<color=red>Red:</color>
+    Increase dmg for one hit\n<color=blue>Blue:</color> Passively increase damage\n<color=orange>Orange:</color>
+    Used for activating abilities\n<color=green>Green:</color> Heals when touched"
   - Right click to activate your special ability. Consumes orange electron.
   - All done here! Have fun
   triggers: {fileID: 0}

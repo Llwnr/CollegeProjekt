@@ -25,6 +25,7 @@ public class BallDash : MonoBehaviour
 
     //For dash ability
     [SerializeField]private Ability abilityToGive;
+    [SerializeField]private Collider2D phaseCollider;
 
     public Ability GetDashAbility(){
         return abilityToGive;
@@ -61,6 +62,7 @@ public class BallDash : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         dashTrail = GetComponent<TrailRenderer>();
+        phaseCollider.enabled = false;
         StopDashTrails();
         ResetDuration();
 
@@ -127,10 +129,12 @@ public class BallDash : MonoBehaviour
 
     void PhaseBall(){
         gameObject.layer = LayerMask.NameToLayer("PhaseThrough");
+        phaseCollider.enabled = true;
     }
 
     void StopPhase(){
         gameObject.layer = LayerMask.NameToLayer("Default");
+        phaseCollider.enabled = false;
     }
 
     //Stop dash when colliding with enemy

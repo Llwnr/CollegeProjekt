@@ -380,6 +380,7 @@ MonoBehaviour:
   maxExtraForce: 30
   framesForMaxCharge: 30
   abilityToGive: {fileID: 0}
+  phaseCollider: {fileID: 7630181514613340675}
   dashColor: {r: 1, g: 0.37169808, b: 0.37169808, a: 1}
 --- !u!114 &3360294590374952209
 MonoBehaviour:
