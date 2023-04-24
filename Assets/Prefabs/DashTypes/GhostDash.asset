@@ -19,7 +19,6 @@ MonoBehaviour:
   framesForMaxCharge: 36
   maxExtraSpeed: 24
   maxExtraForce: 24
-  isGoThrough: 1
   dashIcon: {fileID: 0}
   dashDmgMultiplier: 0.9
   dashAbility: {fileID: 11400000, guid: e4443ab8ce1cc884cb5315f71ab63768, type: 2}
@@ -52,3 +51,4 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 4
+  isPhaseThrough: 1

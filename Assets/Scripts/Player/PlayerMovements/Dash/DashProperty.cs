@@ -15,4 +15,5 @@ public class DashProperty : ScriptableObject {
     public float dashDmgMultiplier;
     public Ability dashAbility;
     public Gradient dashColor;
+    public bool isPhaseThrough;
 }

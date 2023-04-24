@@ -10,6 +10,7 @@ public class Damager : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.transform.CompareTag("Enemy")){
+            Debug.Log("col");
             other.transform.GetComponent<IDamagable>().DealDamage(playerStats.GetMyMaxDamage());
         }
     }

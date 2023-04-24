@@ -21,6 +21,7 @@ public class BallDash : MonoBehaviour
     [SerializeField]private float maxExtraSpeed, maxExtraForce;
     [SerializeField]private int framesForMaxCharge;//Number of frames taken to reach max charge
     private int reduceFramesForMaxCharge;//Will make the charge happen faster
+    private bool isPhaseThrough;//Can the dash go through enemies
 
     //For dash ability
     [SerializeField]private Ability abilityToGive;
@@ -42,7 +43,7 @@ public class BallDash : MonoBehaviour
     private Rigidbody2D rb;
 
     //To allow different types of dashes
-    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, Gradient dashColor){
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, Gradient dashColor, bool isPhaseThrough){
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
         this.duration = duration;
@@ -51,6 +52,7 @@ public class BallDash : MonoBehaviour
         this.framesForMaxCharge = framesForMaxCharge;
         this.abilityToGive = ability;
         this.dashTrailColor = dashColor;
+        this.isPhaseThrough = isPhaseThrough;
         //Give the dash's dmg multiplier to player stats for damage calculation
         GetComponent<PlayerStats>().SetDashDmgMultiplier(dashDmgMultiplier);
     }
@@ -92,6 +94,10 @@ public class BallDash : MonoBehaviour
             ResetDuration();
             DashEnd();
         }
+        //Manage phase through
+        if(isPhaseThrough && isDashing){
+            PhaseBall();
+        }
     }
 
     void Dash(){
@@ -116,6 +122,15 @@ public class BallDash : MonoBehaviour
         DisableDashColor();
         isDashing = false;
         animator.Play("DashEnd");
+        StopPhase();
+    }
+
+    void PhaseBall(){
+        gameObject.layer = LayerMask.NameToLayer("PhaseThrough");
+    }
+
+    void StopPhase(){
+        gameObject.layer = LayerMask.NameToLayer("Default");
     }
 
     //Stop dash when colliding with enemy

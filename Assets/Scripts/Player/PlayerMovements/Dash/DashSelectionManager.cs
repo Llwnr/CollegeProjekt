@@ -32,7 +32,7 @@ public class DashSelectionManager : MonoBehaviour
     }
 
     void SetDashProperty(DashProperty dash){
-        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier, dash.dashAbility, dash.dashColor);
+        ballDash.SetDashProperty(dash.dashForce, dash.maxDashSpeed, dash.duration, dash.maxExtraSpeed, dash.maxExtraForce, dash.framesForMaxCharge, dash.dashDmgMultiplier, dash.dashAbility, dash.dashColor, dash.isPhaseThrough);
     }
 
     void SetFirstDashType(){
