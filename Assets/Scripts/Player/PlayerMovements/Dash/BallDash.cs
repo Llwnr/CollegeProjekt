@@ -133,7 +133,7 @@ public class BallDash : MonoBehaviour
     }
 
     void StopPhase(){
-        gameObject.layer = LayerMask.NameToLayer("Default");
+        gameObject.layer = LayerMask.NameToLayer("Player");
         phaseCollider.enabled = false;
     }
 

@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3360294590374952192}
   - component: {fileID: 3360294590374952193}
-  - component: {fileID: 3360294590374952196}
+  - component: {fileID: 506984809164963514}
   - component: {fileID: 3360294590374952199}
   - component: {fileID: 3360294590374952201}
   - component: {fileID: 3360294590374952194}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 3360294590374952204}
   - component: {fileID: 3360294590374952210}
   - component: {fileID: 3360294590374952208}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Ball
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3360294590374952196
+--- !u!58 &506984809164963514
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

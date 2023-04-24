@@ -22,6 +22,12 @@ public class PlayerStats : MonoBehaviour
 
     private float finalDmg;
 
+    private float powerUpMultiplier = 1;
+
+    public void SetPowerupMultiplier(float value){
+        powerUpMultiplier = value;
+    }
+
     private void Awake() {
         electronHolder = GetComponent<ElectronHolder>();
         playerSpeedInfo = GetComponent<SpeedInfo>();
@@ -52,6 +58,7 @@ public class PlayerStats : MonoBehaviour
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.25f);
         finalDmg = (baseDmg)*highSpeedBuff*dashDmgMultiplier*consumedRedElectronMultiplier + blueElectronExtraDmg*consumedRedElectronMultiplier;
+        finalDmg *= powerUpMultiplier;
         return finalDmg;
     }
 

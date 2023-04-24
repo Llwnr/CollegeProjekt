@@ -61098,6 +61098,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 3360294590374952195, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3360294590374952202, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: chargeBar

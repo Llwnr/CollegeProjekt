@@ -17,6 +17,7 @@ TagManager:
   - PreventTouching
   - Enemy
   - PhaseThrough
+  - BloomPlayer
   - 
   - 
   - 
@@ -27,8 +28,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - Layer 1
+  - Player
   - Layer 2
   - Layer 3
   - 
