@@ -8,13 +8,6 @@ public class PlayerStats : MonoBehaviour
     private SpeedInfo playerSpeedInfo;
     private BallDash ballDash;
 
-    //Electron buffs
-    private ElectronHolder electronHolder;
-    //Red electron increases base dmg by a little bit
-    private float blueElectronExtraDmg;
-    //Automatically consume red electron for extra damage multiplier
-    private float consumedRedElectronMultiplier = 1;
-
     //High speed or velocity buff
     private float highSpeedBuff;
 
@@ -29,17 +22,11 @@ public class PlayerStats : MonoBehaviour
     }
 
     private void Awake() {
-        electronHolder = GetComponent<ElectronHolder>();
         playerSpeedInfo = GetComponent<SpeedInfo>();
         ballDash = GetComponent<BallDash>();
     }
 
     private void Update() {
-        blueElectronExtraDmg = electronHolder.GetMyElectronCount(Consumable.ElectronType.blue);
-
-        if(electronHolder.CanTakeElectron(Consumable.ElectronType.red)){
-            //Debug.Log("Enraged");
-        }
         
     }
 
@@ -54,19 +41,10 @@ public class PlayerStats : MonoBehaviour
     //Calculate damage after buffs and when on high speed
     //Called only when inflicting damage
     public float GetMyMaxDamage(){
-        ConsumeRedElectronForMultiplier();
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.25f);
-        finalDmg = (baseDmg)*highSpeedBuff*dashDmgMultiplier*consumedRedElectronMultiplier + blueElectronExtraDmg*consumedRedElectronMultiplier;
+        finalDmg = (baseDmg)*highSpeedBuff*dashDmgMultiplier;
         finalDmg *= powerUpMultiplier;
         return finalDmg;
-    }
-
-    void ConsumeRedElectronForMultiplier(){
-        if(electronHolder.TakeElectron(Consumable.ElectronType.red)){
-            consumedRedElectronMultiplier = 1.75f;
-        }else{
-            consumedRedElectronMultiplier = 1;
-        }
     }
 }

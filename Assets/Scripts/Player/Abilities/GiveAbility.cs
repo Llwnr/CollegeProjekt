@@ -16,13 +16,12 @@ public class GiveAbility : MonoBehaviour
         if(Input.GetMouseButtonDown(1)){
             //Get the ability of dash
             abilityToGive = ballDash.GetDashAbility();
-            //Check if the ability already exists and the electron required is satisfied
+            //Check if the ability already exists
             AbilityManager abilityManager = player.GetComponent<AbilityManager>();
-            if(!abilityManager.GetMyAbilities().Contains(abilityToGive) && player.GetComponent<ElectronHolder>().TakeElectron(abilityToGive.electronToConsume)){
+            if(!abilityManager.GetMyAbilities().Contains(abilityToGive)){
                 Debug.Log("Ability Given");
                 GiveMyAbility(player);
             }
-            
         }
     }
 
