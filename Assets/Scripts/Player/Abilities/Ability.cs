@@ -18,7 +18,7 @@ public abstract class Ability : ScriptableObject {
     protected GameObject player;
 
     //Item to consume
-    public Consumable.ElectronType electronToConsume;
+    //public ElectronHolder.ElectronType electronToConsume;
 
     protected void OnEnable() {
         player = GameObject.FindWithTag("Player");

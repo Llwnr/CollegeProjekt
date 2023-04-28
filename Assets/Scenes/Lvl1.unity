@@ -147,7 +147,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3360294590455517891}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779272958}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79813bf16e6744b45a4ce245ebfc0fe0, type: 3}
@@ -159,7 +159,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3360294590455517891}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779272958}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e464aeb4ff12b846a44150cf3ea81c6, type: 3}
@@ -171,7 +171,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3360294590455517891}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779272958}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcae72ab680ce9f4eaa35ed0ea61792e, type: 3}
@@ -1392,7 +1392,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &546981656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,21 +1431,11 @@ RectTransform:
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546981658
-=======
---- !u!1 &779272958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3360294590374952195, guid: b9f366522475167479b99e918dd101f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 3360294590455517891}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &779272973
->>>>>>> parent of 2d63810 (dashAbilitySystem,Removal of 2 electrons)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 546981656}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1479,15 +1468,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546981656}
   m_CullTransparentMesh: 1
-=======
-  m_GameObject: {fileID: 779272958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6badda1d5c5b5d34bbf8a602d06a6b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  extraImmuneFrames: 5
->>>>>>> parent of 2d63810 (dashAbilitySystem,Removal of 2 electrons)
 --- !u!1 &871816660
 GameObject:
   m_ObjectHideFlags: 0
@@ -24372,6 +24352,12 @@ PrefabInstance:
       propertyPath: dashIconHolder
       value: 
       objectReference: {fileID: 1986282030}
+    - target: {fileID: 6704175487713548193, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: dashAbilityToGive
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9f366522475167479b99e918dd101f1, type: 3}
 --- !u!1001 &4984705588279948323

@@ -15,17 +15,16 @@ public class DmgImmunity : MonoBehaviour
         ballDash = GetComponent<BallDash>();
         healthManager = GetComponent<HealthManager>();
 
+        ResetImmuneFrameCount();
+    }
+
+    void ResetImmuneFrameCount(){
         extraImmuneFramesCount = extraImmuneFrames;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(ballDash.IsBallDashing()){
-            ActivateImmunityToDamage();
-        }else{
-            extraImmuneFramesCount--;
-        }
+    void Update(){
+        extraImmuneFramesCount--;
         if(extraImmuneFramesCount < 0){
             DeactivateImmunity();
         }

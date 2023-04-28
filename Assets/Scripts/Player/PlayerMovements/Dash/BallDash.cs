@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class BallDash : MonoBehaviour
 {
+    //OBSERVER PATTERN. DashAbilityManager is subscribed. Used to notify dash start and dash end
+    private List<IDashObserver> dashObservers = new List<IDashObserver>();
+    public void AddDashObserver(IDashObserver dashObserver){
+        dashObservers.Add(dashObserver);
+    }
+    public void RemoveDashObserver(IDashObserver dashObserver){
+        dashObservers.Remove(dashObserver);
+    }
+    public void NotifyDashStart(){
+        foreach(IDashObserver dashObserver in dashObservers){
+            dashObserver.DashStart();
+        }
+    }
+    public void NotifyDashEnd(){
+        foreach(IDashObserver dashObserver in dashObservers){
+            dashObserver.DashEnd();
+        }
+    }
+
     [Header ("Base Dash")]
     [SerializeField]private float dashForce;
     [SerializeField]private float maxDashSpeed;
@@ -90,6 +109,7 @@ public class BallDash : MonoBehaviour
         }
         //Dash at direction pointed by mouse
         if(Input.GetMouseButtonUp(0)){
+            NotifyDashStart();
             Dash();
             AddSpeedLimit();
             ResetExtraForcesFromCharge();
