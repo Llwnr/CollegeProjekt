@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 3360294590374952194}
   - component: {fileID: 3360294590374952198}
   - component: {fileID: 3360294590374952197}
-  - component: {fileID: 6704175487713548193}
   - component: {fileID: 3360294590374952209}
   - component: {fileID: 3360294590374952207}
   - component: {fileID: 3360294590374952202}
@@ -383,20 +382,6 @@ MonoBehaviour:
   abilityToGive: {fileID: 0}
   phaseCollider: {fileID: 7630181514613340675}
   dashColor: {r: 1, g: 0.37169808, b: 0.37169808, a: 1}
---- !u!114 &6704175487713548193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3360294590374952195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba924077beb2094c84dbc7fb75915bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashAbilityToGive: {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c, type: 2}
-  dashAbilities: []
 --- !u!114 &3360294590374952209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,8 +498,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueElectrons: 2
   redElectrons: 2
+  orangeElectrons: 2
+  greenElectrons: 0
   blue: {r: 0, g: 0.048322916, b: 1, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
+  orange: {r: 1, g: 0.49646854, b: 0, a: 1}
+  green: {r: 0.10005367, g: 1, b: 0, a: 1}
 --- !u!114 &3360294590374952210
 MonoBehaviour:
   m_ObjectHideFlags: 0

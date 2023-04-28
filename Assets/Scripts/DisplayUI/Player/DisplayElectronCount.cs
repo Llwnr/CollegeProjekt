@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class DisplayElectronCount : MonoBehaviour
 {
     [SerializeField]private ElectronHolder electronHolder;
-    [SerializeField]private List<ElectronHolder.ElectronType> electronTypes = new List<ElectronHolder.ElectronType>();
+    [SerializeField]private List<Consumable.ElectronType> electronTypes = new List<Consumable.ElectronType>();
     //The info box to create/update to show electron count
     [SerializeField]private GameObject electronInfoBox;
     private List<GameObject> infoBoxes = new List<GameObject>();
@@ -25,7 +25,7 @@ public class DisplayElectronCount : MonoBehaviour
     }
 
     void CreateInfoBoxesForEachElectron(){
-        foreach(ElectronHolder.ElectronType electronType in Enum.GetValues(typeof(ElectronHolder.ElectronType))){
+        foreach(Consumable.ElectronType electronType in Enum.GetValues(typeof(Consumable.ElectronType))){
             electronTypes.Add(electronType);
             GameObject infoBox = Instantiate(electronInfoBox, Vector3.zero, Quaternion.identity);
             infoBox.transform.SetParent(transform, false);
@@ -37,7 +37,7 @@ public class DisplayElectronCount : MonoBehaviour
         for(int i=0; i<infoBoxes.Count; i++){
             TextMeshProUGUI textBox = infoBoxes[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             Image electronIcon = infoBoxes[i].transform.GetChild(0).GetComponent<Image>();
-            ElectronHolder.ElectronType electronType = electronTypes[i];
+            Consumable.ElectronType electronType = electronTypes[i];
             textBox.text = electronHolder.GetMyElectronCount(electronType).ToString();
             electronIcon.sprite = electronIconSprite;
             electronIcon.color = electronHolder.GetMyElectronColor(electronType);
