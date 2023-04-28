@@ -15,7 +15,7 @@ public class GiveAbility : MonoBehaviour
     private void Update() {
         if(Input.GetMouseButtonDown(1)){
             //Get the ability of dash
-            abilityToGive = ballDash.GetDashAbility();
+            abilityToGive = ballDash.GetDurationalAbility();
             //Check if the ability already exists
             AbilityManager abilityManager = player.GetComponent<AbilityManager>();
             if(!abilityManager.GetMyAbilities().Contains(abilityToGive)){

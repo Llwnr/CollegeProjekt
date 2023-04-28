@@ -5,12 +5,14 @@ using UnityEngine;
 public class DashAbilityManager : MonoBehaviour, IDashObserver
 {
     private BallDash ballDash;
-    [SerializeField]private DashAbility dashAbilityToGive;
+    private DashAbility dashAbilityToGive;
 
     [SerializeField]private List<DashAbility> dashAbilities = new List<DashAbility>();
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.X)){
+        if(dashAbilityToGive == null || dashAbilityToGive != ballDash.GetDashAbility()){
+            dashAbilityToGive = ballDash.GetDashAbility();
+            dashAbilities.Clear();
             AddDashAbility(dashAbilityToGive);
         }
     }

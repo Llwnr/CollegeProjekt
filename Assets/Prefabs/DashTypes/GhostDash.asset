@@ -21,7 +21,8 @@ MonoBehaviour:
   maxExtraForce: 24
   dashIcon: {fileID: 0}
   dashDmgMultiplier: 0.9
-  dashAbility: {fileID: 11400000, guid: e4443ab8ce1cc884cb5315f71ab63768, type: 2}
+  durationalAbility: {fileID: 11400000, guid: e4443ab8ce1cc884cb5315f71ab63768, type: 2}
+  dashAbility: {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c, type: 2}
   dashColor:
     serializedVersion: 2
     key0: {r: 0.41717148, g: 0, b: 1, a: 0}

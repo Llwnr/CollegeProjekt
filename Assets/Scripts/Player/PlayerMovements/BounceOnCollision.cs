@@ -65,7 +65,7 @@ public class BounceOnCollision : MonoBehaviour
             float speed = velocityOnHit.magnitude;
             //Bounce in the correct angle and direction
             Vector2 dir = Vector2.Reflect(velocityOnHit.normalized, other.contacts[0].normal);
-            rb.velocity = dir * speed + dir*4f;
+            rb.velocity = dir * speed + dir*6f;
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
             StartScreenShake(speed);

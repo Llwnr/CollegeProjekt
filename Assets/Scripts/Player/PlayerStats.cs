@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     //High speed or velocity buff
     private float highSpeedBuff;
 
-    private float dashDmgMultiplier;//Different types of dashes will have different damage multipliers
+    [SerializeField]private float dashDmgMultiplier;//Different types of dashes will have different damage multipliers
 
     private float finalDmg;
 
@@ -37,6 +37,9 @@ public class PlayerStats : MonoBehaviour
     public void SetDashDmgMultiplier(float multiplier){
         dashDmgMultiplier = multiplier;
     }
+    public float GetDashDmgMultiplier(){
+        return dashDmgMultiplier;
+    }
 
     //Calculate damage after buffs and when on high speed
     //Called only when inflicting damage
@@ -44,6 +47,7 @@ public class PlayerStats : MonoBehaviour
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.25f);
         finalDmg = (baseDmg)*highSpeedBuff*dashDmgMultiplier;
+        Debug.Log(dashDmgMultiplier);
         finalDmg *= powerUpMultiplier;
         return finalDmg;
     }

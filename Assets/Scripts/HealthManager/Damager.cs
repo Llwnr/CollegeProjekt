@@ -12,6 +12,7 @@ public class Damager : MonoBehaviour
         if(other.transform.CompareTag("Enemy")){
             Debug.Log("col");
             other.transform.GetComponent<IDamagable>().DealDamage(playerStats.GetMyMaxDamage());
+            GetComponent<BallDash>().DashEnd();
         }
     }
 

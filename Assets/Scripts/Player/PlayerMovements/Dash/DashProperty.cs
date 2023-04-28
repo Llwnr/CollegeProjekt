@@ -13,7 +13,8 @@ public class DashProperty : ScriptableObject {
     public float maxExtraSpeed, maxExtraForce;
     public Sprite dashIcon;
     public float dashDmgMultiplier;
-    public Ability dashAbility;
+    public Ability durationalAbility;
+    public DashAbility dashAbility;
     public Gradient dashColor;
     public bool isPhaseThrough;
 }
