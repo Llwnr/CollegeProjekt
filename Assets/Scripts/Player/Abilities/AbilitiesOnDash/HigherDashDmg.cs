@@ -9,7 +9,7 @@ public class HigherDashDmg : DashAbility
     private float origMultiplier = 0;
     public override void Activate()
     {
-        base.GetReferences();
+        base.Activate();
         origMultiplier = player.GetComponent<PlayerStats>().GetDashDmgMultiplier();
         player.GetComponent<PlayerStats>().SetDashDmgMultiplier(origMultiplier*_multiplier);
     }

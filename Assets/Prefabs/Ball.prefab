@@ -395,7 +395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba924077beb2094c84dbc7fb75915bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashAbilityToGive: {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c, type: 2}
   dashAbilities: []
 --- !u!114 &3360294590374952209
 MonoBehaviour:
@@ -513,8 +512,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueElectrons: 2
   redElectrons: 2
+  orangeElectrons: 0
+  greenElectrons: 0
   blue: {r: 0, g: 0.048322916, b: 1, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
+  orange: {r: 1, g: 0.2872481, b: 0, a: 1}
+  green: {r: 0.010990381, g: 1, b: 0, a: 1}
 --- !u!114 &3360294590374952210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDmg: 3
+  dashDmgMultiplier: 0
 --- !u!114 &3360294590374952208
 MonoBehaviour:
   m_ObjectHideFlags: 0
