@@ -20,6 +20,7 @@ public class ElectronAbilityManager : MonoBehaviour, IDashObserver
         ballDash = GetComponent<BallDash>();
         //Subscribe to ball dash to get notified when ball dashes and ends dash
         ballDash.AddDashObserver(this);
+        electronHolder = GetComponent<ElectronHolder>();
     }
 
     private void OnDisable() {
@@ -29,11 +30,17 @@ public class ElectronAbilityManager : MonoBehaviour, IDashObserver
     //Activate all dash abilities when player is dashing
     public void DashStart(){
         SetSelectedElectronAbility();
-        selectedElectronAbility.Activate();
+        if(electronHolder.TakeElectron(electronSelector.GetSelectedElectronType())){
+            selectedElectronAbility.Activate();
+        }else{
+            
+        }
+        
     }
 
     //Deactivate dash abilities when player is not dashing
     public void DashEnd(){
+        if(selectedElectronAbility != null)
         selectedElectronAbility.Deactivate();
     }
 

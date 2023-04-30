@@ -376,6 +376,7 @@ MonoBehaviour:
   dashForce: 50
   maxDashSpeed: 24
   duration: 0.11
+  durationTimer: 0
   extraSpeed: 0
   extraForce: 0
   maxExtraSpeed: 30
@@ -411,6 +412,7 @@ MonoBehaviour:
   dashProperties:
   - {fileID: 11400000, guid: 27a94786dafa83d4ca99934ea012e3e3, type: 2}
   - {fileID: 11400000, guid: f8136c361410da242a471f55091472fb, type: 2}
+  - {fileID: 11400000, guid: 721c9fc5b6a4ab84da21def5f3356141, type: 2}
   dashIconHolder: {fileID: 0}
 --- !u!114 &3360294590374952207
 MonoBehaviour:
@@ -513,11 +515,11 @@ MonoBehaviour:
   blueElectrons: 2
   redElectrons: 2
   orangeElectrons: 0
-  greenElectrons: 0
+  greyElectrons: 0
   blue: {r: 0, g: 0.048322916, b: 1, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
   orange: {r: 1, g: 0.2872481, b: 0, a: 1}
-  green: {r: 0.010990381, g: 1, b: 0, a: 1}
+  grey: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
 --- !u!114 &2944090367347283433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,9 +534,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   electronAbility:
   - {fileID: 11400000, guid: aaf070f8efb70334b8306427546731e1, type: 2}
-  - {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c, type: 2}
-  - {fileID: 11400000, guid: aaf070f8efb70334b8306427546731e1, type: 2}
-  - {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c, type: 2}
+  - {fileID: 11400000, guid: a4dbea1d74f3c4b4794f30d295f6ea9c, type: 2}
+  - {fileID: 11400000, guid: c4f8bda35b4ad304d8db63382d412402, type: 2}
+  - {fileID: 11400000, guid: 88b0b9bc68d448a499e5c55909a60d84, type: 2}
   electronSelector: {fileID: 0}
 --- !u!114 &3360294590374952210
 MonoBehaviour:

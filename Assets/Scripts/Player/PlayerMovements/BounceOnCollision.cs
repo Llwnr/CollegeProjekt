@@ -34,6 +34,7 @@ public class BounceOnCollision : MonoBehaviour
             isBouncing = false;
             EnableDash();
             DisableStun();
+            
         }
     }
 

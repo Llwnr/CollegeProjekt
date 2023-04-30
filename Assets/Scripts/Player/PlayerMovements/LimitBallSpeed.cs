@@ -31,9 +31,10 @@ public class LimitBallSpeed : MonoBehaviour
         ManageSpeedLimiters();
     }
 
-    public void AddSpeedLimiter(float speedLimit, float duration){
+    public SpeedLimiter AddSpeedLimiter(float speedLimit, float duration){
         SpeedLimiter newLimit = new SpeedLimiter(speedLimit, duration, this);
         speedLimiters.Add(newLimit);
+        return newLimit;
     }
 
     public void RemoveASpeedLimiter(SpeedLimiter speedLimiter){

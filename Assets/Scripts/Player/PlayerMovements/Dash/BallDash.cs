@@ -27,7 +27,7 @@ public class BallDash : MonoBehaviour
     [SerializeField]private float dashForce;
     [SerializeField]private float maxDashSpeed;
     [SerializeField]private float duration;
-    private float durationTimer;
+    [SerializeField]private float durationTimer;
 
     private bool isDashing = false;
 
@@ -46,6 +46,9 @@ public class BallDash : MonoBehaviour
     //Ability is durational while dash ability is only when dashing
     private Ability abilityToGive;
     [SerializeField]private Collider2D phaseCollider;
+
+    //For limiting ball speed to not exceed dash speed
+    private SpeedLimiter speedLimiter;
 
     public Ability GetDurationalAbility(){
         return abilityToGive;
@@ -104,8 +107,8 @@ public class BallDash : MonoBehaviour
         }
         //Dash at direction pointed by mouse
         if(Input.GetMouseButtonUp(0)){
-            NotifyDashStart();
             Dash();
+            NotifyDashStart();
             AddSpeedLimit();
             ResetExtraForcesFromCharge();
         }
@@ -148,6 +151,7 @@ public class BallDash : MonoBehaviour
         //Incase ball can go through enemies
         StopPhase();
         NotifyDashEnd();
+        RemoveASpeedLimiter();
     }
 
     void PhaseBall(){
@@ -181,7 +185,12 @@ public class BallDash : MonoBehaviour
 
     void AddSpeedLimit(){
         //Give the max speed limit into clamping equation when dashing, so that it isn't capped out by base movement's move speed
-        GetComponent<LimitBallSpeed>().AddSpeedLimiter(GetSpeedLimit(), duration);
+        speedLimiter = GetComponent<LimitBallSpeed>().AddSpeedLimiter(GetSpeedLimit(), durationTimer);
+    }
+
+    void RemoveASpeedLimiter(){
+        if(speedLimiter != null)
+        GetComponent<LimitBallSpeed>().RemoveASpeedLimiter(speedLimiter);
     }
 
     public float GetSpeedLimit(){
@@ -219,7 +228,10 @@ public class BallDash : MonoBehaviour
         extraSpeed = maxExtraSpeed;
         extraForce = maxExtraForce;
     }
-    //Increase charge speed
+    //Increase dash duration
+    public void IncreaseDashDuration(float byAmt){
+        durationTimer += byAmt;
+    }
 
     
 }

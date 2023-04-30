@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class ElectronHolder: MonoBehaviour
 {
-    [SerializeField]private int blueElectrons, redElectrons, orangeElectrons, greenElectrons = 0;
-    [SerializeField]private Color blue, red, orange, green;
+    [SerializeField]private int blueElectrons, redElectrons, orangeElectrons, greyElectrons = 0;
+    [SerializeField]private Color blue, red, orange, grey;
 
     public enum ElectronType{
         red,
         blue,
         orange,
-        green
+        grey
     }
 
     public void AddElectron(ElectronType electronType){
@@ -26,8 +26,8 @@ public class ElectronHolder: MonoBehaviour
             case ElectronType.orange:
                 orangeElectrons++;
                 break;
-            case ElectronType.green:
-                greenElectrons++;
+            case ElectronType.grey:
+                greyElectrons++;
                 break;
             default:
                 break;
@@ -54,9 +54,9 @@ public class ElectronHolder: MonoBehaviour
                     return true;
                 }
                 return false;
-            case ElectronType.green:
-                if(greenElectrons > 0){
-                    greenElectrons--;
+            case ElectronType.grey:
+                if(greyElectrons > 0){
+                    greyElectrons--;
                     return true;
                 }
                 return false;
@@ -82,8 +82,8 @@ public class ElectronHolder: MonoBehaviour
                     return true;
                 }
                 return false;
-            case ElectronType.green:
-                if(greenElectrons > 0){
+            case ElectronType.grey:
+                if(greyElectrons > 0){
                     return true;
                 }
                 return false;
@@ -100,8 +100,8 @@ public class ElectronHolder: MonoBehaviour
                 return blueElectrons;
             case ElectronType.orange:
                 return orangeElectrons;
-            case ElectronType.green:
-                return greenElectrons;
+            case ElectronType.grey:
+                return greyElectrons;
             default:
                 return 0;
         }
@@ -115,8 +115,8 @@ public class ElectronHolder: MonoBehaviour
                 return blue;
             case ElectronType.orange:
                 return orange;
-            case ElectronType.green:
-                return green;
+            case ElectronType.grey:
+                return grey;
             default:
                 return red;
         }

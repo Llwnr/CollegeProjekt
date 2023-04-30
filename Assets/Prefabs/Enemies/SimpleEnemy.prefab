@@ -268,9 +268,8 @@ MonoBehaviour:
   - {fileID: 5477711098660444350, guid: 61c04d7437f97b5488925fefb52c505e, type: 3}
   - {fileID: 5477711098660444350, guid: 769bc7b093426954d8de59080c35706d, type: 3}
   - {fileID: 5477711098660444350, guid: 9f914d9f5127c9a488ace444bf509c1b, type: 3}
-  - {fileID: 5477711098660444350, guid: b380c35fef4c9524097bb25e94f49874, type: 3}
   electronCount: 0
-  speedThreshold: 30
+  speedThreshold: 27
 --- !u!114 &4984705589631547160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 7883506356755602286, guid: c9a56d6c8a5c50f40a05627bc522f9b4, type: 3}
-  myCanvas: {fileID: 0}
 --- !u!114 &4984705589631547166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e9f82f61d12442b04a6708fe1df42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgAmt: 3.5
+  dmgAmt: 1
 --- !u!114 &-8017955482752556191
 MonoBehaviour:
   m_ObjectHideFlags: 0

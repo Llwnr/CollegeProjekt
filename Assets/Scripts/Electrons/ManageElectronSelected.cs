@@ -36,6 +36,13 @@ public class ManageElectronSelected : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.G)){
             Debug.Log(GetSelectedElectronType());
         }
+
+        GreyOutUnavailableElectrons();
+    }
+
+    void GreyOutUnavailableElectrons(){
+        foreach(GameObject icon in electronIcons){
+        }
     }
 
     void ManageSelection(){
