@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ElectronSelectionRotation : MonoBehaviour
 {
-    [SerializeField]int mouseScrollAmt = 0;
+    int mouseScrollAmt = 0;
+    [SerializeField]private Transform electronBox;
     float timer = 0;
     private bool rotationEnded = false;
     [SerializeField]float speed;
@@ -12,7 +13,7 @@ public class ElectronSelectionRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        zAngleBeforeRot = transform.localEulerAngles.z;
+        zAngleBeforeRot = electronBox.localEulerAngles.z;
     }
 
     // Update is called once per frame
@@ -28,14 +29,14 @@ public class ElectronSelectionRotation : MonoBehaviour
         timer += Time.deltaTime*speed;
         if(timer > 1){
             timer = 1;
-            transform.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, zAngleBeforeRot+mouseScrollAmt*90f, timer));
+            electronBox.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, zAngleBeforeRot+mouseScrollAmt*90f, timer));
             rotationEnded = true;
             timer = 0;
             mouseScrollAmt = 0;
-            zAngleBeforeRot = transform.localEulerAngles.z;
+            zAngleBeforeRot = electronBox.localEulerAngles.z;
             return;
         }
-        transform.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, zAngleBeforeRot+mouseScrollAmt*90f, timer));
+        electronBox.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, zAngleBeforeRot+mouseScrollAmt*90f, timer));
         
     }
 }

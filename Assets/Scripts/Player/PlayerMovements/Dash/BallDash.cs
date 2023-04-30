@@ -44,15 +44,11 @@ public class BallDash : MonoBehaviour
 
     //For dash ability
     //Ability is durational while dash ability is only when dashing
-    [SerializeField]private Ability abilityToGive;
-    private DashAbility dashAbilityToGive;
+    private Ability abilityToGive;
     [SerializeField]private Collider2D phaseCollider;
 
     public Ability GetDurationalAbility(){
         return abilityToGive;
-    }
-    public DashAbility GetDashAbility(){
-        return dashAbilityToGive;
     }
 
     private Color origColor;
@@ -68,7 +64,7 @@ public class BallDash : MonoBehaviour
     private Rigidbody2D rb;
 
     //To allow different types of dashes
-    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, DashAbility dashAbility, Gradient dashColor, bool isPhaseThrough){
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, Gradient dashColor, bool isPhaseThrough){
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
         this.duration = duration;
@@ -76,7 +72,6 @@ public class BallDash : MonoBehaviour
         this.maxExtraForce = maxExtraForce;
         this.framesForMaxCharge = framesForMaxCharge;
         this.abilityToGive = ability;
-        this.dashAbilityToGive = dashAbility;
         this.dashTrailColor = dashColor;
         this.isPhaseThrough = isPhaseThrough;
         //Give the dash's dmg multiplier to player stats for damage calculation

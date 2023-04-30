@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Invincible", menuName = "CollegeProjekt/DashAbilities/Invincible", order = 0)]
-public class Invincible : DashAbility
+public class Invincible : ElectronAbility
 {
     public override void Activate()
     {

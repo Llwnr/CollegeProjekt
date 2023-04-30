@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 3360294590374952200}
   - component: {fileID: 3360294590374952205}
   - component: {fileID: 3360294590374952204}
+  - component: {fileID: 2944090367347283433}
   - component: {fileID: 3360294590374952210}
   - component: {fileID: 3360294590374952208}
   m_Layer: 20
@@ -380,7 +381,6 @@ MonoBehaviour:
   maxExtraSpeed: 30
   maxExtraForce: 30
   framesForMaxCharge: 30
-  abilityToGive: {fileID: 0}
   phaseCollider: {fileID: 7630181514613340675}
   dashColor: {r: 1, g: 0.37169808, b: 0.37169808, a: 1}
 --- !u!114 &6704175487713548193
@@ -518,6 +518,24 @@ MonoBehaviour:
   red: {r: 1, g: 0, b: 0, a: 1}
   orange: {r: 1, g: 0.2872481, b: 0, a: 1}
   green: {r: 0.010990381, g: 1, b: 0, a: 1}
+--- !u!114 &2944090367347283433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360294590374952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ad6f24ee591fa4bbd70d6414381985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electronAbility:
+  - {fileID: 11400000, guid: aaf070f8efb70334b8306427546731e1, type: 2}
+  - {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c, type: 2}
+  - {fileID: 11400000, guid: aaf070f8efb70334b8306427546731e1, type: 2}
+  - {fileID: 11400000, guid: 1c08bef59facd0c4295d86f111a2163c, type: 2}
+  electronSelector: {fileID: 0}
 --- !u!114 &3360294590374952210
 MonoBehaviour:
   m_ObjectHideFlags: 0

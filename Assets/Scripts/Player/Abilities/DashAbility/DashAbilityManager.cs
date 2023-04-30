@@ -10,11 +10,11 @@ public class DashAbilityManager : MonoBehaviour, IDashObserver
     [SerializeField]private List<DashAbility> dashAbilities = new List<DashAbility>();
 
     private void Update() {
-        if(dashAbilityToGive == null || dashAbilityToGive != ballDash.GetDashAbility()){
-            dashAbilityToGive = ballDash.GetDashAbility();
-            dashAbilities.Clear();
-            AddDashAbility(dashAbilityToGive);
-        }
+        // if(dashAbilityToGive == null || dashAbilityToGive != ballDash.GetDashAbility()){
+        //     dashAbilityToGive = ballDash.GetDashAbility();
+        //     dashAbilities.Clear();
+        //     AddDashAbility(dashAbilityToGive);
+        // }
     }
     
     private void Awake() {
