@@ -26,6 +26,7 @@ public class DisplayElectronCount : MonoBehaviour
 
     void CreateInfoBoxesForEachElectron(){
         foreach(ElectronHolder.ElectronType electronType in Enum.GetValues(typeof(ElectronHolder.ElectronType))){
+            if(electronType == ElectronHolder.ElectronType.grey) continue;
             electronTypes.Add(electronType);
             GameObject infoBox = Instantiate(electronInfoBox, Vector3.zero, Quaternion.identity);
             infoBox.transform.SetParent(transform, false);

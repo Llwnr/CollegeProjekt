@@ -7,16 +7,19 @@ using UnityEngine.UI;
 public class ManageElectronSelected : MonoBehaviour
 {
     private List<GameObject> electronIcons = new List<GameObject>();
+    private List<Color> iconColors = new List<Color>();
     [SerializeField]private GameObject electronIconToMake;
     [SerializeField]private Transform electronBox;
     GameObject prevFrameTopElectron = null;
     GameObject topMostElectron = null;
     [SerializeField]private float speed;
     float timer = 0;
+    private ElectronHolder electronHolder;
     // Start is called before the first frame update
     void Start()
     {
         CreateElectronIcons();
+        electronHolder = GameObject.FindWithTag("Player").GetComponent<ElectronHolder>();
     }
 
     void CreateElectronIcons(){
@@ -26,22 +29,33 @@ public class ManageElectronSelected : MonoBehaviour
             newElectron.GetComponent<MyElectronType>().SetElectronType(electronType);
             newElectron.transform.SetParent(electronBox, false);
             newElectron.GetComponent<Image>().color = GameObject.FindWithTag("Player").GetComponent<ElectronHolder>().GetMyElectronColor(electronType);
+            iconColors.Add(newElectron.GetComponent<Image>().color);
         }
     }
     // Update is called once per frame
     void Update()
     {
+        //Which electron is selected when rotated
         ManageSelection();
 
         if(Input.GetKeyDown(KeyCode.G)){
             Debug.Log(GetSelectedElectronType());
         }
-
+        //Darken/Grey out electrons that are not available cuz of 0 electron count
         GreyOutUnavailableElectrons();
     }
 
     void GreyOutUnavailableElectrons(){
-        foreach(GameObject icon in electronIcons){
+        for(int i=0; i<electronIcons.Count; i++){
+            GameObject icon = electronIcons[i];
+            if(!electronHolder.CanTakeElectron(icon.GetComponent<MyElectronType>().GetElectronType())){
+                icon.GetComponent<Image>().color = iconColors[i]*0.5f + new Color32(0,0,0,255);
+                //Icon's border color
+                icon.transform.GetChild(0).GetComponent<Image>().color = new Color32(90,90,90,255);
+            }else{
+                icon.GetComponent<Image>().color = iconColors[i];
+                icon.transform.GetChild(0).GetComponent<Image>().color = Color.white;
+            }
         }
     }
 

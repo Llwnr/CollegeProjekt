@@ -268,7 +268,6 @@ MonoBehaviour:
   - {fileID: 5477711098660444350, guid: 61c04d7437f97b5488925fefb52c505e, type: 3}
   - {fileID: 5477711098660444350, guid: 769bc7b093426954d8de59080c35706d, type: 3}
   - {fileID: 5477711098660444350, guid: 9f914d9f5127c9a488ace444bf509c1b, type: 3}
-  - {fileID: 5477711098660444350, guid: b380c35fef4c9524097bb25e94f49874, type: 3}
   electronCount: 1
   speedThreshold: 24
 --- !u!114 &4984705589631547160

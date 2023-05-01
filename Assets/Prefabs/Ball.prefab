@@ -515,7 +515,7 @@ MonoBehaviour:
   blueElectrons: 2
   redElectrons: 2
   orangeElectrons: 0
-  greyElectrons: 0
+  greyElectrons: 2000000
   blue: {r: 0, g: 0.048322916, b: 1, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
   orange: {r: 1, g: 0.2872481, b: 0, a: 1}
