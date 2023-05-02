@@ -6,6 +6,7 @@ public abstract class Powerup : ScriptableObject
 {
     public new string name;
     public string desc;
+    public Sprite powerupIcon;
 
     public float duration;
     protected float durationTimer;

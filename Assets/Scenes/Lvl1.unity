@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 11400000, guid: 848d9330fdee9624a99e7ffc68bb92d8, type: 2}
+  powerup: {fileID: 0}
 --- !u!1 &481128286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 11400000, guid: 848d9330fdee9624a99e7ffc68bb92d8, type: 2}
+  powerup: {fileID: 0}
 --- !u!1 &1127447138
 GameObject:
   m_ObjectHideFlags: 0
@@ -23718,6 +23718,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1752457695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1752457697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4984705589631547158, guid: b23542b029531e44f88aa1cf18718f1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1752457695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1752457698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752457697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d998755dc8ef44487b7ea409d90c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
+  powerup: {fileID: 11400000, guid: 2bc6a08bcf1699e498ced8f70a86a29e, type: 2}
 --- !u!1001 &1823817033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23733,7 +23753,7 @@ PrefabInstance:
     - target: {fileID: 4984705589631547158, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547160, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
@@ -23837,7 +23857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 11400000, guid: 848d9330fdee9624a99e7ffc68bb92d8, type: 2}
+  powerup: {fileID: 0}
 --- !u!114 &1986282030 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5296754926222350526, guid: 33e064fd05d3bb846a384d54066c3f8b,
@@ -24070,6 +24090,11 @@ PrefabInstance:
       propertyPath: dashIconHolder
       value: 
       objectReference: {fileID: 1986282030}
+    - target: {fileID: 3360294590374952210, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: baseDmg
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6704175487713548193, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: dashAbilityToGive
@@ -24197,7 +24222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 11400000, guid: 848d9330fdee9624a99e7ffc68bb92d8, type: 2}
+  powerup: {fileID: 0}
 --- !u!1001 &5176953788754774000
 PrefabInstance:
   m_ObjectHideFlags: 0

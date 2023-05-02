@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class GivePowerupOnTouch : MonoBehaviour
 {
-    private Ability abilityToGive;
+    private Powerup powerupToGive;
 
     private void OnTriggerEnter2D(Collider2D other) {
         //When player touches this powerup, activate it
         if(other.transform.CompareTag("Player")){
-            other.transform.GetComponent<AbilityManager>().AddAbility(abilityToGive);
+            PowerupsManager.instance.AddPowerup(powerupToGive);
         }
     }
 
-    public void SetAbilityToGive(Ability ability){
-        abilityToGive = ability;
+    public void SetAbilityToGive(Powerup powerup){
+        powerupToGive = powerup;
     }
 }

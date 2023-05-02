@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PowerupsManager : MonoBehaviour
 {
-    private GameObject player;
-    private List<Powerup> powerups = new List<Powerup>();
+    public static PowerupsManager instance{get; private set;}
+    [SerializeField]private List<Powerup> powerups = new List<Powerup>();
     private void Awake() {
-        player = GameObject.FindWithTag("Player");
-        AddPowerup(powerup1);
+        if(instance != null){
+            Debug.LogError("More than two powerupmanager instances");
+        }else{
+            instance = this;
+        }
     }
-
-    public Powerup powerup1;
     
     public void AddPowerup(Powerup powerup){
         //Add a powerup and activate it also
