@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 227237976}
   - component: {fileID: 227237975}
   - component: {fileID: 227237974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23728,7 +23728,7 @@ PrefabInstance:
     - target: {fileID: 4984705589631547163, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547163, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
@@ -24034,6 +24034,11 @@ PrefabInstance:
         type: 3}
       propertyPath: grey.r
       value: 0.21698111
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: orange.g
+      value: 0.59229463
       objectReference: {fileID: 0}
     - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
         type: 3}

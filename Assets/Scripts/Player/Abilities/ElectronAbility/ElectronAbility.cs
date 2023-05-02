@@ -12,7 +12,6 @@ public abstract class ElectronAbility : ScriptableObject
 
     protected void GetReferences() {
         player = GameObject.FindWithTag("Player");
-        Debug.Log(name);
     }
 
     public virtual void Activate(){

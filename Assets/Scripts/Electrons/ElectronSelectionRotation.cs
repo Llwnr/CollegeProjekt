@@ -10,15 +10,22 @@ public class ElectronSelectionRotation : MonoBehaviour
     private bool rotationEnded = false;
     [SerializeField]float speed;
     float zAngleBeforeRot;
+    private ManageElectronSelected electronSelector;
+
+    private int lastInput = 1;
     // Start is called before the first frame update
     void Start()
     {
         zAngleBeforeRot = electronBox.localEulerAngles.z;
+        electronSelector = GetComponent<ManageElectronSelected>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.mouseScrollDelta.y != 0){
+            lastInput = (int)Input.mouseScrollDelta.y;
+        }
         if(Input.mouseScrollDelta.y != 0 && Mathf.Abs(Input.mouseScrollDelta.y) > Mathf.Abs(mouseScrollAmt)){
             mouseScrollAmt = (int)Input.mouseScrollDelta.y;
             timer -= timer*0.4f;
@@ -37,6 +44,15 @@ public class ElectronSelectionRotation : MonoBehaviour
             return;
         }
         electronBox.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, zAngleBeforeRot+mouseScrollAmt*90f, timer));
-        
+    }
+    private void LateUpdate() {
+        //If the top most electron is not available then rotate again
+        if((timer > 0.85f || timer == 0) && !electronSelector.IsSelectedElectronAvailable()){
+            mouseScrollAmt += (int)Mathf.Sign(lastInput);
+            timer -= timer*0.4f;
+            rotationEnded = false;
+        }
     }
 }
+
+

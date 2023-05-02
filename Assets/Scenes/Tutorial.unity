@@ -1341,6 +1341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8df23aade43074fb7f1958ede08c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &84851546 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 840044780211676601, guid: 33e064fd05d3bb846a384d54066c3f8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 954803934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &130500760
 GameObject:
   m_ObjectHideFlags: 0
@@ -60285,6 +60291,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 329954230, guid: 0e1e7f1215696ba4bae469da7ed63867, type: 3}
+      propertyPath: m_TagString
+      value: ElectronManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 329954232, guid: 0e1e7f1215696ba4bae469da7ed63867, type: 3}
+      propertyPath: electronBox
+      value: 
+      objectReference: {fileID: 84851546}
+    - target: {fileID: 329954233, guid: 0e1e7f1215696ba4bae469da7ed63867, type: 3}
+      propertyPath: electronBox
+      value: 
+      objectReference: {fileID: 84851546}
     - target: {fileID: 100582474507501890, guid: 0e1e7f1215696ba4bae469da7ed63867,
         type: 3}
       propertyPath: m_RootOrder

@@ -94,4 +94,8 @@ public class ManageElectronSelected : MonoBehaviour
     public ElectronHolder.ElectronType GetSelectedElectronType(){
         return topMostElectron.GetComponent<MyElectronType>().GetElectronType();
     }
+
+    public bool IsSelectedElectronAvailable(){
+        return electronHolder.CanTakeElectron(topMostElectron.GetComponent<MyElectronType>().GetElectronType());
+    }
 }

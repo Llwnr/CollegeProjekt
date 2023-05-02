@@ -9,18 +9,18 @@ public class ElectronAbilityManager : MonoBehaviour, IDashObserver
     [SerializeField]private ElectronAbility[] electronAbility = new ElectronAbility[Enum.GetValues(typeof(ElectronHolder.ElectronType)).Length];
     private ElectronAbility selectedElectronAbility;
     //To get the type of electron being used
-    [SerializeField]private ManageElectronSelected electronSelector;
+    private ManageElectronSelected electronSelector;
     private ElectronHolder electronHolder;
-
-    private void Update() {
-        
-    }
     
     private void Awake() {
         ballDash = GetComponent<BallDash>();
         //Subscribe to ball dash to get notified when ball dashes and ends dash
         ballDash.AddDashObserver(this);
         electronHolder = GetComponent<ElectronHolder>();
+    }
+
+    private void Start() {
+        electronSelector = GameObject.FindWithTag("ElectronManager").GetComponent<ManageElectronSelected>();
     }
 
     private void OnDisable() {
