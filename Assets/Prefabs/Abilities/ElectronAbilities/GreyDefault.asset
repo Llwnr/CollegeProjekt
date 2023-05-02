@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07582d6233c84b4e85f927642ccdf75, type: 3}
   m_Name: GreyDefault
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Default
+  description: Nothing special

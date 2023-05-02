@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0afaa245bc3da45ae35860be013872, type: 3}
   m_Name: BlueDashExtra
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: DashLonger
+  description: Dashes for a longer time
   extraDashDuration: 0.1
+  slowDownFactor: 0.2

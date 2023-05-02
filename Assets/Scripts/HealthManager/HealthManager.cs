@@ -7,7 +7,7 @@ public class HealthManager : MonoBehaviour, IDamagable
     [SerializeField]private float hp;
     private float maxHp;
 
-    private float dmgReduction;
+    [SerializeField]private float dmgReduction;
     public void SetDmgReduction(float value){
         dmgReduction = value;
     }
@@ -36,9 +36,11 @@ public class HealthManager : MonoBehaviour, IDamagable
     }
 
     public void DealDamage(float dmgAmt){
-        dmgAmt -= dmgAmt*dmgReduction/100f;
-        hp -= dmgAmt;
-        NotifyObservers(dmgAmt, transform);
+        float newDmgAmt = dmgAmt - dmgAmt*dmgReduction/100f;
+        hp -= newDmgAmt;
+        if(transform.tag == "Player")
+        Debug.Log("Dmg: " + dmgAmt + "Reduced amt: " + newDmgAmt + "Dmg redyc %: " + dmgReduction);
+        NotifyObservers(newDmgAmt, transform);
         if(hp < 0){
             gameObject.SetActive(false);
         }

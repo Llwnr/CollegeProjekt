@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d5db95d10927c4697c4e48daeab3f9, type: 3}
   m_Name: OrangeDmgReduc
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  dmgReductionAmt: 0
+  name: DmgReduction
+  description: Reduces Damage
+  dmgReductionAmt: 70

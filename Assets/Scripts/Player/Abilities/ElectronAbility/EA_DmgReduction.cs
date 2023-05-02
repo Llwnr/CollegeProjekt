@@ -10,10 +10,12 @@ public class EA_DmgReduction : ElectronAbility
     {
         base.GetReferences();
         player.GetComponent<HealthManager>().SetDmgReduction(dmgReductionAmt);
+        Debug.Log("act");
     }
 
     public override void Deactivate()
     {
         player.GetComponent<HealthManager>().SetDmgReduction(0);
+        Debug.Log("deact");
     }
 }

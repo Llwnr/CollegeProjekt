@@ -6,10 +6,12 @@ using UnityEngine;
 public class EA_ExtraDashDuration : ElectronAbility
 {
     public float extraDashDuration;
+    public float slowDownFactor;
     public override void Activate()
     {
         base.GetReferences();
         player.GetComponent<BallDash>().IncreaseDashDuration(extraDashDuration);
+        player.GetComponent<Rigidbody2D>().velocity *= 1-slowDownFactor;
     }
 
     public override void Deactivate()

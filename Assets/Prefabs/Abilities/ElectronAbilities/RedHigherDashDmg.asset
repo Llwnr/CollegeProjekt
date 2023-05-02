@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b78b371c8d5014faf586201e4fe353, type: 3}
   m_Name: RedHigherDashDmg
   m_EditorClassIdentifier: 
-  name: RedAb
-  description: 
+  name: Rage
+  description: Deal more damage, also receive more damage
   _multiplier: 3
+  selfDmgIncreaserPercent: 150

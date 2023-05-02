@@ -1448,6 +1448,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &169529422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169529423}
+  - component: {fileID: 169529424}
+  m_Layer: 0
+  m_Name: ElectronChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &169529423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169529422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227831514}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169529424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169529422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8344876e7ceecae47a78aa74a332d1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electronSelectionBox: {fileID: 201806595}
 --- !u!1 &192599964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1561,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &201806595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 840044780211676602, guid: 33e064fd05d3bb846a384d54066c3f8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 954803934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &227831513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1599,7 @@ Transform:
   - {fileID: 1958523445}
   - {fileID: 63774177}
   - {fileID: 290400748}
+  - {fileID: 169529423}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60476,6 +60528,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 840044780211676601, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 840044780211676602, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5296754926253455766, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
       propertyPath: m_Name
@@ -61037,16 +61099,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialTexts:
   - WASD to move. Move mouse to aim
-  - 'Click to dash. Hold to charge dash.
-
-    You are immune to damage when dashing.'
+  - Click to dash. Hold to charge dash.
   - 'Press Space to change your dash type.
 
     Do this a couple more times to continue'
   - "Hitting enemies at high speed will drop electrons. \n<color=red>Red:</color>
-    Increase dmg for one hit\n<color=blue>Blue:</color> Passively increase damage\n<color=orange>Orange:</color>
-    Used for activating abilities\n<color=green>Green:</color> Heals when touched"
-  - Right click to activate your special ability. Consumes orange electron.
+    Increase dmg done and taken\n<color=blue>Blue:</color> Longer dash\n<color=orange>Orange:</color>Damage
+    reduction when dashing\n<color=green>Grey:</color>Nothing"
+  - 'The selected electron is highlighted, as seen in the bottom middle.
+
+    The
+    selected electron is consumed to gain various effects while dashing.
+
+    Scroll
+    mouse to change selection'
+  - Right click to activate your special ability
   - All done here! Have fun
   triggers: {fileID: 0}
 --- !u!1001 &1603964490
@@ -61126,6 +61193,21 @@ PrefabInstance:
       propertyPath: chargeBar
       value: 
       objectReference: {fileID: 327111025}
+    - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: redElectrons
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: blueElectrons
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: orangeElectrons
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3360294590374952209, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: dashIconHolder
@@ -61193,6 +61275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2156fff02294c4b46b97c9a4a4382655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  electronSelectionBox: {fileID: 201806595}
 --- !u!1 &1958523444
 GameObject:
   m_ObjectHideFlags: 0

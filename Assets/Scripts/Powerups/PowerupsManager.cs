@@ -8,7 +8,10 @@ public class PowerupsManager : MonoBehaviour
     private List<Powerup> powerups = new List<Powerup>();
     private void Awake() {
         player = GameObject.FindWithTag("Player");
+        AddPowerup(powerup1);
     }
+
+    public Powerup powerup1;
     
     public void AddPowerup(Powerup powerup){
         //Add a powerup and activate it also
@@ -37,8 +40,11 @@ public class PowerupsManager : MonoBehaviour
     }
 
     void RemovePowerupsOnDurationEnd(){
-        foreach(Powerup powerup in powerups){
-            if(powerup.HasDurationEnded()) RemovePowerup(powerup);
+        for(int i=0; i<powerups.Count; i++){
+            if(powerups[i].HasDurationEnded()){
+                RemovePowerup(powerups[i]);
+                i--;
+            }
         }
     }
 }

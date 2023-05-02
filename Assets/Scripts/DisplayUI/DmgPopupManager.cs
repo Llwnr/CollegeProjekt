@@ -6,6 +6,7 @@ using TMPro;
 public class DmgPopupManager : MonoBehaviour, IOnDamage
 {
     [SerializeField]private GameObject textBox;
+    [SerializeField]private Color32 textColor = Color.white;
     private Transform myCanvas;
 
     private void Awake() {
@@ -24,6 +25,7 @@ public class DmgPopupManager : MonoBehaviour, IOnDamage
         //Create new dmg popups
         GameObject newTextBox = Instantiate(textBox, myTransform.position, Quaternion.identity);
         newTextBox.GetComponent<TextMeshProUGUI>().text = dmgAmt.ToString("F2");
+        newTextBox.GetComponent<TextMeshProUGUI>().color = textColor;
         newTextBox.transform.SetParent(myCanvas.transform, false);
     }
     

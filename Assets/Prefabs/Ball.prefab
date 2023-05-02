@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 2944090367347283433}
   - component: {fileID: 3360294590374952210}
   - component: {fileID: 3360294590374952208}
+  - component: {fileID: 323532125127773714}
   m_Layer: 20
   m_Name: Ball
   m_TagString: Player
@@ -537,7 +538,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4dbea1d74f3c4b4794f30d295f6ea9c, type: 2}
   - {fileID: 11400000, guid: c4f8bda35b4ad304d8db63382d412402, type: 2}
   - {fileID: 11400000, guid: 88b0b9bc68d448a499e5c55909a60d84, type: 2}
-  electronSelector: {fileID: 0}
 --- !u!114 &3360294590374952210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +565,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+--- !u!114 &323532125127773714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360294590374952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06234624ea4e52438616b1fbb7e41cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 7883506356755602286, guid: c9a56d6c8a5c50f40a05627bc522f9b4, type: 3}
+  textColor:
+    serializedVersion: 2
+    rgba: 4278190205
 --- !u!1 &4052708904013585998
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7588073886340337162}
   - component: {fileID: 7588073886340337163}
   m_Layer: 5
-  m_Name: DmgPopups
+  m_Name: DmgPopupCanvas
   m_TagString: DmgPopupCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
