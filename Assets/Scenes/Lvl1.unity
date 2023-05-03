@@ -1140,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 4984705589631547158, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547160, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 0}
+  powerup: {fileID: 11400000, guid: 2bc6a08bcf1699e498ced8f70a86a29e, type: 2}
 --- !u!1 &481128286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1481,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &918460533
 PrefabInstance:
@@ -1498,7 +1498,7 @@ PrefabInstance:
     - target: {fileID: 4984705589631547158, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547160, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 0}
+  powerup: {fileID: 11400000, guid: 2bc6a08bcf1699e498ced8f70a86a29e, type: 2}
 --- !u!1 &1127447138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,7 +1646,7 @@ Transform:
   m_Children:
   - {fileID: 1376451654}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1305151927
 LightingSettings:
@@ -23857,7 +23857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 0}
+  powerup: {fileID: 11400000, guid: 2bc6a08bcf1699e498ced8f70a86a29e, type: 2}
 --- !u!114 &1986282030 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5296754926222350526, guid: 33e064fd05d3bb846a384d54066c3f8b,
@@ -23888,7 +23888,7 @@ PrefabInstance:
     - target: {fileID: 100582474507501890, guid: 0e1e7f1215696ba4bae469da7ed63867,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100582474507501890, guid: 0e1e7f1215696ba4bae469da7ed63867,
         type: 3}
@@ -24118,7 +24118,7 @@ PrefabInstance:
     - target: {fileID: 4984705589631547158, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547160, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
@@ -24222,7 +24222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropBox: {fileID: 526208516078676919, guid: 72ea461bb78d5a84b8ace23530ea0eaa, type: 3}
-  powerup: {fileID: 0}
+  powerup: {fileID: 11400000, guid: 2bc6a08bcf1699e498ced8f70a86a29e, type: 2}
 --- !u!1001 &5176953788754774000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24332,7 +24332,7 @@ PrefabInstance:
     - target: {fileID: 5296754926253455767, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5296754926253455767, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
