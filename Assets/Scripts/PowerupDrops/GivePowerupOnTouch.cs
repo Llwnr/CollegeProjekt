@@ -10,6 +10,7 @@ public class GivePowerupOnTouch : MonoBehaviour
         //When player touches this powerup, activate it
         if(other.transform.CompareTag("Player")){
             PowerupsManager.instance.AddPowerup(powerupToGive);
+            gameObject.SetActive(false);
         }
     }
 

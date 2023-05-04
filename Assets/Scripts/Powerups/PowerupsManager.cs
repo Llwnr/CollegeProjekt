@@ -15,9 +15,16 @@ public class PowerupsManager : MonoBehaviour
     }
     
     public void AddPowerup(Powerup powerup){
-        //Add a powerup and activate it also
-        powerups.Add(powerup);
-        powerup.Activate();
+        //Only add unique powerups, otherwise just reset duration
+        if(powerups.Contains(powerup)){
+            int index = powerups.IndexOf(powerup);
+            powerups[index].ResetDuration();
+        }else{
+            //Add a powerup and activate it also
+            powerups.Add(powerup);
+            powerup.Activate();
+        }
+        
     }
 
     public void RemovePowerup(Powerup powerup){
@@ -28,6 +35,7 @@ public class PowerupsManager : MonoBehaviour
 
     private void Update() {
         ManagePowerupsDuration();
+        ExecuteUpdateActionOfPowerups();
     }
 
     private void LateUpdate() {
@@ -37,6 +45,12 @@ public class PowerupsManager : MonoBehaviour
     void ManagePowerupsDuration(){
         foreach(Powerup powerup in powerups){
             powerup.ReduceDuration();
+        }
+    }
+
+    void ExecuteUpdateActionOfPowerups(){
+        foreach(Powerup powerup in powerups){
+            powerup.OnUpdate();
         }
     }
 

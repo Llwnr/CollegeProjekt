@@ -11,7 +11,7 @@ public abstract class Powerup : ScriptableObject
     public float duration;
     protected float durationTimer;
 
-    private GameObject player;
+    protected GameObject player;
     private PowerupsManager powerupsManager;
 
     protected void GetReference(){
@@ -25,8 +25,15 @@ public abstract class Powerup : ScriptableObject
 
     public abstract void Deactivate();
 
+    public virtual void OnUpdate(){
+
+    }
+
     public void ReduceDuration(){
         durationTimer -= Time.deltaTime;
+    }
+    public void ResetDuration(){
+        durationTimer = duration;
     }
     public bool HasDurationEnded(){
         return durationTimer <= 0;
