@@ -8,6 +8,7 @@ public class DropPowerup : MonoBehaviour, IOnDeath
     [SerializeField]private Powerup powerup;
     private HealthManager healthManager;
     private void Start() {
+        Debug.Log(name);
         healthManager = GetComponent<HealthManager>();
         healthManager.AddObserver(this);
     }
