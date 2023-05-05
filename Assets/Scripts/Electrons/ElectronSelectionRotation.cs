@@ -12,10 +12,13 @@ public class ElectronSelectionRotation : MonoBehaviour
     float zAngleBeforeRot;
     private ManageElectronSelected electronSelector;
 
+    private BallDash ballDash;
+
     private int lastInput = 1;
     // Start is called before the first frame update
     void Start()
     {
+        ballDash = GameObject.FindWithTag("Player").GetComponent<BallDash>();
         zAngleBeforeRot = electronBox.localEulerAngles.z;
         electronSelector = GetComponent<ManageElectronSelected>();
     }
@@ -47,7 +50,7 @@ public class ElectronSelectionRotation : MonoBehaviour
     }
     private void LateUpdate() {
         //If the top most electron is not available then rotate again
-        if((timer > 0.85f || timer == 0) && !electronSelector.IsSelectedElectronAvailable()){
+        if((timer > 0.85f || timer == 0) && !electronSelector.IsSelectedElectronAvailable() && !ballDash.IsBallDashing()){
             mouseScrollAmt += (int)Mathf.Sign(lastInput);
             timer -= timer*0.4f;
             rotationEnded = false;
