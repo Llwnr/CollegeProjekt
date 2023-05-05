@@ -12,7 +12,7 @@ public class HigherDashDmg : ElectronAbility
     {
         base.Activate();
         origMultiplier = player.GetComponent<PlayerStats>().GetDashDmgMultiplier();
-        player.GetComponent<PlayerStats>().SetDashDmgMultiplier(origMultiplier*_multiplier);
+        player.GetComponent<PlayerStats>().SetDashDmgMultiplier(origMultiplier+_multiplier);
         player.GetComponent<HealthManager>().SetDmgReduction(-selfDmgIncreaserPercent);
     }
 

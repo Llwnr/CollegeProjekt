@@ -281,31 +281,13 @@ PrefabInstance:
       objectReference: {fileID: 410609069}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9f366522475167479b99e918dd101f1, type: 3}
---- !u!1 &402156435 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3360294590374952195, guid: b9f366522475167479b99e918dd101f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 402156434}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &402156436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402156435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6badda1d5c5b5d34bbf8a602d06a6b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &402156437 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3360294590374952197, guid: b9f366522475167479b99e918dd101f1,
     type: 3}
   m_PrefabInstance: {fileID: 402156434}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402156435}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79813bf16e6744b45a4ce245ebfc0fe0, type: 3}
@@ -317,7 +299,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 402156434}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402156435}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcae72ab680ce9f4eaa35ed0ea61792e, type: 3}
@@ -329,7 +311,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 402156434}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402156435}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e464aeb4ff12b846a44150cf3ea81c6, type: 3}
@@ -508,6 +490,11 @@ PrefabInstance:
       propertyPath: targetHealth
       value: 
       objectReference: {fileID: 402156438}
+    - target: {fileID: 5296754926813311049, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5296754926863391420, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
       propertyPath: electronHolder

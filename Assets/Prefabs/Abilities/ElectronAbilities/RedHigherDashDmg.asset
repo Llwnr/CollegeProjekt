@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rage
   description: Deal more damage, also receive more damage
-  _multiplier: 3
-  selfDmgIncreaserPercent: 150
+  _multiplier: 3.5
+  selfDmgIncreaserPercent: 200

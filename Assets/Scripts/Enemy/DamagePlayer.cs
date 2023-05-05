@@ -7,9 +7,6 @@ public class DamagePlayer : MonoBehaviour
     [SerializeField]private float dmgAmt;
     private void OnCollisionEnter2D(Collision2D other) {
         DamageTarget(other.gameObject);
-        if(other.transform.CompareTag("Player")){
-            other.gameObject.GetComponent<BallDash>().DashEnd();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -18,8 +15,7 @@ public class DamagePlayer : MonoBehaviour
 
     void DamageTarget(GameObject other){
         if(other.CompareTag("Player")){
-            other.GetComponent<IDamagable>().DealDamage(dmgAmt);
-            
+            other.GetComponent<IDamagable>().DealDamage(dmgAmt);    
         }
     }
 }
