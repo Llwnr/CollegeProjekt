@@ -23,6 +23,7 @@ public class InstantDashCharge : Ability
     
     public override bool CanActivate()
     {
+        base.Activate();
         //Check if all electrons are available for consumption
         foreach(ElectronHolder.ElectronType electronType in System.Enum.GetValues(typeof(ElectronHolder.ElectronType))){
             if(!electronHolder.CanTakeElectron(electronType)){

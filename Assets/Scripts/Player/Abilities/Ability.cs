@@ -16,7 +16,7 @@ public abstract class Ability : ScriptableObject {
     protected BallDash ballDash;
     protected AbilityManager abilityManager;
     protected GameObject player;
-    public ElectronHolder electronHolder;
+    protected ElectronHolder electronHolder;
 
     //Item to consume
     //public ElectronHolder.ElectronType electronToConsume;

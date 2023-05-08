@@ -44,7 +44,7 @@ public class BounceOnCollision : MonoBehaviour
     }
 
     void SlowdownBounceSpeed(){
-        if(Mathf.Abs(rb.velocity.magnitude) > 0.1f)rb.velocity *= 0.95f;
+        if(Mathf.Abs(rb.velocity.magnitude) > 0.1f)rb.velocity *= 0.9f;
     }
 
     void DisableDash(){
