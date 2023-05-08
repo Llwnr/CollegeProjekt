@@ -39,7 +39,7 @@ public class BallDash : MonoBehaviour
     [SerializeField]private float extraForce = 0;
     [SerializeField]private float maxExtraSpeed, maxExtraForce;
     [SerializeField]private int framesForMaxCharge;//Number of frames taken to reach max charge
-    private int reduceFramesForMaxCharge;//Will make the charge happen faster
+    [SerializeField]private float chargeSpeed;//So that player can be buffed for faster charges
     private bool isPhaseThrough;//Can the dash go through enemies
 
     //For dash ability
@@ -176,8 +176,9 @@ public class BallDash : MonoBehaviour
     }
 
     public void ChargeForce(){
-        extraSpeed += maxExtraSpeed / (1+framesForMaxCharge);
-        extraForce += maxExtraForce / (1+framesForMaxCharge);
+        float totalFramesToTake = 1+framesForMaxCharge/chargeSpeed;
+        extraSpeed += maxExtraSpeed / totalFramesToTake;
+        extraForce += maxExtraForce / totalFramesToTake;
         //Also limit it
         if(extraSpeed > maxExtraSpeed) extraSpeed = maxExtraSpeed;
         if(extraForce > maxExtraForce) extraForce = maxExtraForce;

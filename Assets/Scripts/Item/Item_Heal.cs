@@ -8,6 +8,7 @@ public class Item_Heal : ItemBase
     public float healAmt;
     public override void ActivateOnCollision()
     {
+        base.ActivateOnCollision();
         player.GetComponent<HealthManager>().Heal(healAmt);
     }
 }

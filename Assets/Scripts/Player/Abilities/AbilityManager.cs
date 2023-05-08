@@ -5,7 +5,9 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     [SerializeField]private List<Ability> abilities;
+
     public void AddAbility(Ability ability){
+        if(!ability.CanActivate()) return;
         abilities.Add(ability);
         ability.Activate();
     }

@@ -7,10 +7,12 @@ public class ElectronAbilityManager : MonoBehaviour, IDashObserver
 {
     private BallDash ballDash;
     [SerializeField]private ElectronAbility[] electronAbility = new ElectronAbility[Enum.GetValues(typeof(ElectronHolder.ElectronType)).Length];
-    private ElectronAbility selectedElectronAbility;
+    [SerializeField]private ElectronAbility selectedElectronAbility;
     //To get the type of electron being used
     private ManageElectronSelected electronSelector;
     private ElectronHolder electronHolder;
+
+    private bool abilityActivated = false;
     
     private void Awake() {
         ballDash = GetComponent<BallDash>();
@@ -32,6 +34,7 @@ public class ElectronAbilityManager : MonoBehaviour, IDashObserver
         SetSelectedElectronAbility();
         if(electronHolder.TakeElectron(electronSelector.GetSelectedElectronType())){
             selectedElectronAbility.Activate();
+            abilityActivated = true;
         }else{
             
         }
@@ -40,8 +43,11 @@ public class ElectronAbilityManager : MonoBehaviour, IDashObserver
 
     //Deactivate dash abilities when player is not dashing
     public void DashEnd(){
-        if(selectedElectronAbility != null)
-        selectedElectronAbility.Deactivate();
+        //Only deactivate if an ability was activated first
+        if(selectedElectronAbility != null && abilityActivated){
+            selectedElectronAbility.Deactivate();
+            abilityActivated = false;
+        }
     }
 
     void SetSelectedElectronAbility(){

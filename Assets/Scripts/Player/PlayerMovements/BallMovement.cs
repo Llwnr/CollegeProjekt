@@ -7,6 +7,7 @@ public class BallMovement : MonoBehaviour
     [Header ("Move Speed")]
     [SerializeField]private float moveSpeed;
     [SerializeField]private float maxMoveSpeed;
+    private BallDash ballDash;
     private float extraMoveSpeed = 0;
 
     private Rigidbody2D rb;
@@ -16,6 +17,7 @@ public class BallMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ballDash = GetComponent<BallDash>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,6 @@ public class BallMovement : MonoBehaviour
 
     private void FixedUpdate() {
         MoveBall();
-        LookAtMousePos();
     }
 
     void GetDirection(){
@@ -35,13 +36,8 @@ public class BallMovement : MonoBehaviour
         vDir = Input.GetAxisRaw("Vertical");
     }
 
-    void LookAtMousePos(){
-        Vector2 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(0,0, angle-90);
-    }
-
     void MoveBall(){
+        if(ballDash.IsBallDashing())return;
         rb.AddForce(new Vector2(hDir, vDir)*moveSpeed, ForceMode2D.Force);
     }
 

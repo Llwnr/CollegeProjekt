@@ -15,7 +15,7 @@ public class TargetPlayer : ActionNode
     }
 
     protected override State OnUpdate() {
-        Vector3 dir = (player.position - context.transform.position).normalized;
+        Vector3 dir = ((player.position - context.transform.position)*10000).normalized;
         blackboard.direction = dir;
         return State.Success;
     }

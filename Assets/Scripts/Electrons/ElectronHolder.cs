@@ -8,6 +8,15 @@ public class ElectronHolder: MonoBehaviour
     [SerializeField]private int blueElectrons, redElectrons, orangeElectrons, greyElectrons = 0;
     [SerializeField]private Color blue, red, orange, grey;
 
+    private bool isEnabled = false;
+
+    private void OnEnable() {
+        isEnabled = true;
+    }
+    private void OnDisable() {
+        isEnabled = false;
+    }
+
     public enum ElectronType{
         red,
         blue,
@@ -35,6 +44,7 @@ public class ElectronHolder: MonoBehaviour
     }
 
     public bool TakeElectron(ElectronType electronType){
+        if(!isEnabled) return false;
         switch(electronType){
             case ElectronType.blue:
                 if(blueElectrons > 0){

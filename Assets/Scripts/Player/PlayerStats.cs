@@ -45,8 +45,8 @@ public class PlayerStats : MonoBehaviour
     //Called only when inflicting damage
     public float GetMyMaxDamage(){
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
-        highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.25f);
-        finalDmg = (baseDmg)*highSpeedBuff*dashDmgMultiplier;
+        highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.5f);
+        finalDmg = (baseDmg)+highSpeedBuff*dashDmgMultiplier;
         finalDmg *= powerUpMultiplier;
         return finalDmg;
     }

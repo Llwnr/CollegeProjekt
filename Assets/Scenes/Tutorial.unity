@@ -1716,6 +1716,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4984705589631547160, guid: b23542b029531e44f88aa1cf18718f1f,
+        type: 3}
+      propertyPath: hp
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547163, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -61105,11 +61110,11 @@ MonoBehaviour:
     Do this a couple more times to continue'
   - "Hitting enemies at high speed will drop electrons. \n<color=red>Red:</color>
     Increase dmg done and taken\n<color=blue>Blue:</color> Longer dash\n<color=orange>Orange:</color>Damage
-    reduction when dashing\n<color=green>Grey:</color>Nothing"
-  - 'The selected electron is highlighted, as seen in the bottom middle.
+    reduction when dashing\n<color=grey>Grey:</color>Nothing"
+  - 'The selected electron out of 4 is highlighted, as seen in the bottom middle.
 
     The
-    selected electron is consumed to gain various effects while dashing.
+    selected electron is consumed to gain its effect as explained in previous info.
 
     Scroll
     mouse to change selection'
@@ -61187,6 +61192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360294590374952197, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: chargeSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3360294590374952202, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
@@ -61276,6 +61286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   electronSelectionBox: {fileID: 201806595}
+  electronManager: {fileID: 1786551539}
 --- !u!1 &1958523444
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class Item_ElectronPack : ItemBase
     public int numOfElectrons;
     public override void ActivateOnCollision()
     {
+        base.ActivateOnCollision();
         //Adds electrons
         for(int i=0; i<numOfElectrons; i++){
             foreach(ElectronHolder.ElectronType electronType in Enum.GetValues(typeof(ElectronHolder.ElectronType))){

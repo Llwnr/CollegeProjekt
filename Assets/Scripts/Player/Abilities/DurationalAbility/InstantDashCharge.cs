@@ -20,4 +20,20 @@ public class InstantDashCharge : Ability
         base.OnUpdate();
         ballDash.SetChargeToMax();
     }
+    
+    public override bool CanActivate()
+    {
+        //Check if all electrons are available for consumption
+        foreach(ElectronHolder.ElectronType electronType in System.Enum.GetValues(typeof(ElectronHolder.ElectronType))){
+            if(!electronHolder.CanTakeElectron(electronType)){
+                Debug.Log("Can't take electron. RIP ability");
+                return false;
+            }
+        }
+        //If you can take one electron of each type, then take it and activate ability
+        foreach(ElectronHolder.ElectronType electronType in System.Enum.GetValues(typeof(ElectronHolder.ElectronType))){
+            electronHolder.TakeElectron(electronType);
+        }
+        return true;
+    }
 }

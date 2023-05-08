@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9363db6f53d76a4c83626d26bdd3e63, type: 3}
-  m_Name: Uhh
+  m_Name: FarmDash
   m_EditorClassIdentifier: 
-  dashName: Uhh
+  dashName: FarmDash
   dashForce: 25
   maxDashSpeed: 25
   duration: 0.1
@@ -21,7 +21,7 @@ MonoBehaviour:
   maxExtraForce: 5
   dashIcon: {fileID: 21300000, guid: 72230d291f4455441986ce3e2a71c19a, type: 3}
   dashDmgMultiplier: 1
-  durationalAbility: {fileID: 11400000, guid: e4443ab8ce1cc884cb5315f71ab63768, type: 2}
+  durationalAbility: {fileID: 11400000, guid: 848d9330fdee9624a99e7ffc68bb92d8, type: 2}
   dashColor:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 0.54901963}

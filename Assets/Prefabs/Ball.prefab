@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 506984809164963514}
   - component: {fileID: 3360294590374952199}
   - component: {fileID: 3360294590374952201}
+  - component: {fileID: 7292452175537836539}
   - component: {fileID: 3360294590374952194}
   - component: {fileID: 3360294590374952198}
   - component: {fileID: 3360294590374952197}
@@ -334,6 +335,18 @@ TrailRenderer:
   m_MinVertexDistance: 0.001
   m_Autodestruct: 0
   m_Emitting: 0
+--- !u!114 &7292452175537836539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360294590374952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe54171c335e5f0459d694a4fe336712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3360294590374952194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +396,7 @@ MonoBehaviour:
   maxExtraSpeed: 30
   maxExtraForce: 30
   framesForMaxCharge: 30
+  chargeSpeed: 1
   phaseCollider: {fileID: 7630181514613340675}
   dashColor: {r: 1, g: 0.37169808, b: 0.37169808, a: 1}
 --- !u!114 &6704175487713548193
@@ -474,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceDuration: 0.3
   maxBounceSpeed: 18
+  bounceForce: 1.2
   shakeIntensity: 0.5
   duration: 0.15
 --- !u!114 &3360294590374952200
@@ -538,6 +553,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4dbea1d74f3c4b4794f30d295f6ea9c, type: 2}
   - {fileID: 11400000, guid: c4f8bda35b4ad304d8db63382d412402, type: 2}
   - {fileID: 11400000, guid: 88b0b9bc68d448a499e5c55909a60d84, type: 2}
+  selectedElectronAbility: {fileID: 0}
 --- !u!114 &3360294590374952210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcae72ab680ce9f4eaa35ed0ea61792e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
+  hp: 50
   dmgReduction: 0
 --- !u!114 &323532125127773714
 MonoBehaviour:
@@ -658,7 +674,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -683,4 +699,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.1

@@ -10,8 +10,10 @@ public abstract class ItemBase : ScriptableObject
     public Sprite icon;
 
     protected GameObject player;
-    private void OnEnable() {
+    protected void GetReference() {
         player = GameObject.FindWithTag("Player");
     }
-    public abstract void ActivateOnCollision();
+    public virtual void ActivateOnCollision(){
+        GetReference();
+    }
 }

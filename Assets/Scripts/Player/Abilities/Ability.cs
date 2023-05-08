@@ -16,6 +16,7 @@ public abstract class Ability : ScriptableObject {
     protected BallDash ballDash;
     protected AbilityManager abilityManager;
     protected GameObject player;
+    public ElectronHolder electronHolder;
 
     //Item to consume
     //public ElectronHolder.ElectronType electronToConsume;
@@ -26,6 +27,7 @@ public abstract class Ability : ScriptableObject {
         ballDash = player.GetComponent<BallDash>();
         abilityManager = GameObject.FindWithTag("Player").GetComponent<AbilityManager>();
         durationTimer = buffDuration;
+        electronHolder = GameObject.FindWithTag("Player").GetComponent<ElectronHolder>();
     }
 
     public virtual void OnUpdate(){
@@ -44,4 +46,7 @@ public abstract class Ability : ScriptableObject {
         OnEnable();
     }
     public abstract void Deactivate();
+    public virtual bool CanActivate(){
+        return true;
+    }
 }

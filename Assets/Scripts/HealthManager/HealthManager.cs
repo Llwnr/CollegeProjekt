@@ -49,9 +49,9 @@ public class HealthManager : MonoBehaviour, IDamagable
 
     public void DealDamage(float dmgAmt){
         float newDmgAmt = dmgAmt - dmgAmt*dmgReduction/100f;
-        if(transform.tag == "Player"){
-            newDmgAmt = (int)newDmgAmt;
-        }
+        newDmgAmt = (int)newDmgAmt;
+        //Don't notify subscribers of player taking 0 damage
+        if(newDmgAmt < 1f) return;
         hp -= newDmgAmt;
         NotifyObservers(newDmgAmt, transform);
         if(hp < 0){

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: DashLonger
   description: Dashes for a longer time
-  extraDashDuration: 0.1
-  slowDownFactor: 0.2
+  extraDashDuration: 0.16
+  slowDownFactor: 0.1
