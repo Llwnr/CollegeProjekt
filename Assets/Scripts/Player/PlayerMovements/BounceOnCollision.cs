@@ -12,6 +12,8 @@ public class BounceOnCollision : MonoBehaviour
     private float bounceTimer;
     private bool isBouncing = false;
 
+    [SerializeField]private float slowdownFactor;
+
     [Header ("Camera Shake")]
     [SerializeField]private float shakeIntensity;
     [SerializeField]private float duration;
@@ -44,7 +46,7 @@ public class BounceOnCollision : MonoBehaviour
     }
 
     void SlowdownBounceSpeed(){
-        if(Mathf.Abs(rb.velocity.magnitude) > 0.1f)rb.velocity *= 0.9f;
+        if(Mathf.Abs(rb.velocity.magnitude) > 0.1f)rb.velocity *= 1-slowdownFactor;
     }
 
     void DisableDash(){
@@ -67,7 +69,7 @@ public class BounceOnCollision : MonoBehaviour
             float speed = velocityOnHit.magnitude;
             //Bounce in the correct angle and direction
             Vector2 dir = Vector2.Reflect(velocityOnHit.normalized, other.contacts[0].normal);
-            rb.velocity = dir * (speed*bounceForce) + dir*6f;
+            rb.velocity = dir * (speed*bounceForce) + dir*3f;
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
             StartScreenShake(speed);

@@ -110,7 +110,6 @@ public class BallDash : MonoBehaviour
             Dash();
             NotifyDashStart();
             AddSpeedLimit();
-            ResetExtraForcesFromCharge();
         }
         //Manage durations
         if(isDashing){
@@ -127,6 +126,7 @@ public class BallDash : MonoBehaviour
     }
 
     void Dash(){
+        Time.timeScale = 0.1f;
         //Limit to maximum values incase maximum values change when dash property changes
         ChargeForce();
 
@@ -152,6 +152,7 @@ public class BallDash : MonoBehaviour
         StopPhase();
         NotifyDashEnd();
         RemoveASpeedLimiter();
+        ResetExtraForcesFromCharge();
     }
 
     void PhaseBall(){
@@ -221,6 +222,10 @@ public class BallDash : MonoBehaviour
 
     public bool IsBallDashing(){
         return isDashing;
+    }
+    public bool IsAtMaxCharge(){
+        if(maxExtraSpeed == extraSpeed) return true;
+        return false;
     }
 
     //BUFFS ARE HERE:

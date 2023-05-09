@@ -26,11 +26,25 @@ public class ElectronSelectionRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.mouseScrollDelta.y != 0){
-            lastInput = (int)Input.mouseScrollDelta.y;
+        // if(Input.mouseScrollDelta.y != 0){
+        //     lastInput = (int)Input.mouseScrollDelta.y;
+        // }
+        // if(Input.mouseScrollDelta.y != 0 && Mathf.Abs(Input.mouseScrollDelta.y) > Mathf.Abs(mouseScrollAmt)){
+        //     mouseScrollAmt = (int)Input.mouseScrollDelta.y;
+        //     timer -= timer*0.4f;
+        //     if(timer < 0) timer = 0;
+        //     rotationEnded = false;
+        // }
+        if(Input.GetKeyDown(KeyCode.A)){
+            mouseScrollAmt = 1;
+            lastInput = 1;
+            timer -= timer*0.4f;
+            if(timer < 0) timer = 0;
+            rotationEnded = false;
         }
-        if(Input.mouseScrollDelta.y != 0 && Mathf.Abs(Input.mouseScrollDelta.y) > Mathf.Abs(mouseScrollAmt)){
-            mouseScrollAmt = (int)Input.mouseScrollDelta.y;
+        if(Input.GetKeyDown(KeyCode.D)){
+            mouseScrollAmt = -1;
+            lastInput = -1;
             timer -= timer*0.4f;
             if(timer < 0) timer = 0;
             rotationEnded = false;
