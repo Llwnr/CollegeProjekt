@@ -109,10 +109,11 @@ GameObject:
   - component: {fileID: 3360294590374952200}
   - component: {fileID: 3360294590374952205}
   - component: {fileID: 3360294590374952204}
-  - component: {fileID: 2944090367347283433}
+  - component: {fileID: 7044498567945249226}
   - component: {fileID: 3360294590374952210}
   - component: {fileID: 3360294590374952208}
   - component: {fileID: 323532125127773714}
+  - component: {fileID: 7061307901248863231}
   m_Layer: 20
   m_Name: Ball
   m_TagString: Player
@@ -222,7 +223,7 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -473,10 +474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a960ae0d15f0ea8459d82cac42f510ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceDuration: 0.3
+  bounceDuration: 0.25
   maxBounceSpeed: 18
-  bounceForce: 1.2
-  slowdownFactor: 0
+  bounceForce: 1
+  slowdownFactor: 0.15
   shakeIntensity: 0.5
   duration: 0.15
 --- !u!114 &3360294590374952200
@@ -516,15 +517,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e464aeb4ff12b846a44150cf3ea81c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueElectrons: 2
+  blueElectrons: 5
   redElectrons: 2
-  orangeElectrons: 0
+  orangeElectrons: 6
   greyElectrons: 2000000
   blue: {r: 0, g: 0.048322916, b: 1, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
-  orange: {r: 1, g: 0.2872481, b: 0, a: 1}
-  grey: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
---- !u!114 &2944090367347283433
+  orange: {r: 1, g: 0.59229463, b: 0, a: 1}
+  grey: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
+--- !u!114 &7044498567945249226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,15 +534,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3360294590374952195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ad6f24ee591fa4bbd70d6414381985, type: 3}
+  m_Script: {fileID: 11500000, guid: 69b66e54d93e3a243a2079d75b41b3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  electronAbility:
-  - {fileID: 11400000, guid: aaf070f8efb70334b8306427546731e1, type: 2}
-  - {fileID: 11400000, guid: a4dbea1d74f3c4b4794f30d295f6ea9c, type: 2}
-  - {fileID: 11400000, guid: c4f8bda35b4ad304d8db63382d412402, type: 2}
-  - {fileID: 11400000, guid: 88b0b9bc68d448a499e5c55909a60d84, type: 2}
-  selectedElectronAbility: {fileID: 0}
 --- !u!114 &3360294590374952210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,6 +581,18 @@ MonoBehaviour:
   textColor:
     serializedVersion: 2
     rgba: 4278190205
+--- !u!114 &7061307901248863231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360294590374952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe54171c335e5f0459d694a4fe336712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4052708904013585998
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +704,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5263630281896544233}
-  - component: {fileID: 1402335559804694857}
   m_Layer: 20
   m_Name: AimPointerPivot
   m_TagString: Untagged
@@ -721,15 +727,3 @@ Transform:
   m_Father: {fileID: 3360294590374952192}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1402335559804694857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5051737731755248623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe54171c335e5f0459d694a4fe336712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

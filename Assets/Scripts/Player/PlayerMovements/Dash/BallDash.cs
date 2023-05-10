@@ -42,6 +42,10 @@ public class BallDash : MonoBehaviour
     [SerializeField]private float chargeSpeed;//So that player can be buffed for faster charges
     private bool isPhaseThrough;//Can the dash go through enemies
 
+    //POWERUPS
+    private float extraDuration = 0;
+    private int chargeFrameReduction = 0;
+
     //For dash ability
     //Ability is durational while dash ability is only when dashing
     private Ability abilityToGive;
@@ -68,9 +72,10 @@ public class BallDash : MonoBehaviour
 
     //To allow different types of dashes
     public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, Gradient dashColor, bool isPhaseThrough){
+        Debug.Log("setting dash");
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
-        this.duration = duration;
+        this.duration = duration+extraDuration;
         this.maxExtraSpeed = maxExtraSpeed;
         this.maxExtraForce = maxExtraForce;
         this.framesForMaxCharge = framesForMaxCharge;
@@ -96,7 +101,7 @@ public class BallDash : MonoBehaviour
     }
 
     void ResetDuration(){
-        durationTimer = duration;
+        durationTimer = duration+extraDuration;
     }
 
     // Update is called once per frame
@@ -126,7 +131,6 @@ public class BallDash : MonoBehaviour
     }
 
     void Dash(){
-        Time.timeScale = 0.1f;
         //Limit to maximum values incase maximum values change when dash property changes
         ChargeForce();
 
@@ -177,7 +181,8 @@ public class BallDash : MonoBehaviour
     }
 
     public void ChargeForce(){
-        float totalFramesToTake = 1+framesForMaxCharge/chargeSpeed;
+        float totalFramesToTake = 1+(framesForMaxCharge-chargeFrameReduction)/chargeSpeed;
+        if(totalFramesToTake < 1) totalFramesToTake = 1;
         extraSpeed += maxExtraSpeed / totalFramesToTake;
         extraForce += maxExtraForce / totalFramesToTake;
         //Also limit it
@@ -236,7 +241,11 @@ public class BallDash : MonoBehaviour
     }
     //Increase dash duration
     public void IncreaseDashDuration(float byAmt){
-        durationTimer += byAmt;
+        extraDuration = byAmt;
+    }
+
+    public void SetChargeFrameReduction(int amt){
+        chargeFrameReduction = amt;
     }
 
     

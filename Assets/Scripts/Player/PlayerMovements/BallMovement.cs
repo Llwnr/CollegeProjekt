@@ -28,7 +28,7 @@ public class BallMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        MoveBall();
+        //MoveBall();
     }
 
     void GetDirection(){

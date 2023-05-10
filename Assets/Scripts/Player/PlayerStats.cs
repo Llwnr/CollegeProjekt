@@ -14,6 +14,8 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField]private float dashDmgMultiplier;//Different types of dashes will have different damage multipliers
 
+    [SerializeField]private float redElectronMultiplier = 0;
+
     private float finalDmg;
 
     private float powerUpMultiplier = 1;
@@ -41,21 +43,23 @@ public class PlayerStats : MonoBehaviour
     public float GetDashDmgMultiplier(){
         return dashDmgMultiplier;
     }
+    public void SetRedElectronMultiplier(float amt){
+        redElectronMultiplier = amt;
+    }
 
     //Calculate damage after buffs and when on high speed
     //Called only when inflicting damage
     public float GetMyMaxDamage(){
         if(ballDash.IsAtMaxCharge()){
-            maxChargeBuff = 5;
+            maxChargeBuff = 8;
         }else{
             maxChargeBuff = 0;
         }
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.5f);
         finalDmg = (baseDmg)+highSpeedBuff*dashDmgMultiplier;
-        finalDmg *= powerUpMultiplier;
         finalDmg += maxChargeBuff;
-        finalDmg -= 3;
+        finalDmg *= powerUpMultiplier*(1+redElectronMultiplier);
         if(finalDmg < 0) finalDmg = 0;
         return finalDmg;
     }

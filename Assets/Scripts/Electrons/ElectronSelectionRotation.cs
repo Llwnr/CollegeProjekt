@@ -35,16 +35,26 @@ public class ElectronSelectionRotation : MonoBehaviour
         //     if(timer < 0) timer = 0;
         //     rotationEnded = false;
         // }
-        if(Input.GetKeyDown(KeyCode.A)){
-            mouseScrollAmt = 1;
-            lastInput = 1;
+        if(Input.GetKeyDown(KeyCode.Q)){
+            mouseScrollAmt = 0;
             timer -= timer*0.4f;
             if(timer < 0) timer = 0;
             rotationEnded = false;
         }
-        if(Input.GetKeyDown(KeyCode.D)){
-            mouseScrollAmt = -1;
-            lastInput = -1;
+        if(Input.GetKeyDown(KeyCode.W)){
+            mouseScrollAmt = 1;
+            timer -= timer*0.4f;
+            if(timer < 0) timer = 0;
+            rotationEnded = false;
+        }
+        if(Input.GetKeyDown(KeyCode.E)){
+            mouseScrollAmt = 2;
+            timer -= timer*0.4f;
+            if(timer < 0) timer = 0;
+            rotationEnded = false;
+        }
+        if(Input.GetKeyDown(KeyCode.R)){
+            mouseScrollAmt = 3;
             timer -= timer*0.4f;
             if(timer < 0) timer = 0;
             rotationEnded = false;
@@ -53,14 +63,14 @@ public class ElectronSelectionRotation : MonoBehaviour
         timer += Time.deltaTime*speed;
         if(timer > 1){
             timer = 1;
-            electronBox.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, zAngleBeforeRot+mouseScrollAmt*90f, timer));
+            electronBox.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, 45+mouseScrollAmt*90f, timer));
             rotationEnded = true;
             timer = 0;
             mouseScrollAmt = 0;
             zAngleBeforeRot = electronBox.localEulerAngles.z;
             return;
         }
-        electronBox.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, zAngleBeforeRot+mouseScrollAmt*90f, timer));
+        electronBox.localEulerAngles = new Vector3(0,0, Mathf.Lerp(zAngleBeforeRot, 45+mouseScrollAmt*90f, timer));
     }
     private void LateUpdate() {
         //If the top most electron is not available then rotate again
