@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -9051329144708854409}
   m_Layer: 0
   m_Name: ElectronBlue
-  m_TagString: Untagged
+  m_TagString: Electron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

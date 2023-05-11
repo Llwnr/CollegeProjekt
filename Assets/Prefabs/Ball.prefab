@@ -537,6 +537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b66e54d93e3a243a2079d75b41b3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redCount: 0
+  blueCount: 0
+  orangeCount: 0
 --- !u!114 &3360294590374952210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDmg: 3
   dashDmgMultiplier: 0
+  redElectronMultiplier: 0
 --- !u!114 &3360294590374952208
 MonoBehaviour:
   m_ObjectHideFlags: 0

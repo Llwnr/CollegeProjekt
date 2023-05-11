@@ -8,6 +8,7 @@ TagManager:
   - PreventTouching
   - DmgPopupCanvas
   - ElectronManager
+  - Electron
   layers:
   - Default
   - TransparentFX

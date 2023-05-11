@@ -18,8 +18,9 @@ public class GiveElectrons : MonoBehaviour
     }
 
     void ManageElectronGeneration(Transform other){
-        if(other.CompareTag("Player")){
-            int totalElectronCount = (int)(other.transform.GetComponent<SpeedInfo>().GetSpeed()/speedThreshold) + electronCount;
+        if(other.CompareTag("Player") || (other.parent != null && other.parent.CompareTag("Player"))){
+            GameObject player = GameObject.FindWithTag("Player");
+            int totalElectronCount = (int)(player.transform.GetComponent<SpeedInfo>().GetSpeed()/speedThreshold) + electronCount;
             ThrowElectrons(totalElectronCount);
         }
     }
