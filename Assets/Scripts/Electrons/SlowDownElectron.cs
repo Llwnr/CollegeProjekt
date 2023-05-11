@@ -16,7 +16,6 @@ public class SlowDownElectron : MonoBehaviour
             rb.velocity *= 0.975f;
         }else{
             rb.velocity = Vector2.zero;
-            Destroy(this);
         }
     }
 }

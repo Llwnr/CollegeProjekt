@@ -7,9 +7,15 @@ public class HealthManager : MonoBehaviour, IDamagable
     [SerializeField]private float hp;
     private float maxHp;
 
-    [SerializeField]private float dmgReduction;
+    private int dmgReduction;
+
+    private bool isImmune = false;
     public void SetDmgReduction(float value){
-        dmgReduction = value;
+        dmgReduction = (int)value;
+    }
+
+    public void SetDmgImmunity(bool value){
+        isImmune = value;
     }
 
     //Observer pattern.
@@ -48,7 +54,10 @@ public class HealthManager : MonoBehaviour, IDamagable
     }
 
     public void DealDamage(float dmgAmt){
-        float newDmgAmt = dmgAmt - dmgAmt*dmgReduction/100f;
+        //Don't deal damage when player is immune
+        if(isImmune) return;
+
+        float newDmgAmt = dmgAmt - dmgReduction;
         newDmgAmt = (int)newDmgAmt;
         //Don't notify subscribers of player taking 0 damage
         if(newDmgAmt < 1f) return;

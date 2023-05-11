@@ -8,7 +8,7 @@ public class VacuumElectrons : MonoBehaviour
     private Transform target;
     private void OnTriggerStay2D(Collider2D other) {
         if(other.transform.CompareTag("Electron")){
-            Vector2 dir = transform.position - other.transform.position;
+            Vector2 dir = (transform.position - other.transform.position).normalized;
             other.GetComponent<Rigidbody2D>().AddForce(dir*suckPower);
         }
     }

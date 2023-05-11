@@ -1341,12 +1341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8df23aade43074fb7f1958ede08c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &84851546 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 840044780211676601, guid: 33e064fd05d3bb846a384d54066c3f8b,
-    type: 3}
-  m_PrefabInstance: {fileID: 954803934}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &130500760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,58 +1435,13 @@ RectTransform:
   m_Children:
   - {fileID: 529189657}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &169529422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 169529423}
-  - component: {fileID: 169529424}
-  m_Layer: 0
-  m_Name: ElectronChanger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &169529423
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169529422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 227831514}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &169529424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169529422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8344876e7ceecae47a78aa74a332d1d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  electronSelectionBox: {fileID: 201806595}
 --- !u!1 &192599964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,14 +1508,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &201806595 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 840044780211676602, guid: 33e064fd05d3bb846a384d54066c3f8b,
-    type: 3}
-  m_PrefabInstance: {fileID: 954803934}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &227831513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,9 +1542,8 @@ Transform:
   - {fileID: 1958523445}
   - {fileID: 63774177}
   - {fileID: 290400748}
-  - {fileID: 169529423}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &290400747
 GameObject:
@@ -1724,7 +1666,7 @@ PrefabInstance:
     - target: {fileID: 4984705589631547163, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547163, guid: b23542b029531e44f88aa1cf18718f1f,
         type: 3}
@@ -60014,6 +59956,75 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &394301508
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157298, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580527214041157309, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30,
+        type: 3}
+      propertyPath: m_Name
+      value: AttractElectrons
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e52a2cd2940e4d4cb6cd229dcdfcf30, type: 3}
 --- !u!1 &529189656
 GameObject:
   m_ObjectHideFlags: 0
@@ -60211,6 +60222,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7588073886340337162, guid: bb1ef1dcc5032ac409461e7eba211d1a,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7588073886340337164, guid: bb1ef1dcc5032ac409461e7eba211d1a,
         type: 3}
       propertyPath: m_Pivot.x
@@ -60224,7 +60240,7 @@ PrefabInstance:
     - target: {fileID: 7588073886340337164, guid: bb1ef1dcc5032ac409461e7eba211d1a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7588073886340337164, guid: bb1ef1dcc5032ac409461e7eba211d1a,
         type: 3}
@@ -60355,15 +60371,15 @@ PrefabInstance:
     - target: {fileID: 329954232, guid: 0e1e7f1215696ba4bae469da7ed63867, type: 3}
       propertyPath: electronBox
       value: 
-      objectReference: {fileID: 84851546}
+      objectReference: {fileID: 0}
     - target: {fileID: 329954233, guid: 0e1e7f1215696ba4bae469da7ed63867, type: 3}
       propertyPath: electronBox
       value: 
-      objectReference: {fileID: 84851546}
+      objectReference: {fileID: 0}
     - target: {fileID: 100582474507501890, guid: 0e1e7f1215696ba4bae469da7ed63867,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100582474507501890, guid: 0e1e7f1215696ba4bae469da7ed63867,
         type: 3}
@@ -60475,7 +60491,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786459, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -60498,7 +60514,7 @@ Transform:
   m_Children:
   - {fileID: 558737578}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &924639547
 MonoBehaviour:
@@ -60561,7 +60577,7 @@ PrefabInstance:
     - target: {fileID: 5296754926253455767, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5296754926253455767, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
@@ -60833,7 +60849,7 @@ Transform:
   m_Children:
   - {fileID: 24080573}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374853487
 GameObject:
@@ -61108,16 +61124,17 @@ MonoBehaviour:
   - 'Press Space to change your dash type.
 
     Do this a couple more times to continue'
-  - "Hitting enemies at high speed will drop electrons. \n<color=red>Red:</color>
-    Increase dmg done and taken\n<color=blue>Blue:</color> Longer dash\n<color=orange>Orange:</color>Damage
-    reduction when dashing\n<color=grey>Grey:</color>Nothing"
-  - 'The selected electron out of 4 is highlighted, as seen in the bottom middle.
+  - 'Hitting enemies at high speed will drop electrons. These provide passive buffs
 
-    The
-    selected electron is consumed to gain its effect as explained in previous info.
+    <color=red>Red:</color>
+    Increase dmg done
 
-    Scroll
-    mouse to change selection'
+    <color=blue>Blue:</color> Faster charge
+
+    <color=orange>Orange:</color>Damage
+    reduction
+
+    <color=grey>Grey:</color>Nothing'
   - Right click to activate your special ability
   - All done here! Have fun
   triggers: {fileID: 0}
@@ -61131,7 +61148,7 @@ PrefabInstance:
     - target: {fileID: 3360294590374952192, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3360294590374952192, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
@@ -61285,8 +61302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2156fff02294c4b46b97c9a4a4382655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  electronSelectionBox: {fileID: 201806595}
-  electronManager: {fileID: 1786551539}
 --- !u!1 &1958523444
 GameObject:
   m_ObjectHideFlags: 0

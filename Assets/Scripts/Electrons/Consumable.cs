@@ -6,6 +6,7 @@ public class Consumable : MonoBehaviour
 {
     [SerializeField]private float inconsumableDuration;
     [SerializeField]private ElectronHolder.ElectronType electronType;
+
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Player")){
             other.transform.GetComponent<ElectronHolder>().AddElectron(electronType);

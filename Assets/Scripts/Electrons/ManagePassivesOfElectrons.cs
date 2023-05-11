@@ -26,13 +26,13 @@ public class ManagePassivesOfElectrons : MonoBehaviour
             //If the number of electron you're holding didn't change then dont do anything
             switch(electronType){
                 case ElectronHolder.ElectronType.red:
-                    if(currCount == redCount) return;
+                    if(currCount == redCount) continue;
                     break;
                 case ElectronHolder.ElectronType.blue:
-                    if(currCount == blueCount) return;
+                    if(currCount == blueCount) continue;
                     break;
                 case ElectronHolder.ElectronType.orange:
-                    if(currCount == orangeCount) return;
+                    if(currCount == orangeCount) continue;
                     break;
                 default: break;
             }
@@ -40,21 +40,19 @@ public class ManagePassivesOfElectrons : MonoBehaviour
         }
     }
 
-    private void SetElectronPassive(ElectronHolder.ElectronType electronType){
-        if(electronType == ElectronHolder.ElectronType.grey) return;
-        
+    private void SetElectronPassive(ElectronHolder.ElectronType electronType){     
         switch(electronType){
             case ElectronHolder.ElectronType.red:
                 redCount = currCount;
-                playerStats.SetRedElectronMultiplier(redCount/80f);
+                playerStats.SetRedElectronMultiplier(redCount/40f);
                 break;
             case ElectronHolder.ElectronType.blue:
                 blueCount = currCount;
-                ballDash.SetChargeFrameReduction((int)blueCount/10);
+                ballDash.SetChargeFrameReduction((int)blueCount/20);
                 break;
             case ElectronHolder.ElectronType.orange:
                 orangeCount = currCount;
-                playerStats.GetComponent<HealthManager>().SetDmgReduction(orangeCount/200f);
+                playerStats.GetComponent<HealthManager>().SetDmgReduction((int)orangeCount/15);
                 break;
             default: break;
         }

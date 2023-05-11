@@ -270,8 +270,8 @@ MonoBehaviour:
   - {fileID: 5477711098660444350, guid: 61c04d7437f97b5488925fefb52c505e, type: 3}
   - {fileID: 5477711098660444350, guid: 769bc7b093426954d8de59080c35706d, type: 3}
   - {fileID: 5477711098660444350, guid: 9f914d9f5127c9a488ace444bf509c1b, type: 3}
-  electronCount: 2
-  speedThreshold: 12
+  electronCount: 1
+  speedThreshold: 18
 --- !u!114 &4984705589631547160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 150
   dmgReduction: 0
+  isImmune: 0
 --- !u!114 &4984705589631547167
 MonoBehaviour:
   m_ObjectHideFlags: 0
