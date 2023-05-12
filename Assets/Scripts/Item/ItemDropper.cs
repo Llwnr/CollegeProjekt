@@ -13,7 +13,6 @@ public class ItemDropper : MonoBehaviour, IOnDeath
     }
     public void OnDeath()
     {
-        Debug.Log("Drop new item");
         int randomindex = Random.Range(0,itemData.Count);
         //Create the dummy gameobject and give it the script as well as graphics
         GameObject newItem = Instantiate(itemToDrop, transform.position, Quaternion.identity);
