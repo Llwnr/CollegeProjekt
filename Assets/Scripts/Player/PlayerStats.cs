@@ -57,10 +57,12 @@ public class PlayerStats : MonoBehaviour
         }
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.5f);
+        Debug.Log("High speed: " + highSpeedBuff);
         finalDmg = (baseDmg)+highSpeedBuff*dashDmgMultiplier;
         finalDmg += maxChargeBuff;
         finalDmg *= powerUpMultiplier*(1+redElectronMultiplier);
         if(finalDmg < 0) finalDmg = 0;
+        Debug.Log("final dmg: " + finalDmg);
         return finalDmg;
     }
 }

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1c0d8aaa000e1418a73d1084ad01cf, type: 3}
-  m_Name: Heal
+  m_Script: {fileID: 11500000, guid: 3a81ec833e56fae49a23e8e9c2835b66, type: 3}
+  m_Name: MaxDashUpgrade
   m_EditorClassIdentifier: 
   name: 
   description: 
-  icon: {fileID: 21300000, guid: 407ee5e0c74d46949896c886eac6a2a8, type: 3}
-  healAmt: 10

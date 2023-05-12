@@ -11,7 +11,6 @@ public class DisplayDashCharge : MonoBehaviour
     // Start is called before the first frame update
     private void Start() {
         ballDash = GetComponent<BallDash>();
-        
     }
 
     // Update is called once per frame

@@ -45,6 +45,8 @@ public class BallDash : MonoBehaviour
     //POWERUPS
     private float extraDuration = 0;
     private int chargeFrameReduction = 0;
+    private int increasedFramesForMaxCharge = 0;
+    private float buffedMaxExtraSpeed, buffedMaxExtraForce = 0;
 
     //For dash ability
     //Ability is durational while dash ability is only when dashing
@@ -181,13 +183,13 @@ public class BallDash : MonoBehaviour
     }
 
     public void ChargeForce(){
-        float totalFramesToTake = 1+(framesForMaxCharge-chargeFrameReduction)/chargeSpeed;
+        float totalFramesToTake = 1+(framesForMaxCharge-chargeFrameReduction+increasedFramesForMaxCharge)/chargeSpeed;
         if(totalFramesToTake < 1) totalFramesToTake = 1;
-        extraSpeed += maxExtraSpeed / totalFramesToTake;
-        extraForce += maxExtraForce / totalFramesToTake;
+        extraSpeed += (maxExtraSpeed+buffedMaxExtraSpeed) / totalFramesToTake;
+        extraForce += (maxExtraForce+buffedMaxExtraForce) / totalFramesToTake;
         //Also limit it
-        if(extraSpeed > maxExtraSpeed) extraSpeed = maxExtraSpeed;
-        if(extraForce > maxExtraForce) extraForce = maxExtraForce;
+        if(extraSpeed > maxExtraSpeed+buffedMaxExtraSpeed) extraSpeed = maxExtraSpeed+buffedMaxExtraSpeed;
+        if(extraForce > maxExtraForce+buffedMaxExtraForce) extraForce = maxExtraForce+buffedMaxExtraForce;
     }
 
     void AddSpeedLimit(){
@@ -202,7 +204,7 @@ public class BallDash : MonoBehaviour
 
     public float GetSpeedLimit(){
         //Get maximum dash speed limit
-        return maxDashSpeed+maxExtraSpeed;
+        return maxDashSpeed+maxExtraSpeed+buffedMaxExtraSpeed;
     }
 
     void ResetExtraForcesFromCharge(){
@@ -211,7 +213,7 @@ public class BallDash : MonoBehaviour
     }
 
     public float GetMaxCharge(){
-        return maxExtraSpeed;
+        return maxExtraSpeed+buffedMaxExtraSpeed;
     }
     public float GetCurrentCharge(){
         return extraSpeed;
@@ -229,15 +231,15 @@ public class BallDash : MonoBehaviour
         return isDashing;
     }
     public bool IsAtMaxCharge(){
-        if(maxExtraSpeed == extraSpeed) return true;
+        if(extraSpeed >= maxExtraSpeed+buffedMaxExtraSpeed) return true;
         return false;
     }
 
     //BUFFS ARE HERE:
     //INSTANT CHARGE
     public void SetChargeToMax(){
-        extraSpeed = maxExtraSpeed;
-        extraForce = maxExtraForce;
+        extraSpeed = maxExtraSpeed+buffedMaxExtraSpeed;
+        extraForce = maxExtraForce+buffedMaxExtraForce;
     }
     //Increase dash duration
     public void IncreaseDashDuration(float byAmt){
@@ -246,6 +248,14 @@ public class BallDash : MonoBehaviour
 
     public void SetChargeFrameReduction(int amt){
         chargeFrameReduction = amt;
+    }
+
+    public void IncreaseFramesForMaxChargeBy(int amt){
+        increasedFramesForMaxCharge = amt;
+    }
+
+    public void SetBuffedMaxSpeed(float speedValue){
+        buffedMaxExtraForce = buffedMaxExtraSpeed = speedValue;
     }
 
     
