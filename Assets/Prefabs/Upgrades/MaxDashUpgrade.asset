@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Dash Power +
   description: Deals more damage from dash
   icon: {fileID: 0}
-  redElectronCost: 0
+  redElectronCost: 7
   orangeElectronCost: 5
   blueElectronCost: 0

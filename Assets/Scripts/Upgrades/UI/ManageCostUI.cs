@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ManageCostUI : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class ManageCostUI : MonoBehaviour
 
     void MakeElectronCostIcon(Color electronColor, int costAmt){
         GameObject newIcon = Instantiate(electronIcon, Vector3.zero, Quaternion.identity);
+        newIcon.GetComponent<Image>().color = electronColor;
         //Set the icon to grid container
         newIcon.transform.SetParent(transform.GetChild(0), false);
         newIcon.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = costAmt.ToString();
