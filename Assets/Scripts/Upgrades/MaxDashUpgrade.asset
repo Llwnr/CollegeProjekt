@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a81ec833e56fae49a23e8e9c2835b66, type: 3}
   m_Name: MaxDashUpgrade
   m_EditorClassIdentifier: 
-  name: 
-  description: 
+  name: Dash Power +
+  description: Deals more damage from dash
+  icon: {fileID: 0}
+  redElectronCost: 0
+  orangeElectronCost: 5
+  blueElectronCost: 0
