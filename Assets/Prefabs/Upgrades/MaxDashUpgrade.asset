@@ -18,3 +18,4 @@ MonoBehaviour:
   redElectronCost: 7
   orangeElectronCost: 5
   blueElectronCost: 0
+  increaseBy: 5

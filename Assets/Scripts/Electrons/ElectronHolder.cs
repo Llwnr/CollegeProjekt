@@ -87,6 +87,28 @@ public class ElectronHolder: MonoBehaviour
         }
     }
 
+    public bool CanTakeElectron(ElectronType electronType, int cost){
+        switch(electronType){
+            case ElectronType.blue:
+                if(blueElectrons-cost >= 0){
+                    return true;
+                }
+                return false;
+            case ElectronType.red:
+                if(redElectrons-cost >= 0){
+                    return true;
+                }
+                return false;
+            case ElectronType.orange:
+                if(orangeElectrons-cost >= 0){
+                    return true;
+                }
+                return false;
+            default:
+                return false;
+        }
+    }
+
     public int GetMyElectronCount(ElectronType electronType){
         switch(electronType){
             case ElectronType.red:

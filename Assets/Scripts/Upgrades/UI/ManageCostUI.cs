@@ -7,22 +7,39 @@ using UnityEngine.UI;
 public class ManageCostUI : MonoBehaviour
 {
     [SerializeField]private GameObject electronIcon;
+    private int redCost, orangeCost, blueCost = 0;
     
     public void SetElectronCost(ElectronHolder.ElectronType electronType, int costAmt){
         switch(electronType){
             case ElectronHolder.ElectronType.red:
                 MakeElectronCostIcon(Color.red, costAmt);
+                redCost = costAmt;
                 break;
             case ElectronHolder.ElectronType.orange:
                 Debug.Log("making orange");
                 MakeElectronCostIcon(Color.yellow, costAmt);
+                orangeCost = costAmt;
                 break;
             case ElectronHolder.ElectronType.blue:
                 MakeElectronCostIcon(Color.blue, costAmt);
+                blueCost = costAmt;
                 break;
             default:
                 Debug.Log("No such electron type");
                 break;
+        }
+    }
+
+    public int GetCost(ElectronHolder.ElectronType electronType){
+        switch(electronType){
+            case ElectronHolder.ElectronType.red:
+                return redCost;
+            case ElectronHolder.ElectronType.orange:
+                return orangeCost;
+            case ElectronHolder.ElectronType.blue:
+                return blueCost;
+            default:
+                return 0;
         }
     }
 

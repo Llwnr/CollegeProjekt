@@ -33,6 +33,6 @@ public class UpgradesPanel : MonoBehaviour
     }
 
     void SetUpgradeInfo(SetUpgradeInfo upgradeBox, Upgrade upgradeInfo){
-        upgradeBox.SetInfo(upgradeInfo.name, upgradeInfo.description);
+        upgradeBox.SetInfo(upgradeInfo.name, upgradeInfo.description, upgradeInfo);
     }
 }

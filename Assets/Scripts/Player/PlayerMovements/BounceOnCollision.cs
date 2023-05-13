@@ -82,7 +82,8 @@ public class BounceOnCollision : MonoBehaviour
     }
 
     void StartScreenShake(float ballSpeed){
-        ShakeScreen(Mathf.Max(shakeIntensity * 0.08f * ballSpeed, shakeIntensity), Mathf.Max(duration*ballSpeed*0.05f, duration));
+        //Range intensity from 0.5 to 2
+        ShakeScreen(Mathf.Min(2.5f, Mathf.Max(shakeIntensity * 0.08f * ballSpeed, shakeIntensity)), Mathf.Min(0.75f, Mathf.Max(duration*ballSpeed*0.05f, duration)));
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

@@ -257,6 +257,9 @@ public class BallDash : MonoBehaviour
     public void SetBuffedMaxSpeed(float speedValue){
         buffedMaxExtraForce = buffedMaxExtraSpeed = speedValue;
     }
+    public float GetBuffedMaxSpeed(){
+        return buffedMaxExtraSpeed;
+    }
 
     
 }
