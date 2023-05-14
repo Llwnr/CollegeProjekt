@@ -251,7 +251,7 @@ public class BallDash : MonoBehaviour
     }
 
     public void IncreaseFramesForMaxChargeBy(int amt){
-        increasedFramesForMaxCharge = amt;
+        increasedFramesForMaxCharge += amt;
     }
 
     public void SetBuffedMaxSpeed(float speedValue){

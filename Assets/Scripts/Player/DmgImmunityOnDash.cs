@@ -15,7 +15,7 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         ballDash.AddDashObserver(this);
     }
 
-    private void OnDisable() {
+    private void OnDestroy() {
         ballDash.RemoveDashObserver(this);
     }
     

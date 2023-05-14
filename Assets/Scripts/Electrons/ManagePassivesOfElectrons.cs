@@ -48,7 +48,7 @@ public class ManagePassivesOfElectrons : MonoBehaviour
                 break;
             case ElectronHolder.ElectronType.blue:
                 blueCount = currCount;
-                ballDash.SetChargeFrameReduction((int)blueCount/20);
+                ballDash.SetChargeFrameReduction((int)blueCount/12);
                 break;
             case ElectronHolder.ElectronType.orange:
                 orangeCount = currCount;

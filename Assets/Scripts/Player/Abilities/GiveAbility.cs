@@ -19,7 +19,6 @@ public class GiveAbility : MonoBehaviour
             //Check if the ability already exists
             AbilityManager abilityManager = player.GetComponent<AbilityManager>();
             if(!abilityManager.GetMyAbilities().Contains(abilityToGive)){
-                Debug.Log("Ability Given");
                 GiveMyAbility(player);
             }
         }

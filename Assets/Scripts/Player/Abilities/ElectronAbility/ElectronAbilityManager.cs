@@ -58,14 +58,14 @@ public class ElectronAbilityManager : MonoBehaviour, IDashObserver
         //     selectedElectronAbility.Activate();
         //     abilityActivated = true;
         // }
-        if(dontUseAbilities) return;
-        //Activate all available electron's ability on dash
-        for(int i=0; i<electronTypes.Count; i++){
-            if(electronHolder.TakeElectron(electronTypes[i])){
-                electronAbility[i].Activate();
-                activatedAbilities.Add(electronAbility[i]);
-            }
-        }
+        // if(dontUseAbilities) return;
+        // //Activate all available electron's ability on dash
+        // for(int i=0; i<electronTypes.Count; i++){
+        //     if(electronHolder.TakeElectron(electronTypes[i])){
+        //         electronAbility[i].Activate();
+        //         activatedAbilities.Add(electronAbility[i]);
+        //     }
+        // }
         
     }
 

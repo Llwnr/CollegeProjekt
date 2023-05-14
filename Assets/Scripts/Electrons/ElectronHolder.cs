@@ -2,25 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class ElectronHolder: MonoBehaviour
 {
     [SerializeField]private int blueElectrons, redElectrons, orangeElectrons;
     [SerializeField]private Color blue, red, orange;
 
-    private bool isEnabled = false;
+    SaveObject mySave;
+    string mySaveJson;
 
-    private void OnEnable() {
-        isEnabled = true;
-    }
-    private void OnDisable() {
-        isEnabled = false;
+    private void Awake() {
+        mySave = new SaveObject{
+            redCount = redElectrons
+        };
     }
 
     public enum ElectronType{
         red,
         blue,
         orange
+    }
+
+    private void Update() {
+        //SAVE AND LOAD
+        if(Input.GetKeyDown(KeyCode.S)){
+            mySave.redCount = redElectrons;
+            mySaveJson = JsonUtility.ToJson(mySave);
+            File.WriteAllText(Application.dataPath + "/save.txt", mySaveJson);
+            Debug.Log("saved");
+        }
+
+        if(Input.GetKeyDown(KeyCode.L)){
+            SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(Application.dataPath+"/save.txt"));
+            redElectrons = myLoad.redCount;   
+        }
     }
 
     public void AddElectron(ElectronType electronType){
@@ -40,7 +56,6 @@ public class ElectronHolder: MonoBehaviour
     }
 
     public bool TakeElectron(ElectronType electronType){
-        if(!isEnabled) return false;
         switch(electronType){
             case ElectronType.blue:
                 if(blueElectrons > 0){
@@ -133,5 +148,9 @@ public class ElectronHolder: MonoBehaviour
             default:
                 return red;
         }
+    }
+
+    private class SaveObject{
+        public int redCount;
     }
 }

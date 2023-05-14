@@ -8,7 +8,9 @@ public class AbilityManager : MonoBehaviour
 
     public void AddAbility(Ability ability){
         if(!ability.CanActivate()) return;
+        if(!this.enabled) return;
         abilities.Add(ability);
+        Debug.Log("Ability Given");
         ability.Activate();
     }
 

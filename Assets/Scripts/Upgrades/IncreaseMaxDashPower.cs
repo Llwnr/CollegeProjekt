@@ -10,5 +10,7 @@ public class IncreaseMaxDashPower : Upgrade
     {
         GetReferences();
         ballDash.SetBuffedMaxSpeed(ballDash.GetBuffedMaxSpeed()+increaseBy);
+        //Also increase the frames for max charge
+        ballDash.IncreaseFramesForMaxChargeBy(1);
     }
 }
