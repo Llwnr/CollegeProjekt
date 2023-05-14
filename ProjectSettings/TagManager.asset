@@ -9,6 +9,8 @@ TagManager:
   - DmgPopupCanvas
   - ElectronManager
   - Electron
+  - Projectile
+  - Bomb
   layers:
   - Default
   - TransparentFX

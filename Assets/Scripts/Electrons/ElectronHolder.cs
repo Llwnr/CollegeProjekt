@@ -12,7 +12,7 @@ public class ElectronHolder: MonoBehaviour
     SaveObject mySave;
     string mySaveJson;
 
-    private void Awake() {
+    private void Start() {
         mySave = new SaveObject{
             redCount = redElectrons
         };

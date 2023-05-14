@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
+    private bool neutralized = false;
     [SerializeField]private float dmgAmt;
     private void OnCollisionEnter2D(Collision2D other) {
         DamageTarget(other.gameObject);
@@ -14,6 +15,11 @@ public class DamagePlayer : MonoBehaviour
     }
 
     void DamageTarget(GameObject other){
+        if(neutralized) return;
+        if(other.CompareTag("Bomb")){
+            GetComponent<SpriteRenderer>().color = Color.white;
+            neutralized = true;
+        }
         if(other.CompareTag("Player")){
             other.GetComponent<IDamagable>().DealDamage(dmgAmt);    
         }
