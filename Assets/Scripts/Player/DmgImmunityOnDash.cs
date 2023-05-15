@@ -30,7 +30,9 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     public void DashStart()
     {
         MakePlayerImmune();
-        spriteRenderer.color = Color.white;
+        Color32 transparentColor = origColor;
+        transparentColor.a = 50;
+        spriteRenderer.color = transparentColor;
     }
 
     public void DashEnd()
@@ -43,7 +45,7 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         immunityActive = true;
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         if(!immunityActive) return;
         immuneFramesCount--;
 
