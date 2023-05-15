@@ -16,12 +16,13 @@ public class DamagePlayer : MonoBehaviour
 
     void DamageTarget(GameObject other){
         if(neutralized) return;
-        if(other.CompareTag("Bomb")){
-            GetComponent<SpriteRenderer>().color = Color.white;
-            neutralized = true;
-        }
         if(other.CompareTag("Player")){
             other.GetComponent<IDamagable>().DealDamage(dmgAmt);    
+            Destroy(gameObject);
         }
+    }
+
+    public void SetNeutralization(bool value){
+        neutralized = value;
     }
 }

@@ -9,6 +9,7 @@ public class InvincibleFramesPlus : Upgrade
     public override void Activate()
     {
         GetReferences();
-        player.GetComponent<DmgImmunityOnDash>().IncreaseDurationBy(increaseBy);
+        GameObject dashBomb = GameObject.FindWithTag("Bomb");
+        dashBomb.transform.localScale += Vector3.one*increaseBy;
     }
 }

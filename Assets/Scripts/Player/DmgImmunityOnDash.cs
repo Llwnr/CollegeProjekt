@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
 {
-    [SerializeField]private float immuneDuration;
-    private float durationCount = 0;
+    [SerializeField]private float immuneFramesDuration;
+    private float immuneFramesCount;
     private HealthManager healthManager;
     private BallDash ballDash;
 
-    private float framesForEnd = -1;
+    private SpriteRenderer spriteRenderer;
+    private Color32 origColor;
 
     private bool immunityActive = false;
 
@@ -17,6 +18,9 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         healthManager = GameObject.FindWithTag("Player").GetComponent<HealthManager>();
         ballDash = GetComponent<BallDash>();
         ballDash.AddDashObserver(this);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        origColor = spriteRenderer.color;
     }
 
     private void OnDestroy() {
@@ -25,8 +29,8 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     
     public void DashStart()
     {
-        framesForEnd = 0;
         MakePlayerImmune();
+        spriteRenderer.color = Color.white;
     }
 
     public void DashEnd()
@@ -34,26 +38,24 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     }
 
     void MakePlayerImmune(){
-        durationCount = immuneDuration;
+        immuneFramesCount = immuneFramesDuration;
         healthManager.SetDmgImmunity(true);
         immunityActive = true;
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if(!immunityActive) return;
-        if(durationCount >= 0){
-            durationCount -= Time.deltaTime;
-            framesForEnd++;
-        }
+        immuneFramesCount--;
 
-        if(durationCount < 0){
+        if(immuneFramesCount <= 0){
             healthManager.SetDmgImmunity(false);
             immunityActive = false;
+            spriteRenderer.color = origColor;           
             //Debug.Log("Dmg Immunity stopped : " + framesForEnd);
         }
     }
 
-    public void IncreaseDurationBy(float amt){
-        immuneDuration+=amt;
+    public void IncreaseFrameBy(int amt){
+        immuneFramesDuration+=amt;
     }
 }

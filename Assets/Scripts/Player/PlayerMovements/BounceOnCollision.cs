@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BounceOnCollision : MonoBehaviour
 {
+    private BallDash ballDash;
     private Rigidbody2D rb;
     private Vector2 velocityOnHit;
     [SerializeField]private float bounceDuration;
@@ -22,6 +23,7 @@ public class BounceOnCollision : MonoBehaviour
         Application.targetFrameRate = 60;
         Debug.Log("Setting up application framerate from here");
         rb = GetComponent<Rigidbody2D>();
+        ballDash = GameObject.FindWithTag("Player").GetComponent<BallDash>();
         bounceTimer = bounceDuration;
     }
     private void Update() {
@@ -72,12 +74,15 @@ public class BounceOnCollision : MonoBehaviour
             rb.velocity = dir * (speed*bounceForce) + dir*3f;
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBounceSpeed);
 
+            //How long for player to be stunned after bouncing
+            float stunRatio = Mathf.Min(1, speed/ballDash.GetMaxCharge());
+
             StartScreenShake(speed);
 
             //Set bounce's max speed limit
             AddMaxSpeedLimiter();
             isBouncing = true;
-            bounceTimer = bounceDuration;
+            bounceTimer = bounceDuration*stunRatio;
         }
     }
 
