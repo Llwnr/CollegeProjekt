@@ -24267,7 +24267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrades:
   - {fileID: 11400000, guid: d2b04599339da2d499a598f9276c372e, type: 2}
-  - {fileID: 11400000, guid: cbc6ef673b7e1f44ba3c2c7052431264, type: 2}
+  - {fileID: 11400000, guid: ed0f4915475705e4382674adc4a1a08a, type: 2}
   panel: {fileID: 8608368413543206066, guid: f2421f91fab7192418c0924f7be2ffb6, type: 3}
 --- !u!1001 &100582474307681709
 PrefabInstance:

@@ -13,11 +13,13 @@ public abstract class Upgrade : ScriptableObject {
     protected GameObject player;
     protected BallDash ballDash;
     protected HealthManager playerHealth;
+    protected PlayerStats playerStats;
 
     protected void GetReferences(){
         player = GameObject.FindWithTag("Player");
         ballDash = player.GetComponent<BallDash>();
         playerHealth = player.GetComponent<HealthManager>();
+        playerStats = player.GetComponent<PlayerStats>();
     }
 
     public abstract void Activate();

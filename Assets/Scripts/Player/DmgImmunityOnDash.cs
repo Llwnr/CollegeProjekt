@@ -34,7 +34,6 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         //If when player is immune to damage and parries an attack then activate the parry buff damage
         if(immunityActive && other.transform.CompareTag("Projectile")){
             playerStats.SetParriedOnDash();
-            Time.timeScale = 0.1f;
         }
     }
     
