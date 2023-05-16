@@ -24425,21 +24425,6 @@ PrefabInstance:
       propertyPath: chargeBar
       value: 
       objectReference: {fileID: 42474356}
-    - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
-        type: 3}
-      propertyPath: redElectrons
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
-        type: 3}
-      propertyPath: blueElectrons
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360294590374952204, guid: b9f366522475167479b99e918dd101f1,
-        type: 3}
-      propertyPath: orangeElectrons
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 3360294590374952209, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: dashIconHolder

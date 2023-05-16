@@ -55,7 +55,9 @@ public class HealthManager : MonoBehaviour, IDamagable
 
     public void DealDamage(float dmgAmt){
         //Don't deal damage when player is immune
-        if(isImmune) return;
+        if(isImmune){
+            return;
+        }
 
         float newDmgAmt = dmgAmt - dmgReduction;
         newDmgAmt = (int)newDmgAmt;

@@ -109,11 +109,11 @@ public class BallDash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0)){
+        if(Input.GetMouseButton(0) && !isDashing){
             ChargeForce();
         }
         //Dash at direction pointed by mouse
-        if(Input.GetMouseButtonUp(0)){
+        if(Input.GetMouseButtonUp(0) && !isDashing){
             Dash();
             NotifyDashStart();
             AddSpeedLimit();

@@ -12,10 +12,13 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     private SpriteRenderer spriteRenderer;
     private Color32 origColor;
 
+    private PlayerStats playerStats;
+
     private bool immunityActive = false;
 
     private void Start() {
         healthManager = GameObject.FindWithTag("Player").GetComponent<HealthManager>();
+        playerStats = GetComponent<PlayerStats>();
         ballDash = GetComponent<BallDash>();
         ballDash.AddDashObserver(this);
 
@@ -25,6 +28,14 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
 
     private void OnDestroy() {
         ballDash.RemoveDashObserver(this);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        //If when player is immune to damage and parries an attack then activate the parry buff damage
+        if(immunityActive && other.transform.CompareTag("Projectile")){
+            playerStats.SetParriedOnDash();
+            Time.timeScale = 0.1f;
+        }
     }
     
     public void DashStart()

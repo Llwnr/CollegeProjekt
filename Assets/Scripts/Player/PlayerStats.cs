@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDashObserver
 {
     [SerializeField]private float baseDmg;
     private SpeedInfo playerSpeedInfo;
@@ -11,6 +11,10 @@ public class PlayerStats : MonoBehaviour
     //High speed or velocity buff
     private float highSpeedBuff;
     private float maxChargeBuff;
+
+    //Dash parry buff
+    private float dashParryBuff = 1;
+    private bool hasParried = false;
 
     [SerializeField]private float dashDmgMultiplier;//Different types of dashes will have different damage multipliers
 
@@ -27,6 +31,7 @@ public class PlayerStats : MonoBehaviour
     private void Awake() {
         playerSpeedInfo = GetComponent<SpeedInfo>();
         ballDash = GetComponent<BallDash>();
+        ballDash.AddDashObserver(this);
     }
 
     private void Update() {
@@ -55,12 +60,33 @@ public class PlayerStats : MonoBehaviour
         }else{
             maxChargeBuff = 0;
         }
+        float parryBuff = (hasParried ? dashParryBuff : 0) + 1;
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.5f);
         finalDmg = (baseDmg)+highSpeedBuff*dashDmgMultiplier;
         finalDmg += maxChargeBuff;
-        finalDmg *= powerUpMultiplier*(1+redElectronMultiplier);
+        finalDmg *= powerUpMultiplier*(1+redElectronMultiplier)*(parryBuff);
         if(finalDmg < 0) finalDmg = 0;
         return finalDmg;
+    }
+
+    public void DashStart()
+    {
+        
+    }
+
+    public void DashEnd()
+    {
+        //Reset parry status when dash ends
+        hasParried = false;
+        Time.timeScale = 1;
+    }
+
+    public void SetParriedOnDash(){
+        hasParried = true;
+    }
+
+    public void IncreaseParryDmg(float byAmt){
+        dashParryBuff += byAmt;
     }
 }
