@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a960ae0d15f0ea8459d82cac42f510ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceDuration: 0.4
+  bounceDuration: 0.3
   maxBounceSpeed: 18
   bounceForce: 1
   slowdownFactor: 0.15
@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDmg: 3
+  dashParryBuff: 1
   dashDmgMultiplier: 0
   redElectronMultiplier: 0
 --- !u!114 &3360294590374952208

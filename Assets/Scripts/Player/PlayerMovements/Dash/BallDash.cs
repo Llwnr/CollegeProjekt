@@ -23,6 +23,8 @@ public class BallDash : MonoBehaviour
         }
     }
 
+    private bool doDash = false;
+
     [Header ("Base Dash")]
     [SerializeField]private float dashForce;
     [SerializeField]private float maxDashSpeed;
@@ -114,9 +116,7 @@ public class BallDash : MonoBehaviour
         }
         //Dash at direction pointed by mouse
         if(Input.GetMouseButtonUp(0) && !isDashing){
-            Dash();
-            NotifyDashStart();
-            AddSpeedLimit();
+            doDash = true;
         }
         //Manage durations
         if(isDashing){
@@ -132,6 +132,14 @@ public class BallDash : MonoBehaviour
         }
     }
 
+    private void FixedUpdate() {
+        if(!doDash) return;
+        Dash();
+        NotifyDashStart();
+        AddSpeedLimit();
+        doDash = false;
+    }
+
     void Dash(){
         //Limit to maximum values incase maximum values change when dash property changes
         ChargeForce();
@@ -140,6 +148,7 @@ public class BallDash : MonoBehaviour
         dirToDash = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)*10f;
         dirToDash = dirToDash.normalized;
         rb.AddForce(dirToDash*(dashForce+extraForce), ForceMode2D.Impulse);
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxDashSpeed+buffedMaxExtraSpeed+maxExtraSpeed);
 
         isDashing = true;
         ResetDuration();

@@ -16,7 +16,6 @@ public class ManageCostUI : MonoBehaviour
                 redCost = costAmt;
                 break;
             case ElectronHolder.ElectronType.orange:
-                Debug.Log("making orange");
                 MakeElectronCostIcon(Color.yellow, costAmt);
                 orangeCost = costAmt;
                 break;

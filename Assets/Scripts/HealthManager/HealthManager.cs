@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour, IDamagable
 
     private int dmgReduction;
 
-    private bool isImmune = false;
+    [SerializeField]private bool isImmune = false;
     public void SetDmgReduction(float value){
         dmgReduction = (int)value;
     }

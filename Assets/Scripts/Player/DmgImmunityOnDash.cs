@@ -30,9 +30,9 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         ballDash.RemoveDashObserver(this);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    public void PlayerCollidedWithBullet(Collider2D bullet) {
         //If when player is immune to damage and parries an attack then activate the parry buff damage
-        if(immunityActive && other.transform.CompareTag("Projectile")){
+        if(immunityActive && bullet.transform.CompareTag("Projectile")){
             playerStats.SetParriedOnDash();
         }
     }
@@ -40,8 +40,8 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     public void DashStart()
     {
         MakePlayerImmune();
-        Color32 transparentColor = origColor;
-        transparentColor.a = 50;
+        Color transparentColor = origColor;
+        transparentColor.a = 80;
         spriteRenderer.color = transparentColor;
     }
 
@@ -55,14 +55,14 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         immunityActive = true;
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if(!immunityActive) return;
         immuneFramesCount--;
 
         if(immuneFramesCount <= 0){
             healthManager.SetDmgImmunity(false);
             immunityActive = false;
-            spriteRenderer.color = origColor;           
+            spriteRenderer.color = origColor;        
             //Debug.Log("Dmg Immunity stopped : " + framesForEnd);
         }
     }

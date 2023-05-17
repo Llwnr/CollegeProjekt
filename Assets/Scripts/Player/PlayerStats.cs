@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour, IDashObserver
     private float maxChargeBuff;
 
     //Dash parry buff
-    private float dashParryBuff = 1;
+    [SerializeField]private float dashParryBuff = 1;
     private bool hasParried = false;
 
     [SerializeField]private float dashDmgMultiplier;//Different types of dashes will have different damage multipliers
@@ -72,7 +72,6 @@ public class PlayerStats : MonoBehaviour, IDashObserver
 
     public void DashStart()
     {
-        
     }
 
     public void DashEnd()

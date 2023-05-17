@@ -20,12 +20,10 @@ public class UpgradeTransactionManager : MonoBehaviour
         //Check if you can satisfy the cost
         foreach(ElectronHolder.ElectronType electronType in Enum.GetValues(typeof(ElectronHolder.ElectronType))){
             if(!electronHolder.CanTakeElectron(electronType, costManager.GetCost(electronType))) {
-                Debug.Log("Not enough electron to upgrade");
                 return;
             }
         }
         foreach(ElectronHolder.ElectronType electronType in Enum.GetValues(typeof(ElectronHolder.ElectronType))){
-            Debug.Log("Successfully upgraded");
             for(int i=0; i<costManager.GetCost(electronType); i++){
                 electronHolder.TakeElectron(electronType);
             }

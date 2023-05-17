@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ParryDamagePlus
   m_EditorClassIdentifier: 
   name: Parry Dmg Increase
-  description: Increases parried damage
+  description: Increases parried damage by 20%
   icon: {fileID: 0}
   redElectronCost: 2
   orangeElectronCost: 2
   blueElectronCost: 2
-  increaseBy: 0.5
+  increaseBy: 0.2

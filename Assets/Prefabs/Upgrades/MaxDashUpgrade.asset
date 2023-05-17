@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MaxDashUpgrade
   m_EditorClassIdentifier: 
   name: Dash Power +
-  description: Deals more damage from dash
+  description: Dash speed is increased
   icon: {fileID: 0}
-  redElectronCost: 7
-  orangeElectronCost: 5
-  blueElectronCost: 0
-  increaseBy: 5
+  redElectronCost: 3
+  orangeElectronCost: 4
+  blueElectronCost: 2
+  increaseBy: 3
