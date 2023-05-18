@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 323532125127773714}
   - component: {fileID: 7061307901248863231}
   - component: {fileID: 8491556597893137232}
+  - component: {fileID: 7464972699777536457}
   m_Layer: 20
   m_Name: Ball
   m_TagString: Player
@@ -524,6 +525,7 @@ MonoBehaviour:
   blue: {r: 0, g: 0.048322916, b: 1, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
   orange: {r: 1, g: 0.59229463, b: 0, a: 1}
+  saveName: electronHolderSave
 --- !u!114 &7044498567945249226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 300
+  isImmune: 0
 --- !u!114 &323532125127773714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,6 +612,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneFramesDuration: 2
+--- !u!114 &7464972699777536457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360294590374952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7fd732d63e3a146a3d7a63853d2a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4052708904013585998
 GameObject:
   m_ObjectHideFlags: 0

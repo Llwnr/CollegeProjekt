@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Dash Power +
   description: Dash speed is increased
   icon: {fileID: 0}
-  redElectronCost: 3
-  orangeElectronCost: 4
-  blueElectronCost: 2
-  increaseBy: 3
+  redElectronCost: 2
+  orangeElectronCost: 2
+  blueElectronCost: 1
+  increaseBy: 0.5

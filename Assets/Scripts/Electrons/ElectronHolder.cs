@@ -4,18 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public class ElectronHolder: MonoBehaviour
+public class ElectronHolder: MonoBehaviour, ISaveable
 {
     [SerializeField]private int blueElectrons, redElectrons, orangeElectrons;
     [SerializeField]private Color blue, red, orange;
 
     SaveObject mySave;
     string mySaveJson;
+    public string saveName;
 
-    private void Start() {
+    private void Awake() {
         mySave = new SaveObject{
             redCount = redElectrons
         };
+    }
+
+    public void Save(){
+        mySave.redCount = redElectrons;
+        mySaveJson = JsonUtility.ToJson(mySave);
+        File.WriteAllText(ISaveable.baseSaveLocation + saveName, mySaveJson);
+    }
+
+    public void Load(){
+        SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(ISaveable.baseSaveLocation+saveName));
+        redElectrons = myLoad.redCount;
     }
 
     public enum ElectronType{
@@ -26,17 +38,17 @@ public class ElectronHolder: MonoBehaviour
 
     private void Update() {
         //SAVE AND LOAD
-        if(Input.GetKeyDown(KeyCode.S)){
-            mySave.redCount = redElectrons;
-            mySaveJson = JsonUtility.ToJson(mySave);
-            File.WriteAllText(Application.dataPath + "/save.txt", mySaveJson);
-            Debug.Log("saved");
-        }
+        // if(Input.GetKeyDown(KeyCode.S)){
+        //     mySave.redCount = redElectrons;
+        //     mySaveJson = JsonUtility.ToJson(mySave);
+        //     File.WriteAllText(Application.dataPath + "/save.txt", mySaveJson);
+        //     Debug.Log("saved");
+        // }
 
-        if(Input.GetKeyDown(KeyCode.L)){
-            SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(Application.dataPath+"/save.txt"));
-            redElectrons = myLoad.redCount;   
-        }
+        // if(Input.GetKeyDown(KeyCode.L)){
+        //     SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(Application.dataPath+"/save.txt"));
+        //     redElectrons = myLoad.redCount;   
+        // }
     }
 
     public void AddElectron(ElectronType electronType){

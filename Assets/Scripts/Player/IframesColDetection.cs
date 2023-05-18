@@ -7,8 +7,8 @@ public class IframesColDetection : MonoBehaviour
     private RaycastHit2D[] hits;
     private Rigidbody2D rb;
 
-    [SerializeField]private Vector3 prevPos = Vector3.zero;
-    [SerializeField]private Vector3 curPos;
+    private Vector3 prevPos = Vector3.zero;
+    private Vector3 curPos;
     // Start is called before the first frame update
     void Start()
     {
