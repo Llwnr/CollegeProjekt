@@ -17,6 +17,7 @@ public class UpgradeTransactionManager : MonoBehaviour
     }
 
     public void ExecuteUpgrade(){
+        Debug.Log("clicking on btn");
         //Check if you can satisfy the cost
         foreach(ElectronHolder.ElectronType electronType in Enum.GetValues(typeof(ElectronHolder.ElectronType))){
             if(!electronHolder.CanTakeElectron(electronType, costManager.GetCost(electronType))) {

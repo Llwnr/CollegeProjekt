@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-public class BallDash : MonoBehaviour
+public class BallDash : MonoBehaviour, ISaveable
 {
     //OBSERVER PATTERN. DashAbilityManager is subscribed. Used to notify dash start and dash end
     private List<IDashObserver> dashObservers = new List<IDashObserver>();
@@ -22,9 +23,6 @@ public class BallDash : MonoBehaviour
             dashObserver.DashEnd();
         }
     }
-
-    private bool doDash = false;
-
     [Header ("Base Dash")]
     [SerializeField]private float dashForce;
     [SerializeField]private float maxDashSpeed;
@@ -47,7 +45,7 @@ public class BallDash : MonoBehaviour
     //POWERUPS
     private float extraDuration = 0;
     private int chargeFrameReduction = 0;
-    private int increasedFramesForMaxCharge = 0;
+    private float increasedFramesForMaxCharge = 0;
     private float buffedMaxExtraSpeed, buffedMaxExtraForce = 0;
 
     //For dash ability
@@ -102,6 +100,8 @@ public class BallDash : MonoBehaviour
         origDashLength = dashTrail.time;
 
         animator = GetComponent<Animator>();
+
+        mySave = new SaveObject();
     }
 
     void ResetDuration(){
@@ -116,7 +116,9 @@ public class BallDash : MonoBehaviour
         }
         //Dash at direction pointed by mouse
         if(Input.GetMouseButtonUp(0) && !isDashing){
-            doDash = true;
+            Dash();
+            NotifyDashStart();
+            AddSpeedLimit();
         }
         //Manage durations
         if(isDashing){
@@ -130,14 +132,6 @@ public class BallDash : MonoBehaviour
         if(isPhaseThrough && isDashing){
             PhaseBall();
         }
-    }
-
-    private void FixedUpdate() {
-        if(!doDash) return;
-        Dash();
-        NotifyDashStart();
-        AddSpeedLimit();
-        doDash = false;
     }
 
     void Dash(){
@@ -192,7 +186,7 @@ public class BallDash : MonoBehaviour
     }
 
     public void ChargeForce(){
-        float totalFramesToTake = 1+(framesForMaxCharge-chargeFrameReduction+increasedFramesForMaxCharge)/chargeSpeed;
+        float totalFramesToTake = 1+(framesForMaxCharge-chargeFrameReduction+(int)increasedFramesForMaxCharge)/chargeSpeed;
         if(totalFramesToTake < 1) totalFramesToTake = 1;
         extraSpeed += (maxExtraSpeed+buffedMaxExtraSpeed) / totalFramesToTake;
         extraForce += (maxExtraForce+buffedMaxExtraForce) / totalFramesToTake;
@@ -259,7 +253,7 @@ public class BallDash : MonoBehaviour
         chargeFrameReduction = amt;
     }
 
-    public void IncreaseFramesForMaxChargeBy(int amt){
+    public void IncreaseFramesForMaxChargeBy(float amt){
         increasedFramesForMaxCharge += amt;
     }
 
@@ -270,5 +264,35 @@ public class BallDash : MonoBehaviour
         return buffedMaxExtraSpeed;
     }
 
-    
+    //SAVE LOAD SYSTEM
+    private class SaveObject{
+        public float extraDuration;
+        public int chargeFrameReduction;
+        public float increasedFramesForMaxCharge;
+        public float buffedMaxExtraSpeed, buffedMaxExtraForce;
+    }
+    private SaveObject mySave;
+    private string saveJson;
+    public string saveName;
+    public void Save()
+    {
+        mySave.extraDuration = extraDuration;
+        mySave.chargeFrameReduction = chargeFrameReduction;
+        mySave.increasedFramesForMaxCharge = increasedFramesForMaxCharge;
+        mySave.buffedMaxExtraForce = buffedMaxExtraForce;
+        mySave.buffedMaxExtraSpeed = buffedMaxExtraSpeed;
+
+        saveJson = JsonUtility.ToJson(mySave);
+        File.WriteAllText(ISaveable.baseSaveLocation + saveName, saveJson);
+    }
+
+    public void Load()
+    {
+        SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(ISaveable.baseSaveLocation + saveName));
+        extraDuration = myLoad.extraDuration;
+        chargeFrameReduction = myLoad.chargeFrameReduction;
+        increasedFramesForMaxCharge = myLoad.increasedFramesForMaxCharge;
+        buffedMaxExtraForce = myLoad.buffedMaxExtraForce;
+        buffedMaxExtraSpeed = myLoad.buffedMaxExtraSpeed;
+    }
 }

@@ -14,20 +14,24 @@ public class ElectronHolder: MonoBehaviour, ISaveable
     public string saveName;
 
     private void Awake() {
-        mySave = new SaveObject{
-            redCount = redElectrons
-        };
+        mySave = new SaveObject();
     }
 
     public void Save(){
         mySave.redCount = redElectrons;
+        mySave.blueCount = blueElectrons;
+        mySave.orangeCount = orangeElectrons;
+
         mySaveJson = JsonUtility.ToJson(mySave);
         File.WriteAllText(ISaveable.baseSaveLocation + saveName, mySaveJson);
     }
 
     public void Load(){
         SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(ISaveable.baseSaveLocation+saveName));
+
         redElectrons = myLoad.redCount;
+        blueElectrons = myLoad.blueCount;
+        orangeElectrons = myLoad.orangeCount;
     }
 
     public enum ElectronType{
@@ -163,6 +167,6 @@ public class ElectronHolder: MonoBehaviour, ISaveable
     }
 
     private class SaveObject{
-        public int redCount;
+        public int redCount, blueCount, orangeCount;
     }
 }

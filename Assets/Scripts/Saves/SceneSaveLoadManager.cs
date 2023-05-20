@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneSaveLoadManager : MonoBehaviour
 {
@@ -9,21 +10,18 @@ public class SceneSaveLoadManager : MonoBehaviour
     void Start()
     {   
         CollectAllSaveableClass();
+        //Don't load data on first level
+        if(SceneManager.GetActiveScene().name == "Lvl1") return;
+        //Load all data on start
+        foreach(ISaveable saves in mySaves){
+            saves.Load();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Save everything
-        if(Input.GetKeyDown(KeyCode.Q)){
-            foreach(ISaveable saves in mySaves){
-                saves.Save();
-            }
-        }
-        if(Input.GetKeyDown(KeyCode.E)){
-            foreach(ISaveable saves in mySaves){
-                saves.Load();
-            }
+    private void OnDestroy() {
+        //Save data on destroy
+        foreach(ISaveable saves in mySaves){
+            saves.Save();
         }
     }
 

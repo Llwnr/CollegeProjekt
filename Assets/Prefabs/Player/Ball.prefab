@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 6704175487713548193}
   - component: {fileID: 3360294590374952209}
   - component: {fileID: 3360294590374952207}
-  - component: {fileID: 3360294590374952202}
   - component: {fileID: 3360294590374952211}
   - component: {fileID: 3360294590374952203}
   - component: {fileID: 3360294590374952200}
@@ -389,6 +388,7 @@ MonoBehaviour:
   chargeSpeed: 1
   phaseCollider: {fileID: 7630181514613340675}
   dashColor: {r: 1, g: 0.37169808, b: 0.37169808, a: 1}
+  saveName: ballDashSave.txt
 --- !u!114 &6704175487713548193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,19 +431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d78777c4a4788145989e4a8e540ad22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3360294590374952202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3360294590374952195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18d6ada903c2c3d448431d8649832815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chargeBar: {fileID: 0}
 --- !u!95 &3360294590374952211
 Animator:
   serializedVersion: 4
@@ -525,7 +512,7 @@ MonoBehaviour:
   blue: {r: 0, g: 0.048322916, b: 1, a: 1}
   red: {r: 1, g: 0, b: 0, a: 1}
   orange: {r: 1, g: 0.59229463, b: 0, a: 1}
-  saveName: electronHolderSave
+  saveName: electronHolderSave.txt
 --- !u!114 &7044498567945249226
 MonoBehaviour:
   m_ObjectHideFlags: 0

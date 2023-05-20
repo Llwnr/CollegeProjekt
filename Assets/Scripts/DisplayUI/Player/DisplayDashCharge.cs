@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class DisplayDashCharge : MonoBehaviour
 {
-    [SerializeField]private Image chargeBar;
+    private Image chargeBar;
     private BallDash ballDash;
     private float maxCharge, currCharge;
     // Start is called before the first frame update
     private void Start() {
-        ballDash = GetComponent<BallDash>();
+        ballDash = GameObject.FindWithTag("Player").GetComponent<BallDash>();
+        chargeBar = GetComponent<Image>();
     }
 
     // Update is called once per frame

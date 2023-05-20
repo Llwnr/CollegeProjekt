@@ -1545,6 +1545,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &235097352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5355309295827683232, guid: 33e064fd05d3bb846a384d54066c3f8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 954803934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &290400747
 GameObject:
   m_ObjectHideFlags: 0
@@ -60441,6 +60447,11 @@ PrefabInstance:
       propertyPath: ballDash
       value: 
       objectReference: {fileID: 1786551547}
+    - target: {fileID: 1169860739388104714, guid: 0e1e7f1215696ba4bae469da7ed63867,
+        type: 3}
+      propertyPath: upgradePanel
+      value: 
+      objectReference: {fileID: 235097352}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1e7f1215696ba4bae469da7ed63867, type: 3}
 --- !u!1 &924639544
