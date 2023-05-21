@@ -6,9 +6,9 @@ public class ItemDropper : MonoBehaviour, IOnDeath
 {
     [SerializeField]private GameObject itemToDrop;
     [SerializeField]private List<ItemBase> itemData;
-    private HealthManager healthManager;
+    private BaseHealthManager healthManager;
     private void Awake() {
-        healthManager = GetComponent<HealthManager>();
+        healthManager = GetComponent<BaseHealthManager>();
         healthManager.AddObserver(this);
     }
     public void OnDeath()

@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class HealthManager : MonoBehaviour, IDamagable, ISaveable
+public class HealthManager : BaseHealthManager, IDamagable, ISaveable
 {
-    [SerializeField]private float hp;
-    private float maxHp;
-
     private int dmgReduction;
 
     [SerializeField]private bool isImmune = false;
@@ -19,44 +16,10 @@ public class HealthManager : MonoBehaviour, IDamagable, ISaveable
         isImmune = value;
     }
 
-    //Observer pattern.
-    //Subscribers are: DmgPopup
-    private List<IOnDamage> observers = new List<IOnDamage>();
-    private List<IOnDeath> deathObservers = new List<IOnDeath>();
-
-    public void AddObserver(IOnDamage observer){
-        observers.Add(observer);
-    }
-    public void RemoveObserver(IOnDamage observer){
-        observers.Remove(observer);
-    }
-    public void AddObserver(IOnDeath observer){
-        deathObservers.Add(observer);
-    }
-    public void RemoveObserver(IOnDeath observer){
-        deathObservers.Remove(observer);
-    }
-
-    public void NotifyObservers(float dmgAmt, Transform myTransform){
-        for(int i=0; i<observers.Count; i++){
-            observers[i].ActivateWhenDamaged(dmgAmt, myTransform);
-        }
-    }
-    public void NotifyMyDeath(){
-        for(int i=0; i<deathObservers.Count; i++){
-            deathObservers[i].OnDeath();
-        }
-    }
-
-
-    void Awake()
-    {
-        maxHp = hp;
-    }
-
     public void DealDamage(float dmgAmt){
         //Don't deal damage when player is immune
         if(isImmune){
+            GetComponent<DmgPopupManager>().ActivateWhenDamaged("PARRIED", transform);
             return;
         }
 
@@ -72,13 +35,6 @@ public class HealthManager : MonoBehaviour, IDamagable, ISaveable
         }
     }
 
-    public float GetCurrentHp(){
-        return hp;
-    }
-    public float GetMaxHp(){
-        return maxHp;
-    }
-
     public void Heal(float healAmt){
         hp += healAmt;
         if(hp > maxHp) hp = maxHp;
@@ -90,8 +46,6 @@ public class HealthManager : MonoBehaviour, IDamagable, ISaveable
     private string mySaveJson;
     public void Save()
     {
-        //Don't save enemies hp
-        if(transform.tag != "Player") return;
         //Don't save player's hp if player just died
         if(hp < 0) return;
         mySave = new SaveObject();
@@ -103,7 +57,6 @@ public class HealthManager : MonoBehaviour, IDamagable, ISaveable
 
     public void Load()
     {
-        if(transform.tag != "Player") return;
         SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(ISaveable.baseSaveLocation+"healthSave.txt"));
         hp = myLoad.hp;
     }

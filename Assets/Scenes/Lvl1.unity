@@ -24287,11 +24287,6 @@ PrefabInstance:
       propertyPath: dashIconHolder
       value: 
       objectReference: {fileID: 1986282030}
-    - target: {fileID: 3360294590374952210, guid: b9f366522475167479b99e918dd101f1,
-        type: 3}
-      propertyPath: baseDmg
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 7288061646457122245, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: dashBomb

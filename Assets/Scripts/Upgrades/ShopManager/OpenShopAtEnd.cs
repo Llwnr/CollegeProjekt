@@ -50,7 +50,6 @@ public class OpenShopAtEnd : MonoBehaviour
             Time.timeScale = 0;
             ToggleAllScripts(player, false);
         }else{
-            Time.timeScale = 1;
             ToggleAllScripts(player, true);
         }
     }

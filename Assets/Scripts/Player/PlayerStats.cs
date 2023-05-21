@@ -85,6 +85,10 @@ public class PlayerStats : MonoBehaviour, IDashObserver
         hasParried = true;
     }
 
+    public bool GetHasParried(){
+        return hasParried;
+    }
+
     public void IncreaseParryDmg(float byAmt){
         dashParryBuff += byAmt;
     }

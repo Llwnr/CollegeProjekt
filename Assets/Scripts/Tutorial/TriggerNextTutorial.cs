@@ -8,7 +8,7 @@ public class TriggerNextTutorial : MonoBehaviour
         //When touching a point, go to next tutorial text
         if(other.transform.CompareTag("Player")){
             TutorialManager.instance.UpdateText();
-            //gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

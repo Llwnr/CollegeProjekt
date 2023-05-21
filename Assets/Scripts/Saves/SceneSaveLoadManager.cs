@@ -18,9 +18,10 @@ public class SceneSaveLoadManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy() {
+    private void OnDisable() {
         //Save data on destroy
         foreach(ISaveable saves in mySaves){
+            if(saves == null) continue;
             saves.Save();
         }
     }

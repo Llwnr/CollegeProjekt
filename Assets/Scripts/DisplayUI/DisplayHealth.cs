@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class DisplayHealth : MonoBehaviour
 {
-    [SerializeField]private HealthManager targetHealth;
+    [SerializeField]private BaseHealthManager targetHealth;
     private Image myHealth;
 
-    private float maxHp;
+    [SerializeField]private float maxHp;
     // Start is called before the first frame update
     void Start()
     {
