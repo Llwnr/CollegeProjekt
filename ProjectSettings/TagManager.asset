@@ -11,6 +11,7 @@ TagManager:
   - Electron
   - Projectile
   - Bomb
+  - UpgradesPanel
   layers:
   - Default
   - TransparentFX

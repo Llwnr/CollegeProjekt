@@ -24287,6 +24287,11 @@ PrefabInstance:
       propertyPath: dashIconHolder
       value: 
       objectReference: {fileID: 1986282030}
+    - target: {fileID: 3360294590374952210, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: baseDmg
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7288061646457122245, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: dashBomb
@@ -24504,6 +24509,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096069122101039783, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096069122101039783, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096069122101039783, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2637127658722911727, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
@@ -24760,6 +24780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355309295827683232, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_TagString
+      value: UpgradesPanel
       objectReference: {fileID: 0}
     - target: {fileID: 6179712637554063919, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}

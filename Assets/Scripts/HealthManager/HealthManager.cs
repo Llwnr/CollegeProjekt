@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-public class HealthManager : MonoBehaviour, IDamagable
+public class HealthManager : MonoBehaviour, IDamagable, ISaveable
 {
     [SerializeField]private float hp;
     private float maxHp;
@@ -81,5 +82,33 @@ public class HealthManager : MonoBehaviour, IDamagable
     public void Heal(float healAmt){
         hp += healAmt;
         if(hp > maxHp) hp = maxHp;
+    }
+
+
+    //SAVE LOAD SYSTEM
+    private SaveObject mySave;
+    private string mySaveJson;
+    public void Save()
+    {
+        //Don't save enemies hp
+        if(transform.tag != "Player") return;
+        //Don't save player's hp if player just died
+        if(hp < 0) return;
+        mySave = new SaveObject();
+        mySave.hp = hp;
+
+        mySaveJson = JsonUtility.ToJson(mySave);
+        File.WriteAllText(ISaveable.baseSaveLocation + "healthSave.txt", mySaveJson);
+    }
+
+    public void Load()
+    {
+        if(transform.tag != "Player") return;
+        SaveObject myLoad = JsonUtility.FromJson<SaveObject>(File.ReadAllText(ISaveable.baseSaveLocation+"healthSave.txt"));
+        hp = myLoad.hp;
+    }
+
+    private class SaveObject{
+        public float hp;
     }
 }
