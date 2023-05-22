@@ -61168,15 +61168,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialTexts:
   - 'Click to dash. Hold to charge your dash for more power. '
-  - 'You are immune to all damage for a short while when dashing.
+  - 'You can absorb enemy projectiles for a short while when dashing
 
-    If you are
-    hit when in this state, you deal extra damage (Known as parry dmg).
+    To absorb:
+    Dash in the direction of enemy''s projectile when the projectile is about to
+    hit you
 
-
-    To
-    parry: Just dash in the direction of enemy''s projectile when the projectile
-    is about to hit you'
+    Absorbed dashes will deal more damage'
   - 'Press Space to change your dash type.
 
     Do this a couple more times to continue'
@@ -61201,12 +61199,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542276415}
-  - component: {fileID: 1542276418}
   - component: {fileID: 1542276417}
   - component: {fileID: 1542276416}
   - component: {fileID: 1542276419}
+  - component: {fileID: 1542276420}
   m_Layer: 0
-  m_Name: ParryRangeSlower
+  m_Name: AbsorptionRangeSlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61257,21 +61255,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!114 &1542276418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1542276414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 062e54dcb4e66b3469b8a1eb4c16f4e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToBeDeactive: {fileID: 1002090580}
-  objectToBeActive: {fileID: 1958523444}
-  enemyToHit: {fileID: 813843540}
 --- !u!50 &1542276419
 Rigidbody2D:
   serializedVersion: 4
@@ -61293,6 +61276,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1542276420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542276414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e66c6a612b229646ae128cb40f59636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToBeDeactive: {fileID: 1002090580}
+  objectToBeActive: {fileID: 1958523444}
+  enemyToHit: {fileID: 813843540}
 --- !u!1001 &1603964490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61473,7 +61471,7 @@ GameObject:
   - component: {fileID: 1958523445}
   - component: {fileID: 1958523446}
   m_Layer: 0
-  m_Name: ParryTrigger
+  m_Name: AbsorptionTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

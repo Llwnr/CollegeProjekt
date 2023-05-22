@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParryRangeSlowTimer : MonoBehaviour
+public class AbsorptionRangeSlowTimer : MonoBehaviour
 {
     [SerializeField]private GameObject objectToBeDeactive, objectToBeActive;
     [SerializeField]private GameObject enemyToHit;
@@ -31,7 +31,6 @@ public class ParryRangeSlowTimer : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if(!canStart) return;
         if(other.transform.CompareTag("Projectile")){
             Time.timeScale = 1f;
         }

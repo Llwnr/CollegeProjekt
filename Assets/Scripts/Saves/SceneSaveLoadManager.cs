@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class SceneSaveLoadManager : MonoBehaviour
 {
     [SerializeField]private List<ISaveable> mySaves = new List<ISaveable>();
+
+    private void Awake() {
+        //Check if the save direction exists otherwise create it
+        if(!Directory.Exists(ISaveable.baseSaveLocation)){
+            Directory.CreateDirectory(ISaveable.baseSaveLocation);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {   
