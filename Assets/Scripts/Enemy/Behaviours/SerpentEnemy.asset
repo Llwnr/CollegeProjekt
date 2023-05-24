@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: SerpentEnemy
+  m_EditorClassIdentifier: 
+  rootNode:
+    rid: 2370570709331345408
+  nodes:
+  - rid: 2370570709331345408
+  - rid: 2370570709331345409
+  - rid: 2370570709331345410
+  treeState: 0
+  blackboard:
+    direction: {x: 0, y: 0, z: 0}
+    moveToPosition: {x: 0, y: 0, z: 0}
+  viewPosition: {x: 276.8, y: -92, z: 0}
+  viewScale: {x: 1, y: 1, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 2370570709331345408
+      type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 181a601e-3d0e-43ea-973d-67e55ee6b544
+        position: {x: 0, y: 0}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 2370570709331345409
+    - rid: 2370570709331345409
+      type: {class: Repeat, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 5e45d45cbbb5bc94f8ccbb8f3126ce9b
+        position: {x: 0, y: 105.600006}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 2370570709331345410
+        restartOnSuccess: 1
+        restartOnFailure: 0
+    - rid: 2370570709331345410
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: d252a152368dbfb4caf064ed149f2b93
+        position: {x: 0, y: 213.20001}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        children: []
