@@ -18,11 +18,15 @@ MonoBehaviour:
   - rid: 2370570709331345408
   - rid: 2370570709331345409
   - rid: 2370570709331345410
+  - rid: 2370570729486811136
+  - rid: 2370570729486811137
+  - rid: 2370570729486811138
+  - rid: 2370570729486811139
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 276.8, y: -92, z: 0}
+  viewPosition: {x: 172, y: -52, z: 0}
   viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
@@ -69,4 +73,61 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        children: []
+        children:
+        - rid: 2370570729486811136
+        - rid: 2370570729486811137
+        - rid: 2370570729486811138
+        - rid: 2370570729486811139
+    - rid: 2370570729486811136
+      type: {class: WaitRandom, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: a3cd291768f9dad45920f190389eac87
+        position: {x: -266.19998, y: 340}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        minDuration: 0.5
+        maxDuration: 1
+    - rid: 2370570729486811137
+      type: {class: TargetPlayer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 14fa914b5c6d1234f8748ba6c4dce782
+        position: {x: -101.599976, y: 342.8}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+    - rid: 2370570729486811138
+      type: {class: DashAtDir, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 649cf546a9f2c8c4da93baaba00e587b
+        position: {x: 60, y: 344.8}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        dashForce: 500
+        maxDashSpeed: 12
+    - rid: 2370570729486811139
+      type: {class: Wait, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 204bb23e629cbdf4bae7dd32128571af
+        position: {x: 244.80002, y: 344}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        duration: 2

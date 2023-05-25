@@ -28,7 +28,7 @@ MonoBehaviour:
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 192.8, y: 72.8, z: 0}
+  viewPosition: {x: 210.4, y: 92.8, z: 0}
   viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
@@ -153,11 +153,11 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        bullet: {fileID: 7839815524136982913, guid: 8e3a4cfefe6088b48a00cc0049aaa718,
+        bullet: {fileID: 7839815524136982913, guid: fde6d2f8711565e4d9f0a3fb2ed934a7,
           type: 3}
-        shootForce: 7
-        spreadAngle: 8
-        numOfBullets: 5
+        shootForce: 5
+        spreadAngle: 30
+        numOfBullets: 8
         throwDuration: 0.1
     - rid: 3614959460502208520
       type: {class: TargetPlayer, ns: , asm: Assembly-CSharp}

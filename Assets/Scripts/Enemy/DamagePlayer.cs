@@ -24,9 +24,11 @@ public class DamagePlayer : MonoBehaviour
             //Notify that player has been collided either by unity's system or by raycast
             other.GetComponent<DmgImmunityOnDash>().PlayerCollidedWithBullet(GetComponent<Collider2D>());
             other.GetComponent<IDamagable>().DealDamage(dmgAmt);    
-            Destroy(gameObject);
-            //Failsafe mechanic incase the projectile hits player twice, only activate it once
-            neutralized = true;
+            if(transform.CompareTag("Projectile")) {
+                Destroy(gameObject);
+                //Failsafe mechanic incase the projectile hits player twice, only activate it once
+                neutralized = true;
+            }
         }
     }
 
