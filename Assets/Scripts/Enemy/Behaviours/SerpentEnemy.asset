@@ -117,7 +117,7 @@ MonoBehaviour:
         description: 
         drawGizmos: 0
         dashForce: 500
-        maxDashSpeed: 12
+        maxDashSpeed: 14
     - rid: 2370570729486811139
       type: {class: Wait, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:

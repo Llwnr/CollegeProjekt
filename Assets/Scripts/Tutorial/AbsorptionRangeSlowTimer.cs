@@ -11,7 +11,6 @@ public class AbsorptionRangeSlowTimer : MonoBehaviour
         //If first tutorial is deactivated and second tutorial is activated
         if(!objectToBeDeactive.activeSelf && objectToBeActive.activeSelf){
             canStart = true;
-            Debug.Log(Time.timeScale);
         }else{
             canStart = false;
         }

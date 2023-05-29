@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Serpent
       objectReference: {fileID: 0}
+    - target: {fileID: 4984705589631547158, guid: 49b406a26093de947b8b7e5c4209db8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4984705589631547163, guid: 49b406a26093de947b8b7e5c4209db8c,
         type: 3}
       propertyPath: m_RootOrder

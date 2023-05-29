@@ -16,4 +16,5 @@ public class DashProperty : ScriptableObject {
     public Ability durationalAbility;//Right click to activate
     public Gradient dashColor;
     public bool isPhaseThrough;
+    public Color32 dashChargeBarColor;
 }

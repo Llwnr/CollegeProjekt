@@ -62,6 +62,7 @@ public class BallDash : MonoBehaviour, ISaveable
 
     private Color origColor;
     [SerializeField]private Color dashColor;
+    private Color32 dashChargeBarColor = new Color32(0,0,0,255);
 
     private TrailRenderer dashTrail;
     private Gradient dashTrailColor;
@@ -73,7 +74,7 @@ public class BallDash : MonoBehaviour, ISaveable
     private Rigidbody2D rb;
 
     //To allow different types of dashes
-    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, Gradient dashColor, bool isPhaseThrough){
+    public void SetDashProperty(float dashForce, float maxDashSpeed, float duration, float maxExtraSpeed, float maxExtraForce, int framesForMaxCharge, float dashDmgMultiplier, Ability ability, Gradient dashColor, bool isPhaseThrough, Color32 dashChargeBarColor){
         Debug.Log("setting dash");
         this.dashForce = dashForce;
         this.maxDashSpeed = maxDashSpeed;
@@ -84,8 +85,14 @@ public class BallDash : MonoBehaviour, ISaveable
         this.abilityToGive = ability;
         this.dashTrailColor = dashColor;
         this.isPhaseThrough = isPhaseThrough;
+        this.dashChargeBarColor = dashChargeBarColor;
         //Give the dash's dmg multiplier to player stats for damage calculation
         GetComponent<PlayerStats>().SetDashDmgMultiplier(dashDmgMultiplier);
+    }
+
+    //To have different colored charge bar colors based on different dash types
+    public Color32 GetDashChargeBarColor(){
+        return dashChargeBarColor;
     }
     // Start is called before the first frame update
     void Awake()
@@ -113,6 +120,8 @@ public class BallDash : MonoBehaviour, ISaveable
     {
         if(Input.GetMouseButton(0) && !isDashing){
             ChargeForce();
+            animator.Play("DashStart");
+            animator.speed = 15f/(framesForMaxCharge+1);
         }
         //Dash at direction pointed by mouse
         if(Input.GetMouseButtonUp(0) && !isDashing){

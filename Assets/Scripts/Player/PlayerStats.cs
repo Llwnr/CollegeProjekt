@@ -63,9 +63,9 @@ public class PlayerStats : MonoBehaviour, IDashObserver
         float parryBuff = (hasParried ? dashParryBuff : 0) + 1;
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
         highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.5f);
-        finalDmg = (baseDmg)+highSpeedBuff*dashDmgMultiplier;
+        finalDmg = (baseDmg)+highSpeedBuff;
         finalDmg += maxChargeBuff;
-        finalDmg *= powerUpMultiplier*(1+redElectronMultiplier)*(parryBuff);
+        finalDmg *= powerUpMultiplier*(1+redElectronMultiplier)*(parryBuff)*dashDmgMultiplier;
         if(finalDmg < 0) finalDmg = 0;
         return finalDmg;
     }
