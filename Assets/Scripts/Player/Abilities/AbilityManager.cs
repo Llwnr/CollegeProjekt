@@ -6,11 +6,12 @@ public class AbilityManager : MonoBehaviour
 {
     [SerializeField]private List<Ability> abilities;
 
+    //Durational abilities that will remove itself when its duration ends
+
     public void AddAbility(Ability ability){
         if(!ability.CanActivate()) return;
         if(!this.enabled) return;
         abilities.Add(ability);
-        Debug.Log("Ability Given");
         ability.Activate();
     }
 

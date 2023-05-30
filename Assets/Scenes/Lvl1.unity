@@ -24356,6 +24356,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 3360294590374952197, guid: b9f366522475167479b99e918dd101f1,
+        type: 3}
+      propertyPath: maxChargeColor.rgba
+      value: 4278190227
+      objectReference: {fileID: 0}
     - target: {fileID: 3360294590374952199, guid: b9f366522475167479b99e918dd101f1,
         type: 3}
       propertyPath: m_Interpolate
@@ -24634,6 +24639,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4029253995105231909, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 187936707}
     - target: {fileID: 4364378206506842560, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
       propertyPath: m_RootOrder

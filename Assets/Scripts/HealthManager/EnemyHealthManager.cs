@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthManager : BaseHealthManager, IDamagable
 {
-    public void DealDamage(float dmgAmt)
+    public void DealDamage(float dmgAmt, Transform player)
     {
         hp -= dmgAmt;
         NotifyObservers(dmgAmt, transform);

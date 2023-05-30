@@ -63,6 +63,7 @@ public class BallDash : MonoBehaviour, ISaveable
     private Color origColor;
     [SerializeField]private Color dashColor;
     private Color32 dashChargeBarColor = new Color32(0,0,0,255);
+    [SerializeField]private ParticleSystem maxChargeParticle;
 
     private TrailRenderer dashTrail;
     private Gradient dashTrailColor;
@@ -120,8 +121,6 @@ public class BallDash : MonoBehaviour, ISaveable
     {
         if(Input.GetMouseButton(0) && !isDashing){
             ChargeForce();
-            animator.Play("DashStart");
-            animator.speed = 15f/(framesForMaxCharge+1);
         }
         //Dash at direction pointed by mouse
         if(Input.GetMouseButtonUp(0) && !isDashing){
@@ -159,6 +158,8 @@ public class BallDash : MonoBehaviour, ISaveable
         DisplayDashTrails();
         //SetDashColor();
         animator.Play("DashStart");
+
+        maxChargeParticle.Stop();
     }
 
     public void DashEnd(){
@@ -200,7 +201,11 @@ public class BallDash : MonoBehaviour, ISaveable
         extraSpeed += (maxExtraSpeed+buffedMaxExtraSpeed) / totalFramesToTake;
         extraForce += (maxExtraForce+buffedMaxExtraForce) / totalFramesToTake;
         //Also limit it
-        if(extraSpeed > maxExtraSpeed+buffedMaxExtraSpeed) extraSpeed = maxExtraSpeed+buffedMaxExtraSpeed;
+        if(extraSpeed > maxExtraSpeed+buffedMaxExtraSpeed) {
+            extraSpeed = maxExtraSpeed+buffedMaxExtraSpeed;
+            Debug.Log("Play");
+            maxChargeParticle.Play();
+        }
         if(extraForce > maxExtraForce+buffedMaxExtraForce) extraForce = maxExtraForce+buffedMaxExtraForce;
     }
 

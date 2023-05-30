@@ -16,7 +16,7 @@ public class HealthManager : BaseHealthManager, IDamagable, ISaveable
         isImmune = value;
     }
 
-    public void DealDamage(float dmgAmt){
+    public void DealDamage(float dmgAmt, Transform enemyProjectile){
         //Don't deal damage when player is immune
         if(isImmune){
             GetComponent<DmgPopupManager>().ActivateWhenDamaged("ABSORBED", transform);
@@ -27,8 +27,9 @@ public class HealthManager : BaseHealthManager, IDamagable, ISaveable
         newDmgAmt = (int)newDmgAmt;
         //Don't notify subscribers of player taking 0 damage
         if(newDmgAmt < 1f) return;
+
         hp -= newDmgAmt;
-        NotifyObservers(newDmgAmt, transform);
+        NotifyObservers(newDmgAmt, enemyProjectile);
         if(hp < 0){
             gameObject.SetActive(false);
             NotifyMyDeath();

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDamagable
 {
-    public void DealDamage(float dmgAmt);
+    public void DealDamage(float dmgAmt, Transform projectile);
 }

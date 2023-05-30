@@ -13,7 +13,7 @@ public class GiveAbility : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetMouseButtonDown(1)){
+        if(Input.GetKeyDown(KeyCode.Q)){
             //Get the ability of dash
             abilityToGive = ballDash.GetDurationalAbility();
             //Check if the ability already exists

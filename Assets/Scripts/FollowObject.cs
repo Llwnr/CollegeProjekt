@@ -13,10 +13,6 @@ public class FollowObject : MonoBehaviour
         transform.position = target.position+offset;
     }
 
-    private void OnEnable() {
-        transform.position = target.position+offset;
-    }
-
     public void SetTarget(Transform target){
         this.target = target;
     }

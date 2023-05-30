@@ -34,10 +34,6 @@ public class PlayerStats : MonoBehaviour, IDashObserver
         ballDash.AddDashObserver(this);
     }
 
-    private void Update() {
-        
-    }
-
     public float GetMyBaseDmg(){
         return baseDmg;
     }
@@ -67,6 +63,10 @@ public class PlayerStats : MonoBehaviour, IDashObserver
         finalDmg += maxChargeBuff;
         finalDmg *= powerUpMultiplier*(1+redElectronMultiplier)*(parryBuff)*dashDmgMultiplier;
         if(finalDmg < 0) finalDmg = 0;
+
+        //Reset absorbed buff
+        hasParried = false;
+        GetComponent<SpriteRenderer>().color = new Color32(255,0,0,255);
         return finalDmg;
     }
 
@@ -77,12 +77,12 @@ public class PlayerStats : MonoBehaviour, IDashObserver
     public void DashEnd()
     {
         //Reset parry status when dash ends
-        hasParried = false;
         Time.timeScale = 1;
     }
 
     public void SetParriedOnDash(){
         hasParried = true;
+        GetComponent<SpriteRenderer>().color = new Color32(160,0,0,255);
     }
 
     public bool GetHasParried(){

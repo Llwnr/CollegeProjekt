@@ -20,6 +20,6 @@ public class DisplayDashCharge : MonoBehaviour
         maxCharge = ballDash.GetMaxCharge();
         currCharge = ballDash.GetCurrentCharge();
         chargeBar.fillAmount = currCharge/maxCharge;
-        chargeBar.color = ballDash.GetDashChargeBarColor();
+        //chargeBar.color = ballDash.GetDashChargeBarColor();
     }
 }

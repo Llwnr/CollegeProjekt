@@ -165,7 +165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5296754925798025099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 5296754926412939749}
   - component: {fileID: 5296754926412939748}
   - component: {fileID: 7071352511817874664}
+  - component: {fileID: 4029253995105231909}
   m_Layer: 5
   m_Name: DashChargeBar
   m_TagString: Untagged
@@ -458,7 +459,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 900, y: -360}
-  m_SizeDelta: {x: 50, y: 300}
+  m_SizeDelta: {x: 20, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5296754926412939749
 CanvasRenderer:
@@ -481,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.31485367, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.74218893, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -510,6 +511,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d6ada903c2c3d448431d8649832815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4029253995105231909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296754926412939746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b3924ac8c34e64d93e1c8d200fde0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  convertToCanvas: 1
+  rotateWithTarget: 0
 --- !u!1 &5296754926863391417
 GameObject:
   m_ObjectHideFlags: 0

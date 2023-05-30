@@ -43,7 +43,12 @@ public abstract class Ability : ScriptableObject {
     }
 
     public virtual void Activate(){
-        OnEnable();
+        player = GameObject.FindWithTag("Player");
+        if(player == null) return;
+        ballDash = player.GetComponent<BallDash>();
+        abilityManager = GameObject.FindWithTag("Player").GetComponent<AbilityManager>();
+        durationTimer = buffDuration;
+        electronHolder = GameObject.FindWithTag("Player").GetComponent<ElectronHolder>();
     }
     public abstract void Deactivate();
     public virtual bool CanActivate(){

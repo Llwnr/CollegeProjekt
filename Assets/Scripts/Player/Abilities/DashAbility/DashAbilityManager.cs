@@ -8,14 +8,6 @@ public class DashAbilityManager : MonoBehaviour, IDashObserver
     private DashAbility dashAbilityToGive;
 
     [SerializeField]private List<DashAbility> dashAbilities = new List<DashAbility>();
-
-    private void Update() {
-        // if(dashAbilityToGive == null || dashAbilityToGive != ballDash.GetDashAbility()){
-        //     dashAbilityToGive = ballDash.GetDashAbility();
-        //     dashAbilities.Clear();
-        //     AddDashAbility(dashAbilityToGive);
-        // }
-    }
     
     private void Awake() {
         ballDash = GetComponent<BallDash>();
