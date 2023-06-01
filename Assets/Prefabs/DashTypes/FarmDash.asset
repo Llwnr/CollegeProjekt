@@ -20,7 +20,7 @@ MonoBehaviour:
   maxExtraSpeed: 10
   maxExtraForce: 10
   dashIcon: {fileID: 21300000, guid: 72230d291f4455441986ce3e2a71c19a, type: 3}
-  dashDmgMultiplier: 1.2
+  dashDmgMultiplier: 1
   durationalAbility: {fileID: 11400000, guid: cc664f83cf8e35245ab1c1b03c2b68c1, type: 2}
   dashColor:
     serializedVersion: 2

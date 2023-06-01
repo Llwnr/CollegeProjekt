@@ -10,7 +10,6 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     private BallDash ballDash;
 
     private SpriteRenderer spriteRenderer;
-    private Color32 origColor;
 
     private PlayerStats playerStats;
 
@@ -21,9 +20,6 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         playerStats = GetComponent<PlayerStats>();
         ballDash = GetComponent<BallDash>();
         ballDash.AddDashObserver(this);
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        origColor = spriteRenderer.color;
     }
 
     private void OnDestroy() {
@@ -40,9 +36,6 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     public void DashStart()
     {
         MakePlayerImmune();
-        Color transparentColor = origColor;
-        transparentColor.a = 80;
-        spriteRenderer.color = transparentColor;
     }
 
     public void DashEnd()
@@ -61,8 +54,7 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
 
         if(immuneFramesCount <= 0){
             healthManager.SetDmgImmunity(false);
-            immunityActive = false;
-            spriteRenderer.color = origColor;        
+            immunityActive = false;     
             //Debug.Log("Dmg Immunity stopped : " + framesForEnd);
         }
     }

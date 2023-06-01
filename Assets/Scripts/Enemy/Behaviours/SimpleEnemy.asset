@@ -164,7 +164,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        moveSpeed: 5000
+        moveSpeed: 5
         maxSpeed: 2
         minDuration: 3
         maxDuration: 4.5

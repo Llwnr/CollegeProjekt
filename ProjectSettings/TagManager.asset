@@ -12,6 +12,7 @@ TagManager:
   - Projectile
   - Bomb
   - UpgradesPanel
+  - Wall
   layers:
   - Default
   - TransparentFX

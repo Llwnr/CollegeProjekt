@@ -26,7 +26,7 @@ MonoBehaviour:
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 172, y: -52, z: 0}
+  viewPosition: {x: 340, y: -135.2, z: 0}
   viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
@@ -110,14 +110,15 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 649cf546a9f2c8c4da93baaba00e587b
-        position: {x: 60, y: 344.8}
+        position: {x: 64.84808, y: 340.224}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        dashForce: 500
+        dashForce: 1200
         maxDashSpeed: 14
+        dashDuration: 1
     - rid: 2370570729486811139
       type: {class: Wait, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:

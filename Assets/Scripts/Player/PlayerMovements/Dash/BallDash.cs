@@ -30,6 +30,7 @@ public class BallDash : MonoBehaviour, ISaveable
     [SerializeField]private float durationTimer;
 
     private bool isDashing = false;
+    private Vector2 currDashDir;
 
     private float hDir, vDir;
     private Vector2 dirToDash = Vector2.zero;
@@ -98,6 +99,7 @@ public class BallDash : MonoBehaviour, ISaveable
     // Start is called before the first frame update
     void Awake()
     {
+        maxChargeParticle.Stop();
         rb = GetComponent<Rigidbody2D>();
         dashTrail = GetComponent<TrailRenderer>();
         phaseCollider.enabled = false;
@@ -130,6 +132,8 @@ public class BallDash : MonoBehaviour, ISaveable
         }
         //Manage durations
         if(isDashing){
+            rb.AddForce(dirToDash*(dashForce+extraForce)*16, ForceMode2D.Force);
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxDashSpeed+buffedMaxExtraSpeed+maxExtraSpeed);
             durationTimer -= Time.deltaTime;
         }
         if(durationTimer < 0){
@@ -149,8 +153,9 @@ public class BallDash : MonoBehaviour, ISaveable
         rb.velocity = Vector2.zero;
         dirToDash = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position)*10f;
         dirToDash = dirToDash.normalized;
-        rb.AddForce(dirToDash*(dashForce+extraForce), ForceMode2D.Impulse);
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxDashSpeed+buffedMaxExtraSpeed+maxExtraSpeed);
+        currDashDir = dirToDash;
+        // rb.AddForce(dirToDash*(dashForce+extraForce), ForceMode2D.Impulse);
+        // rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxDashSpeed+buffedMaxExtraSpeed+maxExtraSpeed);
 
         isDashing = true;
         ResetDuration();
