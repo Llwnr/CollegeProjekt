@@ -18,6 +18,10 @@ public class ShootBullet : ActionNode
         GameObject newBullet = GameObject.Instantiate(bullet, context.transform.position, Quaternion.identity);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(blackboard.direction*shootForce, ForceMode2D.Impulse);
+        //Make bullet rotate and face the direction it is moving towards
+        Vector2 targetPos = blackboard.direction;
+        float angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
+        newBullet.transform.eulerAngles = new Vector3(0,0, angle-90);
         return State.Success;
     }
 }

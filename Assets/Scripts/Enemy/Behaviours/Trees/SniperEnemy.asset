@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: SerpentEnemy
+  m_Name: SniperEnemy
   m_EditorClassIdentifier: 
   rootNode:
-    rid: 2370570709331345408
+    rid: 7751732972114149376
   nodes:
-  - rid: 2370570709331345408
-  - rid: 2370570709331345409
-  - rid: 2370570709331345410
-  - rid: 2370570729486811136
-  - rid: 2370570729486811137
-  - rid: 2370570729486811138
-  - rid: 2370570729486811139
+  - rid: 7751732972114149376
+  - rid: 7751732972114149377
+  - rid: 7751732972114149378
+  - rid: 7751732972114149379
+  - rid: 7751732973071761408
+  - rid: 7751732973071761409
+  - rid: 7751732973071761410
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 340, y: -135.2, z: 0}
+  viewPosition: {x: 369.6, y: -18.4, z: 0}
   viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
-    - rid: 2370570709331345408
-      type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
+    - rid: 7751732972114149376
+      type: {class: RootNode, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
-        guid: 181a601e-3d0e-43ea-973d-67e55ee6b544
+        guid: fed8f36a-9d0d-4a73-937c-e47cd9786c06
         position: {x: 0, y: 0}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
@@ -44,93 +44,90 @@ MonoBehaviour:
         description: 
         drawGizmos: 0
         child:
-          rid: 2370570709331345409
-    - rid: 2370570709331345409
-      type: {class: Repeat, ns: TheKiwiCoder, asm: Assembly-CSharp}
+          rid: 7751732972114149377
+    - rid: 7751732972114149377
+      type: {class: Repeat, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
-        guid: 5e45d45cbbb5bc94f8ccbb8f3126ce9b
-        position: {x: 0, y: 105.600006}
+        guid: 774431f992e910d4da22a007ad409d20
+        position: {x: 0.8000183, y: 91.600006}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         child:
-          rid: 2370570709331345410
+          rid: 7751732972114149378
         restartOnSuccess: 1
         restartOnFailure: 0
-    - rid: 2370570709331345410
-      type: {class: Sequencer, ns: TheKiwiCoder, asm: Assembly-CSharp}
+    - rid: 7751732972114149378
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
-        guid: d252a152368dbfb4caf064ed149f2b93
-        position: {x: 0, y: 213.20001}
+        guid: e814a1f806028ee46910f7df45ae5a30
+        position: {x: 0.7999878, y: 193.99998}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         children:
-        - rid: 2370570729486811136
-        - rid: 2370570729486811137
-        - rid: 2370570729486811138
-        - rid: 2370570729486811139
-    - rid: 2370570729486811136
-      type: {class: WaitRandom, ns: , asm: Assembly-CSharp}
+        - rid: 7751732972114149379
+        - rid: 7751732973071761408
+        - rid: 7751732973071761409
+        - rid: 7751732973071761410
+    - rid: 7751732972114149379
+      type: {class: AimPlayer, ns: , asm: Main}
       data:
         state: 0
         started: 0
-        guid: a3cd291768f9dad45920f190389eac87
-        position: {x: -266.19998, y: 340}
-        blackboard:
-          direction: {x: 0, y: 0, z: 0}
-          moveToPosition: {x: 0, y: 0, z: 0}
-        description: 
-        drawGizmos: 0
-        minDuration: 0.5
-        maxDuration: 1
-    - rid: 2370570729486811137
-      type: {class: TargetPlayer, ns: , asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: 14fa914b5c6d1234f8748ba6c4dce782
-        position: {x: -101.599976, y: 342.8}
-        blackboard:
-          direction: {x: 0, y: 0, z: 0}
-          moveToPosition: {x: 0, y: 0, z: 0}
-        description: 
-        drawGizmos: 0
-    - rid: 2370570729486811138
-      type: {class: DashAtDir, ns: , asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: 649cf546a9f2c8c4da93baaba00e587b
-        position: {x: 72.79999, y: 344.4}
-        blackboard:
-          direction: {x: 0, y: 0, z: 0}
-          moveToPosition: {x: 0, y: 0, z: 0}
-        description: 
-        drawGizmos: 0
-        dashForce: 3
-        maxDashSpeed: 12
-        dashDuration: 1.5
-        warmUpDuration: 0.5
-        warmUpSpeedSlower: 0.5
-    - rid: 2370570729486811139
-      type: {class: Wait, ns: TheKiwiCoder, asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: 204bb23e629cbdf4bae7dd32128571af
-        position: {x: 244.80002, y: 344}
+        guid: 7386d2d5653512848b5b50ba61a43df9
+        position: {x: -318.4, y: 324}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         duration: 2
+    - rid: 7751732973071761408
+      type: {class: TargetPlayer, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 8d03986d09d6c0d4ba6ddcc9682ea2d2
+        position: {x: -168.79999, y: 323.59998}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+    - rid: 7751732973071761409
+      type: {class: ShootBullet, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: abf8e7d8c3aec844f81c2dc3c9ad8193
+        position: {x: -12.799988, y: 322.4}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        bullet: {fileID: 7839815524136982913, guid: 1b6f4b24a0973794b9c4af43fd32453c,
+          type: 3}
+        shootForce: 12
+    - rid: 7751732973071761410
+      type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 3c6a4ade795994e418db6b7372317991
+        position: {x: 142.40002, y: 322}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        duration: 1

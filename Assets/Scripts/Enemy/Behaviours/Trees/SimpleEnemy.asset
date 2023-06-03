@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: SimpleEnemy
+  m_EditorClassIdentifier: 
+  rootNode:
+    rid: 7751732974384316416
+  nodes:
+  - rid: 7751732974384316416
+  - rid: 7751732974384316417
+  - rid: 7751732974384316418
+  - rid: 7751732974384316419
+  - rid: 7751732974384316420
+  - rid: 7751732974384316421
+  - rid: 7751732974384316422
+  - rid: 7751732974384316423
+  - rid: 7751732974384316424
+  treeState: 0
+  blackboard:
+    direction: {x: 0, y: 0, z: 0}
+    moveToPosition: {x: 0, y: 0, z: 0}
+  viewPosition: {x: 230.4, y: -52.8, z: 0}
+  viewScale: {x: 1, y: 1, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7751732974384316416
+      type: {class: RootNode, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 8c4a6268-f8d3-4c3d-bee9-4c632214eccd
+        position: {x: 0, y: 0}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 7751732974384316417
+    - rid: 7751732974384316417
+      type: {class: Repeat, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: d4919c060c8d1a043be5bed4bf769dd6
+        position: {x: -0.39996338, y: 101.2}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 7751732974384316418
+        restartOnSuccess: 1
+        restartOnFailure: 0
+    - rid: 7751732974384316418
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: ddebe46d547d3c0458385935d49245b4
+        position: {x: -0.7999878, y: 202}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        children:
+        - rid: 7751732974384316419
+        - rid: 7751732974384316420
+        - rid: 7751732974384316421
+        - rid: 7751732974384316424
+        - rid: 7751732974384316422
+        - rid: 7751732974384316423
+    - rid: 7751732974384316419
+      type: {class: WaitRandom, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 8c9d75db5051893488697830009abfe2
+        position: {x: -318.19998, y: 330}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        minDuration: 1
+        maxDuration: 2
+    - rid: 7751732974384316420
+      type: {class: PickRandomPos, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 0a19d2fc32d02464cb4759f1f8e71280
+        position: {x: -166.19998, y: 332}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        rangeX: 1
+        rangeY: 1
+        currentPos: {x: 0, y: 0, z: 0}
+    - rid: 7751732974384316421
+      type: {class: MoveAtDir, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 30052886c7f9e494b833740ea08ebd0d
+        position: {x: -15.9999695, y: 332}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        moveSpeed: 20
+        maxSpeed: 5.5
+        minDuration: 0.5
+        maxDuration: 1
+    - rid: 7751732974384316422
+      type: {class: TargetPlayer, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 2d4f162eb5f6bc44cb8fa616554a39e7
+        position: {x: 286.79996, y: 333.19998}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+    - rid: 7751732974384316423
+      type: {class: ShootBullet, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 53d1c811bbfa05346b0f6ce5956c844e
+        position: {x: 443.00003, y: 335.19998}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        bullet: {fileID: 7839815524136982913, guid: 8e3a4cfefe6088b48a00cc0049aaa718,
+          type: 3}
+        shootForce: 7
+    - rid: 7751732974384316424
+      type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 7008fa17ba539e1439a9aae7e1ccb79c
+        position: {x: 133.19998, y: 333.59998}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        duration: 0.2
