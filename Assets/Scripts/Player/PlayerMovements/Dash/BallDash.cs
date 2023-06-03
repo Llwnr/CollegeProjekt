@@ -208,7 +208,6 @@ public class BallDash : MonoBehaviour, ISaveable
         //Also limit it
         if(extraSpeed > maxExtraSpeed+buffedMaxExtraSpeed) {
             extraSpeed = maxExtraSpeed+buffedMaxExtraSpeed;
-            Debug.Log("Play");
             maxChargeParticle.Play();
         }
         if(extraForce > maxExtraForce+buffedMaxExtraForce) extraForce = maxExtraForce+buffedMaxExtraForce;

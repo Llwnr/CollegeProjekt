@@ -11,6 +11,7 @@ public class BoomOnDeath : MonoBehaviour
         newParticle.Stop();
     }
     private void OnDestroy() {
+        if(!newParticle) return;
         newParticle.gameObject.transform.position = transform.position;
         newParticle.Play();
     }

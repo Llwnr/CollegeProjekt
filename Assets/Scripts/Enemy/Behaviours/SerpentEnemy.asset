@@ -110,15 +110,17 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 649cf546a9f2c8c4da93baaba00e587b
-        position: {x: 64.84808, y: 340.224}
+        position: {x: 72.79999, y: 344.4}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        dashForce: 1200
-        maxDashSpeed: 14
-        dashDuration: 1
+        dashForce: 3
+        maxDashSpeed: 12
+        dashDuration: 1.5
+        warmUpDuration: 0.5
+        warmUpSpeedSlower: 0.5
     - rid: 2370570729486811139
       type: {class: Wait, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:

@@ -83,4 +83,11 @@ public class LimitBallSpeed : MonoBehaviour
             }
         }
     }
+
+    public float GetSlowdownRate(){
+        return slowdownFactor;
+    }
+    public void SetSlowdownRate(float slowdownFactor){
+        this.slowdownFactor = slowdownFactor;
+    }
 }
