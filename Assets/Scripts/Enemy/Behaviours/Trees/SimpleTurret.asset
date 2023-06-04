@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: SimpleTurret
+  m_EditorClassIdentifier: 
+  rootNode:
+    rid: 7751732992409862144
+  nodes:
+  - rid: 7751732992409862144
+  - rid: 7751732992409862145
+  - rid: 7751732992409862146
+  - rid: 7751732992409862147
+  - rid: 7751732992409862148
+  - rid: 7751732992409862149
+  - rid: 7751732992409862150
+  treeState: 0
+  blackboard:
+    direction: {x: 0, y: 0, z: 0}
+    moveToPosition: {x: 0, y: 0, z: 0}
+  viewPosition: {x: 296, y: -59.2, z: 0}
+  viewScale: {x: 1, y: 1, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7751732992409862144
+      type: {class: RootNode, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 51786577-84d5-4b0d-b0ad-11458335b291
+        position: {x: 0, y: 0}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 7751732992409862145
+    - rid: 7751732992409862145
+      type: {class: Repeat, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 829f8e4f5e0725545a00ba085273a621
+        position: {x: 1.6000366, y: 100.8}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 7751732992409862146
+        restartOnSuccess: 1
+        restartOnFailure: 0
+    - rid: 7751732992409862146
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 574803d5cd5b28c40a293d58ddd6ddc2
+        position: {x: -0.4000244, y: 203.2}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        children:
+        - rid: 7751732992409862148
+        - rid: 7751732992409862147
+        - rid: 7751732992409862149
+        - rid: 7751732992409862150
+    - rid: 7751732992409862147
+      type: {class: TargetPlayer, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 42d271712ad31e645a65026d18c18d0d
+        position: {x: -138.19995, y: 330.4}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+    - rid: 7751732992409862148
+      type: {class: WaitRandom, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 197d831da7acf914395bbe0f69ba2d93
+        position: {x: -304.128, y: 331.952}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        minDuration: 0.8
+        maxDuration: 1.5
+    - rid: 7751732992409862149
+      type: {class: ShootMultiple, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: d6136aeae534f4646942f1e41da9e9ce
+        position: {x: 24, y: 330}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        bullet: {fileID: 7839815524136982913, guid: fde6d2f8711565e4d9f0a3fb2ed934a7,
+          type: 3}
+        shootForce: 6
+        spreadAngle: 25
+        numOfBullets: 8
+        throwDuration: 0.12
+    - rid: 7751732992409862150
+      type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 8ab4bd34f70131940aecc6b3ec4a3675
+        position: {x: 186.40002, y: 330.304}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        duration: 2

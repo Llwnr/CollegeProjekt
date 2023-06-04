@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -8774069167670202144}
   - component: {fileID: 1929447847364265174}
   m_Layer: 7
-  m_Name: SimpleEnemy
+  m_Name: SuicideBomber
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 400586ae982eeae4faa1d3e69c03dc5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 442abe45cd9d3724f9bed8cac13d5a16, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,7 +113,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -536,11 +536,6 @@ PrefabInstance:
       propertyPath: targetHealth
       value: 
       objectReference: {fileID: 1929447847364265174}
-    - target: {fileID: 4203096185906659235, guid: 63539cef5e806c948a2fb5a8abfefc4d,
-        type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6263871351371729655, guid: 63539cef5e806c948a2fb5a8abfefc4d,
         type: 3}
       propertyPath: m_Name
