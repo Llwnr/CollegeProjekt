@@ -18,11 +18,14 @@ MonoBehaviour:
   - rid: 7751732993847984128
   - rid: 7751732993847984129
   - rid: 7751732993847984130
+  - rid: 7751733017002901504
+  - rid: 7751733017002901505
+  - rid: 7751733017002901506
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 232.8, y: -123.2, z: 0}
+  viewPosition: {x: 293.6, y: -156, z: 0}
   viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
@@ -69,4 +72,50 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        children: []
+        children:
+        - rid: 7751733017002901504
+        - rid: 7751733017002901506
+        - rid: 7751733017002901505
+    - rid: 7751733017002901504
+      type: {class: FollowPlayer, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 6b437b5f38ff00a4a95f9ff8106d9f89
+        position: {x: -211.79999, y: 363.19995}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        range: 8
+        rangeToReach: 1.5
+        moveSpeed: 35
+        maxSpeed: 6
+        durationToNextAction: 3
+    - rid: 7751733017002901505
+      type: {class: Blast, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: d212d4a37f48f3c4da0822ce8f5d52db
+        position: {x: 187.60803, y: 361.19995}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        blastExplosion: {fileID: 0}
+    - rid: 7751733017002901506
+      type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 264e8b47b9c2c6d47940e89d66de8035
+        position: {x: -6.199951, y: 366.8}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        duration: 0.3

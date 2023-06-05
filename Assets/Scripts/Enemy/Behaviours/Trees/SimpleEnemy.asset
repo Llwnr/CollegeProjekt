@@ -28,7 +28,7 @@ MonoBehaviour:
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 230.4, y: -52.8, z: 0}
+  viewPosition: {x: 336, y: -4.8, z: 0}
   viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2

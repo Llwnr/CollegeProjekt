@@ -35,6 +35,8 @@ public class BallDash : MonoBehaviour, ISaveable
     private float hDir, vDir;
     private Vector2 dirToDash = Vector2.zero;
 
+    private bool chargingDash = false;
+
     [Header ("Charged Extra Dash")]
     [SerializeField]private float extraSpeed = 0;
     [SerializeField]private float extraForce = 0;
@@ -64,7 +66,6 @@ public class BallDash : MonoBehaviour, ISaveable
     private Color origColor;
     [SerializeField]private Color dashColor;
     private Color32 dashChargeBarColor = new Color32(0,0,0,255);
-    [SerializeField]private ParticleSystem maxChargeParticle;
 
     private TrailRenderer dashTrail;
     private Gradient dashTrailColor;
@@ -99,7 +100,6 @@ public class BallDash : MonoBehaviour, ISaveable
     // Start is called before the first frame update
     void Awake()
     {
-        maxChargeParticle.Stop();
         rb = GetComponent<Rigidbody2D>();
         dashTrail = GetComponent<TrailRenderer>();
         phaseCollider.enabled = false;
@@ -123,6 +123,8 @@ public class BallDash : MonoBehaviour, ISaveable
     {
         if(Input.GetMouseButton(0) && !isDashing){
             ChargeForce();
+        }else{
+            chargingDash = false;
         }
         //Dash at direction pointed by mouse
         if(Input.GetMouseButtonUp(0) && !isDashing){
@@ -163,8 +165,6 @@ public class BallDash : MonoBehaviour, ISaveable
         DisplayDashTrails();
         //SetDashColor();
         animator.Play("DashStart");
-
-        maxChargeParticle.Stop();
     }
 
     public void DashEnd(){
@@ -201,6 +201,7 @@ public class BallDash : MonoBehaviour, ISaveable
     }
 
     public void ChargeForce(){
+        chargingDash = true;
         float totalFramesToTake = 1+(framesForMaxCharge-chargeFrameReduction+(int)increasedFramesForMaxCharge)/chargeSpeed;
         if(totalFramesToTake < 1) totalFramesToTake = 1;
         extraSpeed += (maxExtraSpeed+buffedMaxExtraSpeed) / totalFramesToTake;
@@ -208,7 +209,6 @@ public class BallDash : MonoBehaviour, ISaveable
         //Also limit it
         if(extraSpeed > maxExtraSpeed+buffedMaxExtraSpeed) {
             extraSpeed = maxExtraSpeed+buffedMaxExtraSpeed;
-            maxChargeParticle.Play();
         }
         if(extraForce > maxExtraForce+buffedMaxExtraForce) extraForce = maxExtraForce+buffedMaxExtraForce;
     }
@@ -231,6 +231,10 @@ public class BallDash : MonoBehaviour, ISaveable
     void ResetExtraForcesFromCharge(){
         extraForce = 0;
         extraSpeed = 0;
+    }
+
+    public bool IsBallCharging(){
+        return chargingDash;
     }
 
     public float GetMaxCharge(){

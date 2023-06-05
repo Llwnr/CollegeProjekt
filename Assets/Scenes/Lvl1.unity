@@ -25713,6 +25713,11 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 5296754926412939746, guid: 33e064fd05d3bb846a384d54066c3f8b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5296754926813311047, guid: 33e064fd05d3bb846a384d54066c3f8b,
         type: 3}
       propertyPath: targetHealth
