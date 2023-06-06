@@ -25,7 +25,7 @@ MonoBehaviour:
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 293.6, y: -156, z: 0}
+  viewPosition: {x: 139.2, y: -160, z: 0}
   viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
@@ -105,7 +105,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        blastExplosion: {fileID: 0}
+        blastExplosion: {fileID: 100004, guid: 33384af7b24a0f14cb7bbf3b795f7a2b, type: 3}
     - rid: 7751733017002901506
       type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
       data:

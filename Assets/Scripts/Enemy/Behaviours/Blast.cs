@@ -17,7 +17,7 @@ public class Blast : ActionNode
     }
 
     protected override State OnUpdate() {
-        Debug.Log("Blasted");
+        GameObject.Instantiate(blastExplosion, myTransform.position, Quaternion.identity);
         myTransform.gameObject.SetActive(false);
         return State.Success;
     }
