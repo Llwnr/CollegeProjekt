@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LimitBallSpeed : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class LimitBallSpeed : MonoBehaviour
 
     private void Update() {
         ReduceDurationOfLimiters();
+
+        if(Input.GetKeyDown(KeyCode.R)){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void FixedUpdate() {

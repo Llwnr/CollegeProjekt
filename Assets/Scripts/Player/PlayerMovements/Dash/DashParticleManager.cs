@@ -5,7 +5,7 @@ using UnityEngine;
 public class DashParticleManager : MonoBehaviour
 {
     private BallDash ballDash;
-    [SerializeField]private ParticleSystem fullChargeParticle;
+    [SerializeField]private GameObject fullChargeParticle;
     [SerializeField]private List<ParticleSystem> chargingParticles = new List<ParticleSystem>();
 
     // Start is called before the first frame update
@@ -13,7 +13,7 @@ public class DashParticleManager : MonoBehaviour
     {
         ballDash = GetComponent<BallDash>();
         StopChargingParticles();
-        fullChargeParticle.Stop();
+        StopMaxChargedParticles();
     }
 
     private void Update() {
@@ -24,10 +24,9 @@ public class DashParticleManager : MonoBehaviour
         }
 
         if(ballDash.IsAtMaxCharge()){
-            fullChargeParticle.Play();
-            SetFullChargeEmissionActive(true);
+            DisplayMaxChargedParticles();
         }else{
-            SetFullChargeEmissionActive(false);
+            StopMaxChargedParticles();
         }
     }
 
@@ -43,9 +42,18 @@ public class DashParticleManager : MonoBehaviour
         }
     }
 
-    void SetFullChargeEmissionActive(bool value){
-        var emission = fullChargeParticle.emission;
-        emission.enabled = value;
+    void DisplayMaxChargedParticles(){
+        foreach(ParticleSystem particleSystem in fullChargeParticle.GetComponentsInChildren<ParticleSystem>()){
+            var emission = particleSystem.emission;
+            emission.enabled = true;
+        }
+    }
+
+    void StopMaxChargedParticles(){
+        foreach(ParticleSystem particleSystem in fullChargeParticle.GetComponentsInChildren<ParticleSystem>()){
+            var emission = particleSystem.emission;
+            emission.enabled = false;
+        }
     }
 }
 
