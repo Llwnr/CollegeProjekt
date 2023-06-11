@@ -14,12 +14,16 @@ public class ShootMultiple : ActionNode
     public float throwDuration;
     private float durationCount;
 
+    public bool includeRandomness = true;
+
     private int i;
+    private float randomSpread;
 
     private Vector2 targetDir;
     protected override void OnStart() {
         ResetThrowDuration();
         i = 0;
+        randomSpread = 0;
     }
 
     protected override void OnStop() {
@@ -36,7 +40,11 @@ public class ShootMultiple : ActionNode
         if(durationCount < 0){
             ResetThrowDuration();
             //Spread it weirdly
-            float randomSpread = Random.Range(-spreadAngle, spreadAngle);
+            if(includeRandomness)
+                randomSpread = Random.Range(-spreadAngle, spreadAngle);
+            else{
+                randomSpread += spreadAngle / numOfBullets;
+            }
             newSpreadAngle = playerTargetAngle + randomSpread;
             spreadDir = new Vector2(Mathf.Cos(Mathf.Deg2Rad * newSpreadAngle), Mathf.Sin(Mathf.Deg2Rad * newSpreadAngle));
             ThrowBullet(spreadDir);

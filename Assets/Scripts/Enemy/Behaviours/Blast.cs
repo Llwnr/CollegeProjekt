@@ -54,7 +54,7 @@ public class Blast : ActionNode
         }
 
         //Add force
-        rb.AddForce(explosionDir*Mathf.Lerp(explosionForce, 0, explosionDist), forceMode);
+        rb.AddForce(explosionDir*Mathf.Lerp(explosionForce, explosionForce*0.2f, explosionDist), forceMode);
         Debug.Log(explosionDist);
     }
 }

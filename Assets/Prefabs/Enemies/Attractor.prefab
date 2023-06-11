@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4984705589631547164}
   - component: {fileID: 4984705589631547162}
   - component: {fileID: 4984705589631547167}
-  - component: {fileID: 4984705589631547166}
   - component: {fileID: -8017955482752556191}
   - component: {fileID: -8774069167670202144}
   - component: {fileID: 1929447847364265174}
@@ -184,19 +183,6 @@ MonoBehaviour:
   textColor:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &4984705589631547166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4984705589631547158}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 38f32443fb12f4142b502154ea9f728f, type: 2}
 --- !u!114 &-8017955482752556191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,11 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1f4ae24db50034b95c945c7dc4497b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullForce: 200
+  pullForce: 250
   radius: 6
   limitPlayerSlowdownSpeed: 0
-  pullPower: 0
-  pullTweak: 0.441
+  pullTweak: 0.2
 --- !u!114 &8688385367270025056
 MonoBehaviour:
   m_ObjectHideFlags: 0

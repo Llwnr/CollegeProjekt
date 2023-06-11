@@ -13,6 +13,7 @@ TagManager:
   - Bomb
   - UpgradesPanel
   - Wall
+  - vCam
   layers:
   - Default
   - TransparentFX

@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: SuicideBomber
+  m_Name: BrobotBoss
   m_EditorClassIdentifier: 
   rootNode:
-    rid: 7751732993847984128
+    rid: 7751733111067246592
   nodes:
-  - rid: 7751732993847984128
-  - rid: 7751732993847984129
-  - rid: 7751732993847984130
-  - rid: 7751733017002901504
-  - rid: 7751733017002901505
-  - rid: 7751733017002901506
-  - rid: 7751733087098372096
+  - rid: 7751733111067246592
+  - rid: 7751733111067246593
+  - rid: 7751733111067246594
+  - rid: 7751733127400652800
+  - rid: 7751733127400652801
+  - rid: 7751733127400652802
+  - rid: 7751733131550392320
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 143.2, y: -44.8, z: 0}
-  viewScale: {x: 1, y: 1, z: 1}
+  viewPosition: {x: 120, y: -37.6, z: 0}
+  viewScale: {x: 0.8695652, y: 0.8695652, z: 1}
   references:
     version: 2
     RefIds:
-    - rid: 7751732993847984128
+    - rid: 7751733111067246592
       type: {class: RootNode, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
-        guid: 0050358a-ff4f-449b-95fb-a6b9425fe2a6
+        guid: 45e91274-eb30-452c-a8a4-f21465cc8ed5
         position: {x: 0, y: 0}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
@@ -44,95 +44,99 @@ MonoBehaviour:
         description: 
         drawGizmos: 0
         child:
-          rid: 7751732993847984129
-    - rid: 7751732993847984129
+          rid: 7751733111067246593
+    - rid: 7751733111067246593
       type: {class: Repeat, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
-        guid: 92909ed7807e0164a89d61bd910c996a
-        position: {x: -2.399994, y: 102}
+        guid: 588139543e58c264ba9dedff73dc169e
+        position: {x: 2, y: 95.40001}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         child:
-          rid: 7751732993847984130
+          rid: 7751733111067246594
         restartOnSuccess: 1
         restartOnFailure: 0
-    - rid: 7751732993847984130
+    - rid: 7751733111067246594
       type: {class: Sequencer, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
-        guid: 35f41b2270032394c81acfeb4586ad21
-        position: {x: -2, y: 220}
+        guid: 74e21746ef1df694e839164abf6fe330
+        position: {x: -2.7999878, y: 215.40001}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         children:
-        - rid: 7751733017002901504
-        - rid: 7751733017002901506
-        - rid: 7751733017002901505
-        - rid: 7751733087098372096
-    - rid: 7751733017002901504
-      type: {class: FollowPlayer, ns: , asm: Main}
+        - rid: 7751733127400652802
+        - rid: 7751733131550392320
+    - rid: 7751733127400652800
+      type: {class: TargetPlayer, ns: , asm: Main}
       data:
         state: 0
         started: 0
-        guid: 6b437b5f38ff00a4a95f9ff8106d9f89
-        position: {x: -211.79999, y: 363.19995}
+        guid: 199f2273f936ef9439d465ef7ac94907
+        position: {x: -253.59998, y: 329.19998}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        range: 8
-        rangeToReach: 3
-        moveSpeed: 35
-        maxSpeed: 6
-        durationToNextAction: 3
-    - rid: 7751733017002901505
-      type: {class: Blast, ns: , asm: Main}
+    - rid: 7751733127400652801
+      type: {class: ShootMultiple, ns: , asm: Main}
       data:
         state: 0
         started: 0
-        guid: d212d4a37f48f3c4da0822ce8f5d52db
-        position: {x: 187.60803, y: 361.19995}
+        guid: 5e491fa50762f0743a0f395997ea4bf0
+        position: {x: -81.600006, y: 328.8}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        blastExplosion: {fileID: 100004, guid: 955643c11658f724e8e18fa04e72b2b4, type: 3}
-        explosionForce: 24
-    - rid: 7751733017002901506
+        bullet: {fileID: 7839815524136982913, guid: 8e3a4cfefe6088b48a00cc0049aaa718,
+          type: 3}
+        shootForce: 10
+        spreadAngle: 40
+        numOfBullets: 50
+        throwDuration: 0.15
+        includeRandomness: 1
+    - rid: 7751733127400652802
       type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
-        guid: 264e8b47b9c2c6d47940e89d66de8035
-        position: {x: -6.199951, y: 366.8}
+        guid: f312c67340ac4c343965536ed9153843
+        position: {x: 78.20001, y: 326}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        duration: 0.8
-    - rid: 7751733087098372096
-      type: {class: ShakeScreenBTree, ns: , asm: Main}
+        duration: 1
+    - rid: 7751733131550392320
+      type: {class: OrbitBalls, ns: , asm: Main}
       data:
         state: 0
         started: 0
-        guid: f940aeec6c03a4e4890a490552f34551
-        position: {x: 409.60004, y: 355.19998}
+        guid: cbb107049428db242ac0c2ba95a13fcd
+        position: {x: 237.30005, y: 326.50006}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        shakeIntensity: 2.5
-        shakeDuration: 0.4
+        ball: {fileID: 7839815524136982913, guid: fde6d2f8711565e4d9f0a3fb2ed934a7,
+          type: 3}
+        rotator: {fileID: 5617134247228001472, guid: 4b2ec45bcd8ceb342853328d1260fa4c,
+          type: 3}
+        numOfBalls: 12
+        distFromBall: 5
+        duration: 2
+        rotateSpeed: 5
