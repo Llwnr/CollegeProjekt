@@ -17,13 +17,16 @@ public class OrbitBalls : ActionNode
     public float rotateSpeed;
     private float newAngle = 0;
 
-    private float offsetForTargetPlayer = 0;
+    private Transform myTransform, player;
 
 
     private List<GameObject> myBalls = new List<GameObject>();
     protected override void OnStart() {
+        player = GameObject.FindWithTag("Player").transform;
+        myTransform = context.transform;
         rotatorRef = GameObject.Instantiate(rotator, context.transform.position, Quaternion.identity);
         rotatorRef.GetComponent<RotateObject>().SetRotateSpeed(rotateSpeed);
+        blackboard.orbitPivot = rotatorRef;
         CreateBalls();
 
         durationCounter = duration;
@@ -39,41 +42,35 @@ public class OrbitBalls : ActionNode
         
 
             GameObject newBall = GameObject.Instantiate(ball,rotatorRef.transform.position, Quaternion.identity);
-            newBall.transform.localPosition = new Vector3(x,y,0)*distFromBall;
-            //newBall.transform.SetParent(rotatorRef.transform, false);
+            newBall.transform.localPosition = new Vector3(x,y,0);
+            newBall.transform.SetParent(rotatorRef.transform, false);
             myBalls.Add(newBall);
+            blackboard.orbitBalls.Add(newBall);
         }
     }
 
     protected override void OnStop() {
-        for(int i=0; myBalls.Count != 0;){
-            GameObject.Destroy(myBalls[i]);
-            myBalls.RemoveAt(i);
-        }
-        GameObject.Destroy(rotatorRef);
     }
 
     protected override State OnUpdate() {
         durationCounter -= Time.deltaTime;
-        if(durationCounter < duration/2){
-            for(int i=0; i<myBalls.Count; i++){
-            float x, y, origX, origY;
-            //Create balls at different location in perfect circle
-            x = Mathf.Sin((Mathf.PI * 2 * i*360/(numOfBalls*360))/2);
-            y = Mathf.Cos((Mathf.PI * 2 * i*360/(numOfBalls*360))/2);
-            origX = Mathf.Sin(Mathf.PI * 2 * i*360/(numOfBalls*360));
-            origY = Mathf.Cos(Mathf.PI * 2 * i*360/(numOfBalls*360));
-            
-            x = Mathf.Lerp(x, origX, durationCounter*4/duration);
-            y = Mathf.Lerp(y, origY, durationCounter*4/duration);
-
-            myBalls[i].transform.localPosition = new Vector3(x,y,0)*distFromBall;
-        }
-        }
+        GraduallyExpandToMaxDist();
         if(durationCounter < 0)
             return State.Success;
         else{
             return State.Running;
+        }
+    }
+
+    void GraduallyExpandToMaxDist(){
+        for(int i=0; i<myBalls.Count; i++){
+            if(!myBalls[i]){
+                continue;
+            }
+            float origX, origY;
+            origX = Mathf.Sin(Mathf.PI * 2 * i*360/(numOfBalls*360));
+            origY = Mathf.Cos(Mathf.PI * 2 * i*360/(numOfBalls*360));
+            myBalls[i].transform.localPosition = new Vector3(origX, origY, 0) * Mathf.Lerp(distFromBall, 1, durationCounter/duration);
         }
     }
 }

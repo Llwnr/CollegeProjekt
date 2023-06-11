@@ -22,11 +22,15 @@ MonoBehaviour:
   - rid: 7751733127400652801
   - rid: 7751733127400652802
   - rid: 7751733131550392320
+  - rid: 7751733158365102080
+  - rid: 7751733158365102081
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 120, y: -37.6, z: 0}
+    orbitBalls: []
+    orbitPivot: {fileID: 0}
+  viewPosition: {x: 62.4, y: -90.4, z: 0}
   viewScale: {x: 0.8695652, y: 0.8695652, z: 1}
   references:
     version: 2
@@ -41,6 +45,8 @@ MonoBehaviour:
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
         child:
@@ -55,6 +61,8 @@ MonoBehaviour:
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
         child:
@@ -71,11 +79,15 @@ MonoBehaviour:
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
         children:
-        - rid: 7751733127400652802
         - rid: 7751733131550392320
+        - rid: 7751733158365102080
+        - rid: 7751733158365102081
+        - rid: 7751733127400652802
     - rid: 7751733127400652800
       type: {class: TargetPlayer, ns: , asm: Main}
       data:
@@ -86,6 +98,8 @@ MonoBehaviour:
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
     - rid: 7751733127400652801
@@ -98,6 +112,8 @@ MonoBehaviour:
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
         bullet: {fileID: 7839815524136982913, guid: 8e3a4cfefe6088b48a00cc0049aaa718,
@@ -113,23 +129,27 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: f312c67340ac4c343965536ed9153843
-        position: {x: 78.20001, y: 326}
+        position: {x: 563.0001, y: 337.80002}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
-        duration: 1
+        duration: 3
     - rid: 7751733131550392320
       type: {class: OrbitBalls, ns: , asm: Main}
       data:
         state: 0
         started: 0
         guid: cbb107049428db242ac0c2ba95a13fcd
-        position: {x: 237.30005, y: 326.50006}
+        position: {x: 61.60003, y: 343.7632}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
         ball: {fileID: 7839815524136982913, guid: fde6d2f8711565e4d9f0a3fb2ed934a7,
@@ -137,6 +157,36 @@ MonoBehaviour:
         rotator: {fileID: 5617134247228001472, guid: 4b2ec45bcd8ceb342853328d1260fa4c,
           type: 3}
         numOfBalls: 12
-        distFromBall: 5
-        duration: 2
-        rotateSpeed: 5
+        distFromBall: 8
+        duration: 4
+        rotateSpeed: 0.8
+    - rid: 7751733158365102080
+      type: {class: AlignOrbitBalls, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: af483340bdc36cd4d8cd92282dc32deb
+        position: {x: 227.30003, y: 341}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
+        description: 
+        drawGizmos: 0
+        duration: 5
+    - rid: 7751733158365102081
+      type: {class: ThrowOrbitBalls, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: 7d5d125d96643184d8ad787308755ff4
+        position: {x: 398.7, y: 338.996}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
+        description: 
+        drawGizmos: 0
+        throwForce: 20
