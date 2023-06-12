@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5228321877562933540}
   - component: {fileID: 8392750929185482549}
   - component: {fileID: 62714577006513377}
+  - component: {fileID: 4245305649008610560}
   m_Layer: 0
   m_Name: OrbsPivot
   m_TagString: Untagged
@@ -61,4 +62,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   isPlayer: 1
-  offset: 270
+  offset: 260
+  rotSpeed: 2
+--- !u!114 &4245305649008610560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617134247228001472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74d2f4e259f8db48bdc4f399d367f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
+  lerp: 0
+  lerpSpeed: 1

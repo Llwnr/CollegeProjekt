@@ -19,6 +19,8 @@ public class OrbitBalls : ActionNode
 
     private Transform myTransform, player;
 
+    public float pivotFollowSpeed;
+
 
     private List<GameObject> myBalls = new List<GameObject>();
     protected override void OnStart() {
@@ -26,6 +28,9 @@ public class OrbitBalls : ActionNode
         myTransform = context.transform;
         rotatorRef = GameObject.Instantiate(rotator, context.transform.position, Quaternion.identity);
         rotatorRef.GetComponent<RotateObject>().SetRotateSpeed(rotateSpeed);
+        //Make sure pivot position is the same as my transform
+        rotatorRef.GetComponent<FollowObject>().SetTarget(myTransform);
+        rotatorRef.GetComponent<FollowObject>().SetLerpSpeed(pivotFollowSpeed);
         blackboard.orbitPivot = rotatorRef;
         CreateBalls();
 

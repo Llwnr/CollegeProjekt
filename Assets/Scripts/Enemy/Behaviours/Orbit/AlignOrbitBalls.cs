@@ -9,6 +9,7 @@ public class AlignOrbitBalls : ActionNode
     private List<GameObject> myBalls;
     public float duration;
     private float durationCounter;
+
     private float dist;
     protected override void OnStart() {
         myBalls = blackboard.orbitBalls;
@@ -44,7 +45,7 @@ public class AlignOrbitBalls : ActionNode
             desiredY = Mathf.Cos(Mathf.PI * 2 * i*360/(myBalls.Count*360)/2);
 
             //Lerp to desired pos
-            myBalls[i].transform.localPosition = Vector2.Lerp(new Vector2(desiredX, desiredY), new Vector2(origX, origY), durationCounter*2/duration) * dist;
+            myBalls[i].transform.localPosition = Vector2.Lerp(new Vector2(desiredX, desiredY), new Vector2(origX, origY), durationCounter/duration) * dist;
         }
     }
 }
