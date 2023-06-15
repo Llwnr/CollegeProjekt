@@ -12,9 +12,16 @@ public class AlignOrbitBalls : ActionNode
 
     private float dist;
     protected override void OnStart() {
+        //Dont execute if all the orbit balls are destroyed
         myBalls = blackboard.orbitBalls;
+        if(myBalls.Count <= 0) return;
+
+        GameObject existingBall = null;
+        foreach(GameObject ball in myBalls){
+            if(ball) existingBall = ball;
+        }
         durationCounter = duration;
-        dist = Vector2.Distance(blackboard.orbitPivot.transform.position, myBalls[0].transform.position);
+        dist = Vector2.Distance(blackboard.orbitPivot.transform.position, existingBall.transform.position);
         blackboard.orbitPivot.GetComponent<LookAtTarget>().enabled = true;
         blackboard.orbitPivot.GetComponent<RotateObject>().enabled = false;
     }

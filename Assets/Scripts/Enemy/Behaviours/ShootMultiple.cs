@@ -60,7 +60,7 @@ public class ShootMultiple : ActionNode
     }
 
     void ThrowBullet(Vector2 dir){
-        GameObject newBullet = GameObject.Instantiate(bullet, context.transform.position, Quaternion.identity);
+        GameObject newBullet = GameObject.Instantiate(bullet, context.transform.position+new Vector3(0,0,-1), Quaternion.identity);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(dir*shootForce, ForceMode2D.Impulse);
     }

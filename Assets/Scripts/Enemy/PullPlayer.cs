@@ -26,7 +26,7 @@ public class PullPlayer : MonoBehaviour
         player.GetComponent<LimitBallSpeed>().SetSlowdownRate(slowdownFactor);
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         hits = Physics2D.CircleCastAll(transform.position, radius, Vector2.zero);
         foreach(RaycastHit2D hit in hits){
             if(hit.transform.CompareTag("Player")){
@@ -42,7 +42,7 @@ public class PullPlayer : MonoBehaviour
         //Make player friction zero for gravity space like effect
         if(dir.magnitude < radius-0.5f) SetPlayerSlowdownRate(limitPlayerSlowdownSpeed);
         //Pull harder when object is closer
-        pullPower = Mathf.Lerp(pullTweak, pullTweak*0.2f, Vector2.Distance(transform.position, objectToPull.position)/radius);
+        pullPower = Mathf.Lerp(pullTweak, 0f, Vector2.Distance(transform.position, objectToPull.position)/radius);
         dir = dir.normalized;
         
         objectToPull.GetComponent<Rigidbody2D>().AddForce(dir*pullForce*pullPower, ForceMode2D.Force);
