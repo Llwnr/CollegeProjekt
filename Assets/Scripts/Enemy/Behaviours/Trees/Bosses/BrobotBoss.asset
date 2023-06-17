@@ -34,7 +34,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     orbitBalls: []
     orbitPivot: {fileID: 0}
-  viewPosition: {x: -166.4, y: -255.2, z: 0}
+  viewPosition: {x: 485.6, y: -193.6, z: 0}
   viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
@@ -203,7 +203,6 @@ MonoBehaviour:
         drawGizmos: 0
         children:
         - rid: 7751733111067246594
-        - rid: 7751733241025658881
     - rid: 7751733241025658881
       type: {class: Sequencer, ns: TheKiwiCoder, asm: BTree}
       data:
@@ -238,7 +237,7 @@ MonoBehaviour:
           orbitPivot: {fileID: 0}
         description: 
         drawGizmos: 0
-        duration: 1
+        duration: 4
     - rid: 7751733241025658883
       type: {class: ShootCircular, ns: , asm: Main}
       data:
@@ -257,8 +256,11 @@ MonoBehaviour:
           type: 3}
         numOfBullets: 5
         shootForce: 5
-        shootInterval: 2
+        shootInterval: 0.4
         shootAngle: 180
         duration: 8
         offsetIncrement: 0
         offset: 0
+        aimPlayer: 0
+        cannon: {fileID: 7778985274044922506, guid: 3a0ccb428a33f414b8bc9c9bc54611d7,
+          type: 3}

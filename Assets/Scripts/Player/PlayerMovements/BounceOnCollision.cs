@@ -66,6 +66,9 @@ public class BounceOnCollision : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
+        if(other.transform.CompareTag("Wall")){
+            GetComponent<BallDash>().DashEnd();
+        }
         if(other.transform.CompareTag("Enemy")){
             //Bounce
             float speed = velocityOnHit.magnitude;
