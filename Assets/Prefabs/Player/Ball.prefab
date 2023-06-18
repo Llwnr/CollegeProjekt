@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 70
-  maxMoveSpeed: 10
+  maxMoveSpeed: 4
 --- !u!114 &3360294590374952198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   dashForce: 50
   maxDashSpeed: 24
   duration: 0.11
-  durationTimer: 0
+  cooldown: 0
   extraSpeed: 0
   extraForce: 0
   maxExtraSpeed: 30

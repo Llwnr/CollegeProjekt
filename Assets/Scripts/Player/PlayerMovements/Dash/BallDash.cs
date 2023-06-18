@@ -27,7 +27,7 @@ public class BallDash : MonoBehaviour, ISaveable
     [SerializeField]private float dashForce;
     [SerializeField]private float maxDashSpeed;
     [SerializeField]private float duration;
-    [SerializeField]private float durationTimer;
+    private float durationTimer;
 
     private bool isDashing = false;
     private Vector2 currDashDir;
