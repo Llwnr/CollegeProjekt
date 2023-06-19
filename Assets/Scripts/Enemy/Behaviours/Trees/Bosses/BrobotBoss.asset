@@ -31,6 +31,8 @@ MonoBehaviour:
   - rid: 7751733312939098112
   - rid: 7751733312939098113
   - rid: 7751733312939098114
+  - rid: 7751733332306558976
+  - rid: 7751733332306558977
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
@@ -38,7 +40,7 @@ MonoBehaviour:
     orbitBalls: []
     orbitPivot: {fileID: 0}
     trapPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: -333.6, y: -119.2, z: 0}
+  viewPosition: {x: -360, y: -50.4, z: 0}
   viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
   references:
     version: 2
@@ -298,6 +300,8 @@ MonoBehaviour:
         drawGizmos: 0
         children:
         - rid: 7751733312939098113
+        - rid: 7751733332306558977
+        - rid: 7751733332306558976
         - rid: 7751733312939098114
     - rid: 7751733312939098113
       type: {class: TrapAnticipation, ns: , asm: Main}
@@ -323,7 +327,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 7d70abfeb3c4da74fb35aaaa1029d578
-        position: {x: 995.86896, y: 511.01398}
+        position: {x: 1210.4435, y: 517.2835}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -332,4 +336,38 @@ MonoBehaviour:
           trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        duration: 0.5
+        duration: 2
+    - rid: 7751733332306558976
+      type: {class: ThrowTrap, ns: , asm: Main}
+      data:
+        state: 0
+        started: 0
+        guid: ceae6c9d6bbe9624ab807ad84316444a
+        position: {x: 1044.07, y: 512.31647}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        trap: {fileID: 2491976670619284984, guid: b052221e65ecaf84a8f34e20327f3b4c,
+          type: 3}
+        duration: 2
+    - rid: 7751733332306558977
+      type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: 132071398a5f3794ea36e735cdd82350
+        position: {x: 861.1077, y: 508.14948}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
+        description: Wait for player to react to the anticipation
+        drawGizmos: 0
+        duration: 1
