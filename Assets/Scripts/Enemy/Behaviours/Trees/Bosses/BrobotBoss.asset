@@ -37,6 +37,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
     orbitBalls: []
     orbitPivot: {fileID: 0}
+    trapPosition: {x: 0, y: 0, z: 0}
   viewPosition: {x: -333.6, y: -119.2, z: 0}
   viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
   references:
@@ -54,6 +55,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         child:
@@ -70,6 +72,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         child:
@@ -88,6 +91,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         children:
@@ -105,6 +109,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
     - rid: 7751733127400652802
@@ -119,6 +124,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         duration: 1
@@ -134,6 +140,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         ball: {fileID: 7839815524136982913, guid: fde6d2f8711565e4d9f0a3fb2ed934a7,
@@ -157,6 +164,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         duration: 0.8
@@ -172,6 +180,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         throwForce: 16
@@ -187,6 +196,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         duration: 1
@@ -202,6 +212,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         children:
@@ -218,6 +229,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         children:
@@ -238,6 +250,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         duration: 4
@@ -253,6 +266,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         bullet: {fileID: 7839815524136982913, guid: fc32b1c7666a77f42910105cc5ca1de4,
@@ -279,6 +293,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         children:
@@ -290,12 +305,13 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: d6a3cc6ae0ed8054f9ef12c002e4d975
-        position: {x: 757.6001, y: 494.40002}
+        position: {x: 696.765, y: 512.65045}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
         maxRange: 10
@@ -313,6 +329,7 @@ MonoBehaviour:
           moveToPosition: {x: 0, y: 0, z: 0}
           orbitBalls: []
           orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        duration: 1
+        duration: 0.5

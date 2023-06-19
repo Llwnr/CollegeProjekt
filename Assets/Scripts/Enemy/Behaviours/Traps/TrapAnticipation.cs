@@ -13,6 +13,7 @@ public class TrapAnticipation : ActionNode
     protected override void OnStart()
     {
         pickedRange = Random.insideUnitCircle * maxRange + (Vector2)context.transform.position;
+        blackboard.trapPosition = pickedRange;
         GameObject.Instantiate(anticipationGuide, pickedRange, Quaternion.identity);
     }
 
