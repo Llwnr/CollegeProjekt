@@ -318,7 +318,7 @@ MonoBehaviour:
           trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        maxRange: 10
+        maxRange: 7
         anticipationGuide: {fileID: 1448867347998824144, guid: f1bed7d65077ec24ebf62974f1e1dd2d,
           type: 3}
     - rid: 7751733312939098114
@@ -336,7 +336,7 @@ MonoBehaviour:
           trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        duration: 2
+        duration: 0.5
     - rid: 7751733332306558976
       type: {class: ThrowTrap, ns: , asm: Main}
       data:
@@ -352,8 +352,9 @@ MonoBehaviour:
           trapPosition: {x: 0, y: 0, z: 0}
         description: 
         drawGizmos: 0
-        trap: {fileID: 2491976670619284984, guid: b052221e65ecaf84a8f34e20327f3b4c,
+        trap: {fileID: 3803797004070436147, guid: fecc89a3f3fc80446ae8bb76db9a7da3,
           type: 3}
+        speed: 1
         duration: 2
     - rid: 7751733332306558977
       type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
@@ -370,4 +371,4 @@ MonoBehaviour:
           trapPosition: {x: 0, y: 0, z: 0}
         description: Wait for player to react to the anticipation
         drawGizmos: 0
-        duration: 1
+        duration: 0.2

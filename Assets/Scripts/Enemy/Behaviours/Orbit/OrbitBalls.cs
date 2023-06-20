@@ -15,7 +15,6 @@ public class OrbitBalls : ActionNode
     private float durationCounter;
 
     public float rotateSpeed;
-    private float newAngle = 0;
 
     private Transform myTransform, player;
 
@@ -35,7 +34,6 @@ public class OrbitBalls : ActionNode
         CreateBalls();
 
         durationCounter = duration;
-        newAngle = 0;
     }
 
     void CreateBalls(){

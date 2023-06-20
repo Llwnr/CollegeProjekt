@@ -101,8 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPos: {x: 7, y: 12, z: 0}
   shadowManager: {fileID: 2491976671438215212}
-  height: 8
-  iterations: 100
   pointsToFollow: []
 --- !u!1001 &2491976671625977200
 PrefabInstance:
@@ -118,13 +116,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1518368169673657944, guid: eee58d3d6c75af34ea169f2dfc1054f5,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1518368169673657944, guid: eee58d3d6c75af34ea169f2dfc1054f5,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1518368169673657944, guid: eee58d3d6c75af34ea169f2dfc1054f5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1518368169673657944, guid: eee58d3d6c75af34ea169f2dfc1054f5,
         type: 3}
@@ -180,7 +183,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 5ba76af46dd12064d99df075942ad078,
+      objectReference: {fileID: -2413806693520163455, guid: 3a332d9acda164b4a91e2d42cfe8c846,
         type: 3}
     - target: {fileID: 4825785892177558531, guid: eee58d3d6c75af34ea169f2dfc1054f5,
         type: 3}

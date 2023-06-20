@@ -6,53 +6,53 @@ public class ThrowCurve : MonoBehaviour
 {
     [SerializeField]private Vector3 targetPos;
     private Vector3 currPos;
+    private float height;
+    private float speed;
+    private float lerpValue;
+
+    private bool hasLanded = false;
 
     [SerializeField]private FlightShadowInGround shadowManager;
-
-    int index;
-    [SerializeField]private float height;
-    public int iterations;
+    
 
     [SerializeField] List<Vector3> pointsToFollow = new List<Vector3>();
 
-    public void Init(Vector3 targetPos, float height, int smoothness){
+    public void Init(Vector3 targetPos, float height, float speed){
         currPos = transform.position;
         this.targetPos = targetPos;
-        pointsToFollow = GetCurve(currPos, targetPos, height, iterations);
-
-        //For shadow to follow based on index of this script
-        this.shadowManager = transform.GetChild(0).GetComponent<FlightShadowInGround>();
-        shadowManager.SetPos(currPos, targetPos);
-        index = 0;
+        this.speed = speed;
+        this.height = height;
+        lerpValue = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Follow the path created by bezier curve
-        transform.position = pointsToFollow[index];
-        shadowManager.UpdateShadowPos(index);
-        index++;
-        if(index >= pointsToFollow.Count) {
-            index = 0;
-            pointsToFollow = GetCurve(currPos, targetPos, height, iterations);
+        if(lerpValue > 1.2f) {
+            hasLanded = true;
+            return;
         }
+        //Follow the path created by bezier curve
+        transform.position = GetCurve(height, lerpValue);
+        shadowManager.SetPos(currPos, targetPos, lerpValue);
+        lerpValue += Time.deltaTime * speed;
     }
 
     //Will return a bezier curve with height;
-    List<Vector3> GetCurve(Vector3 startPos, Vector3 targetPos, float height, int numOfPoints){
+    Vector3 GetCurve(float height, float lerpValue){
         Vector3 midPoint;
-        midPoint = (startPos+targetPos)*0.5f + new Vector3(0,height,0);
+        midPoint = (currPos+targetPos)*0.5f + new Vector3(0,height,0);
+
         Vector3 aToMid, midToB;
+        aToMid = Vector3.Lerp(currPos, midPoint, lerpValue);
+        midToB = Vector3.Lerp(midPoint, targetPos, lerpValue);
 
-        List<Vector3> myPoints = new List<Vector3>();
-        for(int i=0; i<numOfPoints; i++){
-            aToMid = Vector3.Lerp(startPos, midPoint, i/(float)numOfPoints);
-            midToB = Vector3.Lerp(midPoint, targetPos, i/(float)numOfPoints);
-            Vector3 myPoint = Vector3.Lerp(aToMid, midToB, i/(float)numOfPoints);
-            myPoints.Add(myPoint);
-        }
+        Vector3 myPoint = Vector3.Lerp(aToMid, midToB, lerpValue);
 
-        return myPoints;
+        return myPoint;
+    }
+
+    public bool HasTrapLanded(){
+        return hasLanded;
     }
 }
