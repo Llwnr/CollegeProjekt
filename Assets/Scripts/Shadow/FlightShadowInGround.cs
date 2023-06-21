@@ -12,6 +12,9 @@ public class FlightShadowInGround : MonoBehaviour
         origLocalScale = transform.localScale;
     }
 
+    private void FixedUpdate() {
+    }
+
     public void SetPos(Vector3 startPos, Vector3 targetPos, float lerpValue){
         Vector3 midPoint;
         midPoint = (startPos+targetPos)*0.5f + new Vector3(0,0,0);

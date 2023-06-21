@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -8017955482752556191}
   - component: {fileID: -8774069167670202144}
   - component: {fileID: 1929447847364265174}
+  - component: {fileID: -7370693680596461870}
   m_Layer: 7
   m_Name: SniperEnemy
   m_TagString: Enemy
@@ -64,7 +65,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 38f32443fb12f4142b502154ea9f728f, type: 2}
+  tree: {fileID: 11400000, guid: e20b2a8bdb601074aa43ed711fdcaecb, type: 2}
 --- !u!114 &-8017955482752556191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +239,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
+--- !u!114 &-7370693680596461870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4984705589631547158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759af50a5493dd242b62046954432c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorWhenHit:
+    serializedVersion: 2
+    rgba: 4278190080
+  duration: 0.35
 --- !u!1 &6342258320981147757
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThrowCurve : MonoBehaviour
 {
-    [SerializeField]private Vector3 targetPos;
+    private Vector3 targetPos;
     private Vector3 currPos;
     private float height;
     private float speed;
@@ -13,9 +13,6 @@ public class ThrowCurve : MonoBehaviour
     private bool hasLanded = false;
 
     [SerializeField]private FlightShadowInGround shadowManager;
-    
-
-    [SerializeField] List<Vector3> pointsToFollow = new List<Vector3>();
 
     public void Init(Vector3 targetPos, float height, float speed){
         currPos = transform.position;

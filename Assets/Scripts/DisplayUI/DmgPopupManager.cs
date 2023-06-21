@@ -23,7 +23,7 @@ public class DmgPopupManager : MonoBehaviour, IOnDamage
 
     public void ActivateWhenDamaged(float dmgAmt, Transform myTransform){
         //Create new dmg popups
-        GameObject newTextBox = Instantiate(textBox, myTransform.position, Quaternion.identity);
+        GameObject newTextBox = Instantiate(textBox, transform.position, Quaternion.identity);
         newTextBox.GetComponent<TextMeshProUGUI>().text = dmgAmt.ToString("F0");
         newTextBox.GetComponent<TextMeshProUGUI>().color = textColor;
         newTextBox.transform.SetParent(myCanvas.transform, false);

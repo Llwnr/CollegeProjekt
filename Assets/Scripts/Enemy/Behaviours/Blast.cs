@@ -39,8 +39,11 @@ public class Blast : ActionNode
         }
     }
 
-    void AddExplosionForce(Rigidbody2D rb, float explosionForce, Vector2 explosionPos, ForceMode2D forceMode, float maxDist){
+    public static void AddExplosionForce(Rigidbody2D rb, float explosionForce, Vector2 explosionPos, ForceMode2D forceMode, float maxDist){
         Vector2 explosionDir = rb.position - explosionPos;
+        if(explosionDir.magnitude == 0){
+            explosionDir = new Vector2(0.5f, 0.5f);
+        }
         float explosionDist = explosionDir.magnitude/maxDist;
 
         //Normalize dir
@@ -54,6 +57,7 @@ public class Blast : ActionNode
         }
 
         //Add force
+        rb.velocity = Vector2.zero;
         rb.AddForce(explosionDir*Mathf.Lerp(explosionForce, explosionForce*0.2f, explosionDist), forceMode);
         Debug.Log(explosionDist);
     }

@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 7061307901248863231}
   - component: {fileID: 8491556597893137232}
   - component: {fileID: 7464972699777536457}
-  - component: {fileID: 942322312830457410}
+  - component: {fileID: 5331649823639287015}
   m_Layer: 20
   m_Name: Ball
   m_TagString: Player
@@ -228,7 +228,7 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -383,7 +383,6 @@ MonoBehaviour:
   dashForce: 50
   maxDashSpeed: 24
   duration: 0.11
-  cooldown: 0
   extraSpeed: 0
   extraForce: 0
   maxExtraSpeed: 30
@@ -631,7 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7fd732d63e3a146a3d7a63853d2a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &942322312830457410
+--- !u!114 &5331649823639287015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -640,13 +639,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3360294590374952195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a4563405ac9564b80fb31154247b02, type: 3}
+  m_Script: {fileID: 11500000, guid: 759af50a5493dd242b62046954432c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedColor:
+  colorWhenHit:
     serializedVersion: 2
-    rgba: 4278190106
-  duration: 0.5
+    rgba: 4294967295
+  duration: 0.3
 --- !u!1 &4052708904013585998
 GameObject:
   m_ObjectHideFlags: 0

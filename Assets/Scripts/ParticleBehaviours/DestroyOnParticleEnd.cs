@@ -10,6 +10,7 @@ public class DestroyOnParticleEnd : MonoBehaviour
     void Start()
     {
         myParticleSystem = GetComponent<ParticleSystem>();
+        Debug.Log("MyName: " + name);
     }
 
     // Update is called once per frame
@@ -18,6 +19,12 @@ public class DestroyOnParticleEnd : MonoBehaviour
         if(myParticleSystem.isPlaying){
             hasPlayed = true;
         }
-        if(hasPlayed && myParticleSystem.isStopped) Destroy(gameObject);
+        if(hasPlayed && myParticleSystem.isStopped) {
+            if(transform.parent == null){
+                Destroy(gameObject);
+                return;
+            }
+            Destroy(transform.parent.gameObject);
+        }
     }
 }

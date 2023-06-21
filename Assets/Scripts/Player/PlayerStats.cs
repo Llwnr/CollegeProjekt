@@ -52,15 +52,15 @@ public class PlayerStats : MonoBehaviour, IDashObserver
     //Called only when inflicting damage
     public float GetMyMaxDamage(){
         if(ballDash.IsAtMaxCharge()){
-            maxChargeBuff = 8;
+            maxChargeBuff = 5;
         }else{
             maxChargeBuff = 0;
         }
         float parryBuff = (hasParried ? dashParryBuff : 0) + 1;
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
-        highSpeedBuff = 1 + (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f * 0.5f);
-        finalDmg = (baseDmg)+highSpeedBuff;
-        finalDmg += maxChargeBuff;
+        highSpeedBuff = (Mathf.Min(playerSpeedInfo.GetSpeed(), ballDash.GetSpeedLimit()) * 0.1f);
+        finalDmg = (baseDmg)+maxChargeBuff;
+        finalDmg *= highSpeedBuff;
         finalDmg *= powerUpMultiplier*(1+redElectronMultiplier)*(parryBuff)*dashDmgMultiplier;
         if(finalDmg < 0) finalDmg = 0;
 

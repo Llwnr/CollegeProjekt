@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgAmt: 10
+  isExplosive: 0
 --- !u!50 &5407284676623376640
 Rigidbody2D:
   serializedVersion: 4
@@ -148,8 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3c0ec0f3138a44392201f473c85c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateBoom: {fileID: 5828330498031924980, guid: 5b3eaaeef2885004cb97b8115bf4302f,
-    type: 3}
+  activateBoom: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
 --- !u!61 &-4696210001165861056
 BoxCollider2D:
   m_ObjectHideFlags: 0

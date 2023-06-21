@@ -83,9 +83,9 @@ public class BounceOnCollision : MonoBehaviour
             StartScreenShake(speed);
 
             //Set bounce's max speed limit
+            bounceTimer = bounceDuration*stunRatio;
             AddMaxSpeedLimiter();
             isBouncing = true;
-            bounceTimer = bounceDuration*stunRatio;
         }
     }
 
@@ -103,7 +103,7 @@ public class BounceOnCollision : MonoBehaviour
 
     void AddMaxSpeedLimiter(){
         //Don't let player be limited to base movement speed limit when bouncing
-        GetComponent<LimitBallSpeed>().AddSpeedLimiter(maxBounceSpeed, bounceDuration);
+        GetComponent<LimitBallSpeed>().AddSpeedLimiter(maxBounceSpeed, bounceTimer);
     }
 
     void ShakeScreen(float shakeIntensity, float duration){
