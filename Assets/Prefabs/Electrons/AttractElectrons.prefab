@@ -61,4 +61,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0322b3c4166984785a15cbeec8523c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suckPower: 80
+  suckPower: 4

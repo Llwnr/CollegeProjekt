@@ -43,7 +43,7 @@ public class BounceOnCollision : MonoBehaviour
         }
     }
 
-    private void FixedUpdate() {
+    private void LateUpdate() {
         velocityOnHit = rb.velocity;
     }
 
@@ -67,11 +67,12 @@ public class BounceOnCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.transform.CompareTag("Wall")){
-            GetComponent<BallDash>().DashEnd();
+            //ballDash.DashEnd();
         }
         if(other.transform.CompareTag("Enemy")){
             //Bounce
-            float speed = velocityOnHit.magnitude;
+            float speed = ballDash.GetTotalCurrSpeed();
+            float maxSpeed = ballDash.GetTotalMaxSpeed();
             //Bounce in the correct angle and direction
             Vector2 dir = Vector2.Reflect(velocityOnHit.normalized, other.contacts[0].normal);
             rb.velocity = dir * (speed*bounceForce) + dir*3f;
@@ -80,7 +81,7 @@ public class BounceOnCollision : MonoBehaviour
             //How long for player to be stunned after bouncing
             float stunRatio = Mathf.Min(1, speed/ballDash.GetMaxCharge());
 
-            StartScreenShake(speed);
+            StartScreenShake(speed, maxSpeed);
 
             //Set bounce's max speed limit
             bounceTimer = bounceDuration*stunRatio;
@@ -89,15 +90,16 @@ public class BounceOnCollision : MonoBehaviour
         }
     }
 
-    void StartScreenShake(float ballSpeed){
-        //Range intensity from 0.5 to 2
-        ShakeScreen(Mathf.Min(2.5f, Mathf.Max(shakeIntensity * 0.08f * ballSpeed, shakeIntensity)), Mathf.Min(0.75f, Mathf.Max(duration*ballSpeed*0.05f, duration)));
+    void StartScreenShake(float ballSpeed, float maxBallSpeed){
+        //Range intensity from shakeIntensity to shakeIntensity*2
+        ShakeScreen( Mathf.Max(shakeIntensity * Mathf.Min(1, ballSpeed/maxBallSpeed) * 2, shakeIntensity), Mathf.Min(0.75f, Mathf.Max(duration*ballSpeed*0.025f, duration)));
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Enemy")){
-            float speed = velocityOnHit.magnitude;
-            StartScreenShake(speed);
+            float speed = ballDash.GetTotalCurrSpeed();
+            float maxSpeed =  ballDash.GetTotalMaxSpeed();
+            StartScreenShake(speed, maxSpeed);
         }
     }
 

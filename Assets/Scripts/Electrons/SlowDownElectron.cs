@@ -13,7 +13,7 @@ public class SlowDownElectron : MonoBehaviour
     private void Update() {
         //Slowdown electron after released
         if(rb.velocity.magnitude > 0.01f){
-            rb.velocity *= 0.975f;
+            rb.velocity *= 0.96f;
         }else{
             rb.velocity = Vector2.zero;
         }

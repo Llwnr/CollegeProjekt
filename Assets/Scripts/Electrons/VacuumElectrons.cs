@@ -5,11 +5,17 @@ using UnityEngine;
 public class VacuumElectrons : MonoBehaviour
 {
     public float suckPower;
+    private float intensity = 1;
     private Transform target;
     private void OnTriggerStay2D(Collider2D other) {
         if(other.transform.CompareTag("Electron")){
-            Vector2 dir = (transform.position - other.transform.position).normalized;
-            other.GetComponent<Rigidbody2D>().AddForce(dir*suckPower);
+            //Just increase speed of electrons if electrons are very close
+            if(Vector2.Distance(other.transform.position, transform.position) < 2f){
+                intensity += 0.05f;
+            }else{
+                intensity = 1;
+            }
+            other.transform.position = Vector2.Lerp(other.transform.position, transform.position, Time.deltaTime*suckPower*intensity);
         }
     }
 

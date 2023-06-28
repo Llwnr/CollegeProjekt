@@ -15,10 +15,10 @@ MonoBehaviour:
   dashName: StrongDash
   dashForce: 20
   maxDashSpeed: 20
-  duration: 0.11
-  framesForMaxCharge: 24
-  maxExtraSpeed: 40
-  maxExtraForce: 36
+  duration: 0.125
+  framesForMaxCharge: 36
+  maxExtraSpeed: 24
+  maxExtraForce: 24
   dashIcon: {fileID: 21300000, guid: d800997b70feb4b4cb425caecbd7a93f, type: 3}
   dashDmgMultiplier: 1.6
   durationalAbility: {fileID: 11400000, guid: bd16acc5ed09151488d33ad251c1a7bc, type: 2}

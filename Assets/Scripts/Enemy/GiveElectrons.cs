@@ -20,7 +20,8 @@ public class GiveElectrons : MonoBehaviour
     void ManageElectronGeneration(Transform other){
         if(other.CompareTag("Player") || (other.parent != null && other.parent.CompareTag("Player"))){
             GameObject player = GameObject.FindWithTag("Player");
-            int totalElectronCount = (int)(player.transform.GetComponent<SpeedInfo>().GetSpeed()/speedThreshold) + electronCount;
+            int totalElectronCount = Mathf.FloorToInt(player.transform.GetComponent<BallDash>().GetTotalCurrSpeed()/speedThreshold) + electronCount;
+            //Debug.Log("Player speed: " + player.transform.GetComponent<BallDash>().GetTotalCurrSpeed() + "Electrons: " + totalElectronCount);
             ThrowElectrons(totalElectronCount);
         }
     }
@@ -31,7 +32,7 @@ public class GiveElectrons : MonoBehaviour
             Vector3 dir = Random.insideUnitCircle;
             while(dir.magnitude < 0.4f) dir = Random.insideUnitCircle;
             GameObject newElectron = Instantiate(electron[randomIndex], transform.position+dir, Quaternion.identity);
-            newElectron.GetComponent<Rigidbody2D>().AddForce(dir*3f, ForceMode2D.Impulse);
+            newElectron.GetComponent<Rigidbody2D>().AddForce(dir*10f, ForceMode2D.Impulse);
             RotateElectrons.instance.AddElectronToRotate(newElectron.transform);
         }
     }

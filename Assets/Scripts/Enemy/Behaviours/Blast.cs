@@ -52,7 +52,7 @@ public class Blast : ActionNode
         if(rb.CompareTag("Player")){
             //Manage speed limit
             LimitBallSpeed speedLimitManager = rb.GetComponent<LimitBallSpeed>();
-            explosionDist -= 0.1f;
+            explosionDist -= 0.35f;
             speedLimitManager.AddSpeedLimiter(explosionForce, 0.2f);
         }
 

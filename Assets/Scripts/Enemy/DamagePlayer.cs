@@ -7,6 +7,7 @@ public class DamagePlayer : MonoBehaviour
     private bool neutralized = false;
     [SerializeField]private float dmgAmt;
     [SerializeField]private bool isExplosive = false;
+    private float setDefault = 0;
     private void OnCollisionEnter2D(Collision2D other) {
         DamageTarget(other.gameObject);
     }
@@ -28,9 +29,9 @@ public class DamagePlayer : MonoBehaviour
             if(transform.CompareTag("Projectile")) {
                 Destroy(gameObject);
                 //Failsafe mechanic incase the projectile hits player twice, only activate it once
-                if(!isExplosive)
-                neutralized = true;
+                
             }
+            neutralized = true;
 
 
             if(isExplosive){
@@ -39,6 +40,7 @@ public class DamagePlayer : MonoBehaviour
         }
     }
     private void OnTriggerStay2D(Collider2D other) {
+        if(neutralized) return;
         //Just knockback slowly if player is still inside exploding range
         if(other.CompareTag("Player")){
             if(isExplosive){
@@ -49,5 +51,15 @@ public class DamagePlayer : MonoBehaviour
 
     public void SetNeutralization(bool value){
         neutralized = value;
+    }
+
+    private void Update() {
+        if(neutralized){
+            setDefault += Time.deltaTime;
+        }
+        if(setDefault>1){
+            setDefault = 0;
+            neutralized = false;
+        }
     }
 }

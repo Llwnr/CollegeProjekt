@@ -7,6 +7,7 @@ using System.IO;
 public class ElectronHolder: MonoBehaviour, ISaveable
 {
     [SerializeField]private int blueElectrons, redElectrons, orangeElectrons;
+    [SerializeField]private int maxElectronsCount;
     [SerializeField]private Color blue, red, orange;
 
     SaveObject mySave;
@@ -69,6 +70,14 @@ public class ElectronHolder: MonoBehaviour, ISaveable
             default:
                 break;
         }
+
+        ClampElectrons();
+    }
+
+    private void ClampElectrons(){
+        blueElectrons = Mathf.Min(blueElectrons, maxElectronsCount);
+        redElectrons = Mathf.Min(redElectrons, maxElectronsCount);
+        orangeElectrons = Mathf.Min(orangeElectrons, maxElectronsCount);
     }
 
     public bool TakeElectron(ElectronType electronType){

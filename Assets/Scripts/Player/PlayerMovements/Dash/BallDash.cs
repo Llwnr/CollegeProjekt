@@ -132,15 +132,19 @@ public class BallDash : MonoBehaviour, ISaveable
             NotifyDashStart();
             AddSpeedLimit();
         }
+        if(durationTimer < 0){
+            ResetDuration();
+            DashEnd();
+        }
+        
+    }
+
+    private void FixedUpdate() {
         //Manage durations
         if(isDashing){
             rb.AddForce(dirToDash*(dashForce+extraForce)*16, ForceMode2D.Force);
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxDashSpeed+buffedMaxExtraSpeed+maxExtraSpeed);
-            durationTimer -= Time.deltaTime;
-        }
-        if(durationTimer < 0){
-            ResetDuration();
-            DashEnd();
+            durationTimer -= Time.fixedDeltaTime;
         }
         //Manage phase through
         if(isPhaseThrough && isDashing){
@@ -211,6 +215,9 @@ public class BallDash : MonoBehaviour, ISaveable
             extraSpeed = maxExtraSpeed+buffedMaxExtraSpeed;
         }
         if(extraForce > maxExtraForce+buffedMaxExtraForce) extraForce = maxExtraForce+buffedMaxExtraForce;
+
+        //Shake camera a little when charging
+        CinemachineShake.instance.ShakeCamera(0.25f, 0.1f);
     }
 
     void AddSpeedLimit(){
@@ -284,6 +291,17 @@ public class BallDash : MonoBehaviour, ISaveable
     }
     public float GetBuffedMaxSpeed(){
         return buffedMaxExtraSpeed;
+    }
+    public float GetTotalMaxSpeed(){
+        return maxDashSpeed + buffedMaxExtraSpeed + maxExtraSpeed;
+    }
+    public float GetTotalCurrSpeed(){
+
+        if(!isDashing){
+            //if player is not dashing then just return player walking speed
+            return transform.GetComponent<SpeedInfo>().GetSpeed();
+        }
+        return dashForce + extraForce;
     }
 
     //SAVE LOAD SYSTEM

@@ -15,7 +15,6 @@ public class LookAtTarget : MonoBehaviour
     {
         if(isPlayer){
             target = GameObject.FindWithTag("Player").transform;
-            Debug.Log("start: " + transform.eulerAngles.z);
         }
     }
 

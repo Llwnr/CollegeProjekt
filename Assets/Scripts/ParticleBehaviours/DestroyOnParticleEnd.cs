@@ -10,7 +10,6 @@ public class DestroyOnParticleEnd : MonoBehaviour
     void Start()
     {
         myParticleSystem = GetComponent<ParticleSystem>();
-        Debug.Log("MyName: " + name);
     }
 
     // Update is called once per frame

@@ -30,9 +30,9 @@ MonoBehaviour:
   - rid: 7751733241025658883
   - rid: 7751733312939098112
   - rid: 7751733312939098113
-  - rid: 7751733312939098114
   - rid: 7751733332306558976
   - rid: 7751733332306558977
+  - rid: 7751733492519534592
   treeState: 0
   blackboard:
     direction: {x: 0, y: 0, z: 0}
@@ -40,8 +40,8 @@ MonoBehaviour:
     orbitBalls: []
     orbitPivot: {fileID: 0}
     trapPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: -360, y: -50.4, z: 0}
-  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
+  viewPosition: {x: 117.6, y: 107.2, z: 0}
+  viewScale: {x: 0.25, y: 0.25, z: 1}
   references:
     version: 2
     RefIds:
@@ -80,14 +80,14 @@ MonoBehaviour:
         child:
           rid: 7751733241025658880
         restartOnSuccess: 1
-        restartOnFailure: 0
+        restartOnFailure: 1
     - rid: 7751733111067246594
       type: {class: Sequencer, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
         guid: 74e21746ef1df694e839164abf6fe330
-        position: {x: -740.28796, y: 375.2}
+        position: {x: -759.78357, y: 366.0747}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -218,7 +218,9 @@ MonoBehaviour:
         description: 
         drawGizmos: 0
         children:
-        - rid: 7751733312939098112
+        - rid: 7751733492519534592
+        - rid: 7751733241025658881
+        - rid: 7751733111067246594
     - rid: 7751733241025658881
       type: {class: Sequencer, ns: TheKiwiCoder, asm: BTree}
       data:
@@ -289,7 +291,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 8db6fc4a4cbb562449bf604636de429a
-        position: {x: 864, y: 374.40002}
+        position: {x: 894.5902, y: 561.85693}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -302,14 +304,13 @@ MonoBehaviour:
         - rid: 7751733312939098113
         - rid: 7751733332306558977
         - rid: 7751733332306558976
-        - rid: 7751733312939098114
     - rid: 7751733312939098113
       type: {class: TrapAnticipation, ns: , asm: Main}
       data:
         state: 0
         started: 0
         guid: d6a3cc6ae0ed8054f9ef12c002e4d975
-        position: {x: 696.765, y: 512.65045}
+        position: {x: 727.39026, y: 700.2569}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -319,31 +320,16 @@ MonoBehaviour:
         description: 
         drawGizmos: 0
         maxRange: 7
+        numOfTraps: 5
         anticipationGuide: {fileID: 1448867347998824144, guid: f1bed7d65077ec24ebf62974f1e1dd2d,
           type: 3}
-    - rid: 7751733312939098114
-      type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
-      data:
-        state: 0
-        started: 0
-        guid: 7d70abfeb3c4da74fb35aaaa1029d578
-        position: {x: 1210.4435, y: 517.2835}
-        blackboard:
-          direction: {x: 0, y: 0, z: 0}
-          moveToPosition: {x: 0, y: 0, z: 0}
-          orbitBalls: []
-          orbitPivot: {fileID: 0}
-          trapPosition: {x: 0, y: 0, z: 0}
-        description: 
-        drawGizmos: 0
-        duration: 0.5
     - rid: 7751733332306558976
       type: {class: ThrowTrap, ns: , asm: Main}
       data:
         state: 0
         started: 0
         guid: ceae6c9d6bbe9624ab807ad84316444a
-        position: {x: 1044.07, y: 512.31647}
+        position: {x: 1074.5903, y: 699.45685}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -355,14 +341,14 @@ MonoBehaviour:
         trap: {fileID: 3803797004070436147, guid: fecc89a3f3fc80446ae8bb76db9a7da3,
           type: 3}
         speed: 1
-        duration: 2
+        duration: 0.8
     - rid: 7751733332306558977
       type: {class: Wait, ns: TheKiwiCoder, asm: BTree}
       data:
         state: 0
         started: 0
         guid: 132071398a5f3794ea36e735cdd82350
-        position: {x: 861.1077, y: 508.14948}
+        position: {x: 892.19025, y: 695.457}
         blackboard:
           direction: {x: 0, y: 0, z: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
@@ -371,4 +357,23 @@ MonoBehaviour:
           trapPosition: {x: 0, y: 0, z: 0}
         description: Wait for player to react to the anticipation
         drawGizmos: 0
-        duration: 0.2
+        duration: 0.1
+    - rid: 7751733492519534592
+      type: {class: Repeat, ns: TheKiwiCoder, asm: BTree}
+      data:
+        state: 0
+        started: 0
+        guid: bd7b7a2f0e4028d478e216bf8d3eeb1e
+        position: {x: 879.3922, y: 379.19995}
+        blackboard:
+          direction: {x: 0, y: 0, z: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          orbitBalls: []
+          orbitPivot: {fileID: 0}
+          trapPosition: {x: 0, y: 0, z: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 7751733312939098112
+        restartOnSuccess: 1
+        restartOnFailure: 0

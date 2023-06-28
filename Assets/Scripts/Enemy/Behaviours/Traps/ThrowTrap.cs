@@ -24,8 +24,6 @@ public class ThrowTrap : ActionNode
     }
 
     protected override State OnUpdate() {
-        //myTrap.transform.position = Vector3.Lerp(myTrap.transform.position, blackboard.trapPosition, Time.deltaTime*5);
-
         durationCount -= Time.deltaTime;
         if(durationCount > 0){
             return State.Running;

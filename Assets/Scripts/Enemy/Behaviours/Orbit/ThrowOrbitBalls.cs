@@ -25,7 +25,6 @@ public class ThrowOrbitBalls : ActionNode
             if(!ball) continue;
             Rigidbody2D rb = ball.GetComponent<Rigidbody2D>();
             rb.AddForce((GameObject.FindWithTag("Player").transform.position - ball.transform.position).normalized*throwForce, ForceMode2D.Impulse);
-            Debug.Log("Force added");
         }
 
         return State.Success;

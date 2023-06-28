@@ -5,13 +5,15 @@ using UnityEngine;
 public class Damager : MonoBehaviour
 {
     private PlayerStats playerStats;
+    //To end player dash after all dash calculations such as extra speed, buffs are calculated
+    private bool endPlayerDash = false;
     private void Awake() {
         playerStats = GetComponent<PlayerStats>();
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.transform.CompareTag("Enemy")){
             other.transform.GetComponent<IDamagable>().DealDamage(playerStats.GetMyMaxDamage(), other.transform);
-            GetComponent<BallDash>().DashEnd();
+            endPlayerDash = true;
         }
     }
 
@@ -19,5 +21,12 @@ public class Damager : MonoBehaviour
         if(other.transform.CompareTag("Enemy")){
             other.transform.GetComponent<IDamagable>().DealDamage(playerStats.GetMyMaxDamage(), other.transform);
         }
+    }
+
+    void LateUpdate(){
+        if(!endPlayerDash) return;
+
+        GetComponent<BallDash>().DashEnd();
+        endPlayerDash = false;
     }
 }

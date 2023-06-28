@@ -25,9 +25,9 @@ public class CinemachineShake : MonoBehaviour
 
     public void ShakeCamera(float intensity, float time){
         vCamPerlin = vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        vCamPerlin.m_AmplitudeGain = 0f;
+        //vCamPerlin.m_AmplitudeGain = 0f;
         shakeTimer = time;
-        maxShakeIntensity = shakeTimer;
+        maxShakeTimer = shakeTimer;
         maxShakeIntensity = intensity;
     }
 
