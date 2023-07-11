@@ -104,6 +104,8 @@ GameObject:
   - component: {fileID: 3360294590374952209}
   - component: {fileID: 7584321750911516543}
   - component: {fileID: 4280781059247702}
+  - component: {fileID: 993643096749066555}
+  - component: {fileID: 8715619341348339716}
   - component: {fileID: 3360294590374952207}
   - component: {fileID: 3360294590374952211}
   - component: {fileID: 3360294590374952203}
@@ -353,8 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48796d2f16176184cb0477dc94e2824c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 70
-  maxMoveSpeed: 4
+  moveSpeed: 40
+  maxMoveSpeed: 5
 --- !u!114 &3360294590374952198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullChargeParticle: {fileID: 6717385446704924660}
   chargingParticles: []
+  absorbedChargedParticle: {fileID: 0}
 --- !u!114 &4280781059247702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +454,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interval: 0.001
   trail: {fileID: 8436007613772717496, guid: 88391f79c0934474291a8fc3ef4d8bc2, type: 3}
+--- !u!114 &993643096749066555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360294590374952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ddb0aa9a5f6f44a88e2f31ea96425e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx:
+    Guid:
+      Data1: -1592381043
+      Data2: 1170797099
+      Data3: 1295922623
+      Data4: 1487427088
+    Path: event:/8BitCharge
+  maxChargeReachedSfx:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+--- !u!114 &8715619341348339716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3360294590374952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c270c02b232b34c827bbda64964889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3360294590374952207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDmg: 3
+  maxChargeBuff: 2.5
   dashParryBuff: 1
   dashDmgMultiplier: 0
   redElectronMultiplier: 0
@@ -632,6 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immuneFramesDuration: 4
+  forceField: {fileID: 0}
 --- !u!114 &7464972699777536457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,6 +923,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: InitialModule.size3D
       value: 0
       objectReference: {fileID: 0}
@@ -926,6 +973,14 @@ PrefabInstance:
     - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: InitialModule.startRotationY.minMaxState
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
+      propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 176790904455b214b92ac1cfd30fddc9, type: 3}
       propertyPath: InitialModule.startSize.scalar

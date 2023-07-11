@@ -10,7 +10,7 @@ public class PlayerStats : MonoBehaviour, IDashObserver
 
     //High speed or velocity buff
     private float highSpeedBuff;
-    private float maxChargeBuff;
+    [SerializeField]private float maxChargeBuff;
 
     //Dash parry buff
     [SerializeField]private float dashParryBuff = 1;
@@ -51,21 +51,19 @@ public class PlayerStats : MonoBehaviour, IDashObserver
     //Calculate damage after buffs and when on high speed
     //Called only when inflicting damage
     public float GetMyMaxDamage(){
+        float chargeBuff = 0;
         if(ballDash.IsAtMaxCharge()){
-            maxChargeBuff = 5;
-        }else{
-            maxChargeBuff = 0;
+            chargeBuff = maxChargeBuff;
         }
         float parryBuff = (hasParried ? dashParryBuff : 0) + 1;
         //Sometimes speed limit may exceed maxSpeedLimit for a frame. In that case, use the maxSpeedLimit instead of the speed
-        highSpeedBuff = (Mathf.Min(ballDash.GetTotalCurrSpeed(), ballDash.GetSpeedLimit()) * 0.1f);
-        finalDmg = (baseDmg)+maxChargeBuff;
+        highSpeedBuff = 1+(Mathf.Min(ballDash.GetTotalCurrSpeed(), ballDash.GetSpeedLimit()) * 0.05f);
+        finalDmg = (baseDmg)+chargeBuff;
         finalDmg *= highSpeedBuff;
         finalDmg *= powerUpMultiplier*(1+redElectronMultiplier)*(parryBuff)*dashDmgMultiplier;
         if(finalDmg < 0) finalDmg = 0;
 
-        //Reset absorbed buff
-        hasParried = false;
+        
         GetComponent<SpriteRenderer>().color = new Color32(255,0,0,255);
         return finalDmg;
     }
@@ -78,11 +76,12 @@ public class PlayerStats : MonoBehaviour, IDashObserver
     {
         //Reset parry status when dash ends
         Time.timeScale = 1;
+        //Reset absorbed buff
+        hasParried = false;
     }
 
     public void SetParriedOnDash(){
         hasParried = true;
-        GetComponent<SpriteRenderer>().color = new Color32(160,0,0,255);
     }
 
     public bool GetHasParried(){

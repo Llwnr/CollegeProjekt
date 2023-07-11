@@ -296,7 +296,6 @@ public class BallDash : MonoBehaviour, ISaveable
         return maxDashSpeed + buffedMaxExtraSpeed + maxExtraSpeed;
     }
     public float GetTotalCurrSpeed(){
-
         if(!isDashing){
             //if player is not dashing then just return player walking speed
             return transform.GetComponent<SpeedInfo>().GetSpeed();

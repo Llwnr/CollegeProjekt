@@ -19,7 +19,7 @@ public class HealthManager : BaseHealthManager, IDamagable, ISaveable
     public void DealDamage(float dmgAmt, Transform enemyProjectile){
         //Don't deal damage when player is immune
         if(isImmune){
-            GetComponent<DmgPopupManager>().ActivateWhenDamaged("ABSORBED", transform);
+            GetComponent<DmgPopupManager>().ActivateWhenDamaged("!!", transform);
             return;
         }
 

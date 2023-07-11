@@ -5,7 +5,7 @@ using TMPro;
 
 public class DmgPopup : MonoBehaviour
 {
-    [SerializeField]private float duration = 1f;
+    [SerializeField]private float duration = 4f;
     private float timer;
     private TextMeshProUGUI textBox;
     // Start is called before the first frame update
@@ -21,11 +21,10 @@ public class DmgPopup : MonoBehaviour
         timer -= Time.deltaTime;
         //Starting phase
         if(timer > duration*0.5f){
-            textBox.fontSize += Time.deltaTime*0.8f;
-            transform.position += new Vector3(0, Time.deltaTime*2, 0);
+            textBox.fontSize += Time.deltaTime*1.5f;
+            transform.position += new Vector3(0, Time.deltaTime*5, 0);
         }else if(timer < duration*0.5){
-            textBox.fontSize -= Time.deltaTime;
-            transform.position -= new Vector3(0, Time.deltaTime, 0);
+            transform.position += new Vector3(0, Time.deltaTime, 0);
         }
 
         if(timer < 0){

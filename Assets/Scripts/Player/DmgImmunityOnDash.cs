@@ -15,6 +15,8 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
 
     private bool immunityActive = false;
 
+    [SerializeField]private ParticleSystem forceField;
+
     private void Start() {
         healthManager = GameObject.FindWithTag("Player").GetComponent<HealthManager>();
         playerStats = GetComponent<PlayerStats>();
@@ -35,6 +37,7 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
     
     public void DashStart()
     {
+        //forceField.Play();
         MakePlayerImmune();
     }
 
@@ -55,6 +58,7 @@ public class DmgImmunityOnDash : MonoBehaviour, IDashObserver
         if(immuneFramesCount <= 0){
             healthManager.SetDmgImmunity(false);
             immunityActive = false;     
+            //forceField.Stop();
             //Debug.Log("Dmg Immunity stopped : " + framesForEnd);
         }
     }
