@@ -10,6 +10,7 @@ public class CameraRangeExtendByMouse : MonoBehaviour
     private Vector3 cameraPos;
     [SerializeField]private Vector2 offset;
     [SerializeField]private float offsetMultiplier;
+    [SerializeField]private float lerpSpeed;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,7 +22,8 @@ public class CameraRangeExtendByMouse : MonoBehaviour
     void Update()
     {
         cameraPos = player.transform.position;
-        offset = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - cameraPos).normalized;
+        //Lerp offset to follow mouse position
+        offset = Vector2.Lerp(offset, (Camera.main.ScreenToWorldPoint(Input.mousePosition) - cameraPos).normalized, Time.deltaTime*lerpSpeed);
         //if(Mathf.Abs(offset.x) < 0.01f && Mathf.Abs(offset.y) < 0.01f) return;
         vCamTransposer.m_FollowOffset = offset*offsetMultiplier;
         vCamTransposer.m_FollowOffset.z = -10;

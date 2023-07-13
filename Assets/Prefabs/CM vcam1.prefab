@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 5176953787964415327}
   - component: {fileID: 5176953787964415297}
   - component: {fileID: 3791434890913158241}
+  - component: {fileID: 6026448433643643068}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: vCam
@@ -211,4 +212,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
-  offsetMultiplier: 1.5
+  offsetMultiplier: 3
+  lerpSpeed: 9.5
+--- !u!114 &6026448433643643068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176953787964415326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 725a9cbfeb1c9c44dabd4da2e4cdb2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusedOrthoSize: 6
+  speed: 1

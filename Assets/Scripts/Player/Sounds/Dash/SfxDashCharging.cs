@@ -6,6 +6,8 @@ using FMOD.Studio;
 
 public class SfxDashCharging : MonoBehaviour
 {
+    [SerializeField]private List<EventReference> sfxs;
+    [SerializeField]private List<EventReference> maxChargeSfxs;
     [SerializeField]private EventReference sfx;
     [SerializeField]private EventReference maxChargeReachedSfx;
     private EventInstance currentSfx;
@@ -15,11 +17,27 @@ public class SfxDashCharging : MonoBehaviour
     private bool stoppedPlaying = true;
     private bool reachedMaxCharge = false;
 
+    private int index = 0;
+
     void Start()
     {
         currentSfx = RuntimeManager.CreateInstance(sfx);
         maxChargeSfx = RuntimeManager.CreateInstance(maxChargeReachedSfx);
         ballDash = GetComponent<BallDash>();
+    }
+
+    private void Update() {
+        //Switch sfxs
+        if(Input.GetKeyDown(KeyCode.Space)){
+            SwitchSfx();
+        }
+    }
+
+    private void SwitchSfx(){
+        index++;
+        index %= sfxs.Count;
+        currentSfx = RuntimeManager.CreateInstance(sfxs[index]);
+        maxChargeSfx = RuntimeManager.CreateInstance(maxChargeSfxs[index]);
     }
 
     private void LateUpdate() {

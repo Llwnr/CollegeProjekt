@@ -1,1 +1,1 @@
-{"extraDuration":0.0,"chargeFrameReduction":1,"increasedFramesForMaxCharge":0.0,"buffedMaxExtraSpeed":0.0,"buffedMaxExtraForce":0.0}
+{"extraDuration":0.0,"chargeFrameReduction":9,"increasedFramesForMaxCharge":0.0,"buffedMaxExtraSpeed":0.0,"buffedMaxExtraForce":0.0}

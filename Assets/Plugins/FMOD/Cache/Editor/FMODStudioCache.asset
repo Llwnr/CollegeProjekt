@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: Assets/FModBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638246802197851215
+  lastModified: 638248554344342650
   FileSizes:
   - Name: 
-    Value: 856
+    Value: 1016
   Exists: 1
+--- !u!114 &-5735806784815178117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx2
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx2
+  Guid:
+    Data1: 984978527
+    Data2: 1297781270
+    Data3: -745235052
+    Data4: -1949213788
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3400
 --- !u!114 &-4216147290910211235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,7 +73,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1300
+  Length: 7480
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,13 +93,44 @@ MonoBehaviour:
   - {fileID: -4216147290910211235}
   - {fileID: 3668847951266983786}
   - {fileID: 7934289743070967156}
+  - {fileID: -5735806784815178117}
+  - {fileID: 7392927161899676034}
+  - {fileID: 2637472641467511770}
+  - {fileID: 7270281233009191978}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6375579266646224549}
   StringsBanks:
   - {fileID: -9007694710560363094}
-  cacheTime: 638246802197851215
+  cacheTime: 638248554344342650
   cacheVersion: 131605
+--- !u!114 &2637472641467511770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HitSfx
+  m_EditorClassIdentifier: 
+  Path: event:/HitSfx
+  Guid:
+    Data1: 67576549
+    Data2: 1341408239
+    Data3: 662242224
+    Data4: -1033095310
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 210
 --- !u!114 &3668847951266983786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,9 +173,63 @@ MonoBehaviour:
   Path: Assets/FModBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638246802197811171
+  lastModified: 638248554344302532
   FileSizes: []
   Exists: 1
+--- !u!114 &7270281233009191978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DashSwitchSfx
+  m_EditorClassIdentifier: 
+  Path: event:/DashSwitchSfx
+  Guid:
+    Data1: -699073830
+    Data2: 1087747209
+    Data3: 7411368
+    Data4: -1181958090
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 862
+--- !u!114 &7392927161899676034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MaxChargeSfx2
+  m_EditorClassIdentifier: 
+  Path: event:/MaxChargeSfx2
+  Guid:
+    Data1: -954397210
+    Data2: 1168173771
+    Data3: -1095203181
+    Data4: 742308992
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50
 --- !u!114 &7934289743070967156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,4 +256,4 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1700
+  Length: 8020
