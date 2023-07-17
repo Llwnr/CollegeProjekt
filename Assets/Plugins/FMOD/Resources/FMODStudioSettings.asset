@@ -383,7 +383,8 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks: []
+  Banks:
+  - HitSfx
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

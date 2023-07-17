@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4984705589631547156}
   - component: {fileID: 290627498390687849}
   - component: {fileID: 8978135292828581239}
+  - component: {fileID: 2887130991153031885}
   m_Layer: 7
   m_Name: Attractor
   m_TagString: Enemy
@@ -118,3 +119,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2887130991153031885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4984705589631547158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba73e6fb76f6c78468a08bd59a828c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx:
+    Guid:
+      Data1: 67576549
+      Data2: 1341408239
+      Data3: 662242224
+      Data4: -1033095310
+    Path: event:/HitSfxs/HitSfx

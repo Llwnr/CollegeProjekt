@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8328931979624946274}
   - component: {fileID: 5778358922178220230}
   - component: {fileID: -7638111722929460896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ElectronRed
   m_TagString: Electron
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -27,6 +27,7 @@ public class Damager : MonoBehaviour
         if(!endPlayerDash) return;
 
         GetComponent<BallDash>().DashEnd();
+        Debug.Log("Dash ended at last update after collision");
         endPlayerDash = false;
     }
 }

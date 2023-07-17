@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9109353068867502539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DashCharging/Sfx2
+  m_EditorClassIdentifier: 
+  Path: event:/DashCharging/Sfx2
+  Guid:
+    Data1: 984978527
+    Data2: 1297781270
+    Data3: -745235052
+    Data4: -1949213788
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3400
 --- !u!114 &-9007694710560363094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,12 +42,36 @@ MonoBehaviour:
   Path: Assets/FModBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638248554344342650
+  lastModified: 638251959805614540
   FileSizes:
   - Name: 
-    Value: 1016
+    Value: 1338
   Exists: 1
---- !u!114 &-5735806784815178117
+--- !u!114 &-8680619105280356517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactMining-3/EQ Global
+  m_EditorClassIdentifier: 
+  Name: EQ Global
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4058864794
+    data2: 4235678384
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8654846872190545728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,41 +81,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfx2
+  m_Name: event:/DashCharging/ReachedMaxCharge
   m_EditorClassIdentifier: 
-  Path: event:/Sfx2
+  Path: event:/DashCharging/ReachedMaxCharge
   Guid:
-    Data1: 984978527
-    Data2: 1297781270
-    Data3: -745235052
-    Data4: -1949213788
-  Banks:
-  - {fileID: 6375579266646224549}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3400
---- !u!114 &-4216147290910211235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/8BitCharge
-  m_EditorClassIdentifier: 
-  Path: event:/8BitCharge
-  Guid:
-    Data1: -1592381043
-    Data2: 1170797099
-    Data3: 1295922623
-    Data4: 1487427088
+    Data1: 982247562
+    Data2: 1149013838
+    Data3: 1464141467
+    Data4: -1982733442
   Banks:
   - {fileID: 6375579266646224549}
   IsStream: 0
@@ -73,7 +97,138 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 7480
+  Length: 8020
+--- !u!114 &-6105394358715687228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DashCharging/DashSwitchSfx
+  m_EditorClassIdentifier: 
+  Path: event:/DashCharging/DashSwitchSfx
+  Guid:
+    Data1: -699073830
+    Data2: 1087747209
+    Data3: 7411368
+    Data4: -1181958090
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 862
+--- !u!114 &-4951259130164913866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactMining-3/Pitch
+  m_EditorClassIdentifier: 
+  Name: Pitch
+  StudioPath: 
+  Min: -12
+  Max: 12
+  Default: 0
+  ID:
+    data1: 1319201962
+    data2: 2740279117
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2538199352354299652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HitSfxs/HitSfx
+  m_EditorClassIdentifier: 
+  Path: event:/HitSfxs/HitSfx
+  Guid:
+    Data1: 67576549
+    Data2: 1341408239
+    Data3: 662242224
+    Data4: -1033095310
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 210
+--- !u!114 &-1729164066830198371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HitSfxs/MetalHitSfx
+  m_EditorClassIdentifier: 
+  Path: event:/HitSfxs/MetalHitSfx
+  Guid:
+    Data1: 1307484667
+    Data2: 1089022484
+    Data3: -311317582
+    Data4: 683648800
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8199770889884467101}
+  - {fileID: -1624470098681252972}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &-1624470098681252972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MetalHitSfx/StopLength
+  m_EditorClassIdentifier: 
+  Name: StopLength
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 842959801
+    data2: 4273917903
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,22 +244,25 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: -9007694710560363094}
   - {fileID: 6375579266646224549}
+  - {fileID: 5908201857086738484}
   EditorEvents:
-  - {fileID: -4216147290910211235}
-  - {fileID: 3668847951266983786}
-  - {fileID: 7934289743070967156}
-  - {fileID: -5735806784815178117}
-  - {fileID: 7392927161899676034}
-  - {fileID: 2637472641467511770}
-  - {fileID: 7270281233009191978}
+  - {fileID: 8088106687529571430}
+  - {fileID: -9109353068867502539}
+  - {fileID: -8654846872190545728}
+  - {fileID: 7249049005994133914}
+  - {fileID: 6973499798189859731}
+  - {fileID: -6105394358715687228}
+  - {fileID: -2538199352354299652}
+  - {fileID: 7175615005977461122}
+  - {fileID: -1729164066830198371}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6375579266646224549}
   StringsBanks:
   - {fileID: -9007694710560363094}
-  cacheTime: 638248554344342650
+  cacheTime: 638251959805614540
   cacheVersion: 131605
---- !u!114 &2637472641467511770
+--- !u!114 &5908201857086738484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,51 +271,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HitSfx
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/HitSfx.bank
   m_EditorClassIdentifier: 
-  Path: event:/HitSfx
-  Guid:
-    Data1: 67576549
-    Data2: 1341408239
-    Data3: 662242224
-    Data4: -1033095310
-  Banks:
-  - {fileID: 6375579266646224549}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 210
---- !u!114 &3668847951266983786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PowerUp
-  m_EditorClassIdentifier: 
-  Path: event:/PowerUp
-  Guid:
-    Data1: 1698696083
-    Data2: 1194617316
-    Data3: -369364332
-    Data4: 1500250552
-  Banks:
-  - {fileID: 6375579266646224549}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2520
+  Path: Assets/FModBanks/Desktop/HitSfx.bank
+  Name: HitSfx
+  StudioPath: bank:/HitSfx
+  lastModified: 638251959805004510
+  FileSizes: []
+  Exists: 1
 --- !u!114 &6375579266646224549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,10 +295,10 @@ MonoBehaviour:
   Path: Assets/FModBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638248554344302532
+  lastModified: 638251959805574582
   FileSizes: []
   Exists: 1
---- !u!114 &7270281233009191978
+--- !u!114 &6973499798189859731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,14 +308,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/DashSwitchSfx
+  m_Name: event:/DashCharging/PowerUp
   m_EditorClassIdentifier: 
-  Path: event:/DashSwitchSfx
+  Path: event:/DashCharging/PowerUp
   Guid:
-    Data1: -699073830
-    Data2: 1087747209
-    Data3: 7411368
-    Data4: -1181958090
+    Data1: 1698696083
+    Data2: 1194617316
+    Data3: -369364332
+    Data4: 1500250552
   Banks:
   - {fileID: 6375579266646224549}
   IsStream: 0
@@ -202,8 +324,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 862
---- !u!114 &7392927161899676034
+  Length: 2520
+--- !u!114 &7175615005977461122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,9 +335,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MaxChargeSfx2
+  m_Name: event:/DashCharging/MaxChargeSfx2
   m_EditorClassIdentifier: 
-  Path: event:/MaxChargeSfx2
+  Path: event:/DashCharging/MaxChargeSfx2
   Guid:
     Data1: -954397210
     Data2: 1168173771
@@ -230,7 +352,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 50
---- !u!114 &7934289743070967156
+--- !u!114 &7249049005994133914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,14 +362,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/ReachedMaxCharge
+  m_Name: event:/DashCharging/8BitCharge
   m_EditorClassIdentifier: 
-  Path: event:/ReachedMaxCharge
+  Path: event:/DashCharging/8BitCharge
   Guid:
-    Data1: 982247562
-    Data2: 1149013838
-    Data3: 1464141467
-    Data4: -1982733442
+    Data1: -1592381043
+    Data2: 1170797099
+    Data3: 1295922623
+    Data4: 1487427088
   Banks:
   - {fileID: 6375579266646224549}
   IsStream: 0
@@ -256,4 +378,57 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 8020
+  Length: 7480
+--- !u!114 &8088106687529571430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HitSfxs/ImpactMining-3
+  m_EditorClassIdentifier: 
+  Path: event:/HitSfxs/ImpactMining-3
+  Guid:
+    Data1: 456137392
+    Data2: 1201608433
+    Data3: -345543261
+    Data4: 1768343283
+  Banks:
+  - {fileID: 5908201857086738484}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4951259130164913866}
+  - {fileID: -8680619105280356517}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 150
+--- !u!114 &8199770889884467101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MetalHitSfx/EQ Global
+  m_EditorClassIdentifier: 
+  Name: EQ Global
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4058864794
+    data2: 4235678384
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1

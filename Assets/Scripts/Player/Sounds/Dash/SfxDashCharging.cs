@@ -10,6 +10,9 @@ public class SfxDashCharging : MonoBehaviour
     [SerializeField]private List<EventReference> maxChargeSfxs;
     [SerializeField]private EventReference sfx;
     [SerializeField]private EventReference maxChargeReachedSfx;
+
+    //To stop sounds in case you change dash type while sound is playing
+    private int sfxRef, maxChargeSfxRef;
     private EventInstance currentSfx;
     private EventInstance maxChargeSfx;
     private BallDash ballDash;

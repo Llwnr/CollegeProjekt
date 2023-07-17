@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using System.Collections;
 
 [CreateAssetMenu(fileName = "MoreDamage", menuName = "CollegeProjekt/Abilities/MoreDamage", order = 0)]

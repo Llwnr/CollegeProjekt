@@ -66,9 +66,6 @@ public class BounceOnCollision : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(other.transform.CompareTag("Wall")){
-            //ballDash.DashEnd();
-        }
         if(other.transform.CompareTag("Enemy")){
             //Bounce
             float speed = ballDash.GetTotalCurrSpeed();

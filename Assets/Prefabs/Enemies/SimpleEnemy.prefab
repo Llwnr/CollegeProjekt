@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -8774069167670202144}
   - component: {fileID: 1929447847364265174}
   - component: {fileID: 2217539180316052166}
+  - component: {fileID: 7077445305248109448}
   m_Layer: 7
   m_Name: SimpleEnemy
   m_TagString: Enemy
@@ -255,6 +256,25 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   duration: 0.35
+--- !u!114 &7077445305248109448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4984705589631547158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba73e6fb76f6c78468a08bd59a828c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx:
+    Guid:
+      Data1: 1307484667
+      Data2: 1089022484
+      Data3: -311317582
+      Data4: 683648800
+    Path: event:/HitSfxs/MetalHitSfx
 --- !u!1 &6342258320981147757
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -8774069167670202144}
   - component: {fileID: 1929447847364265174}
   - component: {fileID: -7370693680596461870}
+  - component: {fileID: -6363254979343543494}
   m_Layer: 7
   m_Name: SniperEnemy
   m_TagString: Enemy
@@ -255,6 +256,25 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4278190080
   duration: 0.35
+--- !u!114 &-6363254979343543494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4984705589631547158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba73e6fb76f6c78468a08bd59a828c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx:
+    Guid:
+      Data1: 67576549
+      Data2: 1341408239
+      Data3: 662242224
+      Data4: -1033095310
+    Path: event:/HitSfxs/HitSfx
 --- !u!1 &6342258320981147757
 GameObject:
   m_ObjectHideFlags: 0
