@@ -14,6 +14,7 @@ TagManager:
   - UpgradesPanel
   - Wall
   - vCam
+  - PostProcess
   layers:
   - Default
   - TransparentFX

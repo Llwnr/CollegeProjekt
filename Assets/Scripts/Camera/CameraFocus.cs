@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
-public class CameraFocus : MonoBehaviour
+public class CameraFocus : MonoBehaviour, IDashObserver
 {
     public static CameraFocus instance {get; private set;}
 
@@ -14,6 +16,13 @@ public class CameraFocus : MonoBehaviour
     [SerializeField]private float speed;
 
     private bool toZoom = false;
+
+    //For chromatic aberration
+    [SerializeField]private Volume postProcessVolume;
+    private ChromaticAberration chromaticAberration;
+    private LensDistortion lensDistortion;
+
+    private BallDash ballDash;
 
     private void Awake() {
         if(!instance){
@@ -28,6 +37,20 @@ public class CameraFocus : MonoBehaviour
     {
         vCam = GetComponent<CinemachineVirtualCamera>();
         origOrthoSize = vCam.m_Lens.OrthographicSize;
+        if(postProcessVolume.profile.TryGet<ChromaticAberration>(out chromaticAberration)){
+            Debug.Log("success");
+        }
+        if(postProcessVolume.profile.TryGet<LensDistortion>(out lensDistortion)){
+
+        }
+
+        //For camera to zoom while dashing
+        ballDash = GameObject.FindWithTag("Player").GetComponent<BallDash>();
+        ballDash.AddDashObserver(this);
+    }
+
+    private void OnDestroy() {
+        ballDash.RemoveDashObserver(this);
     }
 
     // Update is called once per frame
@@ -44,5 +67,15 @@ public class CameraFocus : MonoBehaviour
         toZoom = value;
     }
 
+    public void DashStart()
+    {
+        chromaticAberration.intensity.value = 0.7f;
+        lensDistortion.intensity.value = -0.2f;
+    }
 
+    public void DashEnd()
+    {
+        chromaticAberration.intensity.value = 0;
+        lensDistortion.intensity.value = 0;
+    }
 }

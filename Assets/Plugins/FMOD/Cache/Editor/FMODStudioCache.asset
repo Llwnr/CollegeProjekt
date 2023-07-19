@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/FModBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638251959805614540
+  lastModified: 638252937954178004
   FileSizes:
   - Name: 
-    Value: 1338
+    Value: 1388
   Exists: 1
 --- !u!114 &-8680619105280356517
 MonoBehaviour:
@@ -204,7 +204,34 @@ MonoBehaviour:
   - {fileID: -1624470098681252972}
   MinDistance: 1
   MaxDistance: 20
-  Length: 500
+  Length: 355
+--- !u!114 &-1717567807787943551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dash/OnDash
+  m_EditorClassIdentifier: 
+  Path: event:/Dash/OnDash
+  Guid:
+    Data1: 360036222
+    Data2: 1149319852
+    Data3: 1654982575
+    Data4: -1350654213
+  Banks:
+  - {fileID: 6375579266646224549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 781
 --- !u!114 &-1624470098681252972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,12 +282,13 @@ MonoBehaviour:
   - {fileID: -2538199352354299652}
   - {fileID: 7175615005977461122}
   - {fileID: -1729164066830198371}
+  - {fileID: -1717567807787943551}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6375579266646224549}
   StringsBanks:
   - {fileID: -9007694710560363094}
-  cacheTime: 638251959805614540
+  cacheTime: 638252937954178004
   cacheVersion: 131605
 --- !u!114 &5908201857086738484
 MonoBehaviour:
@@ -277,7 +305,7 @@ MonoBehaviour:
   Path: Assets/FModBanks/Desktop/HitSfx.bank
   Name: HitSfx
   StudioPath: bank:/HitSfx
-  lastModified: 638251959805004510
+  lastModified: 638252937953587698
   FileSizes: []
   Exists: 1
 --- !u!114 &6375579266646224549
@@ -295,7 +323,7 @@ MonoBehaviour:
   Path: Assets/FModBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638251959805574582
+  lastModified: 638252937954147767
   FileSizes: []
   Exists: 1
 --- !u!114 &6973499798189859731
@@ -407,7 +435,7 @@ MonoBehaviour:
   - {fileID: -8680619105280356517}
   MinDistance: 1
   MaxDistance: 20
-  Length: 150
+  Length: 180
 --- !u!114 &8199770889884467101
 MonoBehaviour:
   m_ObjectHideFlags: 0
