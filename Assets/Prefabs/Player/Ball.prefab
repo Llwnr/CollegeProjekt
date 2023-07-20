@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 7584321750911516543}
   - component: {fileID: 4280781059247702}
   - component: {fileID: 3556959189971278552}
-  - component: {fileID: 3483327895828718188}
   - component: {fileID: 993643096749066555}
   - component: {fileID: 8715619341348339716}
   - component: {fileID: 239973575871478501}
@@ -471,25 +470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   electricDischarge: {fileID: 8913584302994376543}
---- !u!114 &3483327895828718188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3360294590374952195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aed0e9f033e25248bf8eda1bb5b94f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sfx:
-    Guid:
-      Data1: 360036222
-      Data2: 1149319852
-      Data3: 1654982575
-      Data4: -1350654213
-    Path: event:/Dash/OnDash
 --- !u!114 &993643096749066555
 MonoBehaviour:
   m_ObjectHideFlags: 0

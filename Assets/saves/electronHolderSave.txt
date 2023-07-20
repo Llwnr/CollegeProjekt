@@ -1,1 +1,1 @@
-{"redCount":25,"blueCount":26,"orangeCount":19}
+{"redCount":10,"blueCount":10,"orangeCount":10}
