@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83aa1a975ed6956489addb7ab16d42fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
+  duration: 5
 --- !u!114 &-4053914667885323352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715e9f82f61d12442b04a6708fe1df42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgAmt: 10
+  dmgAmt: 5
   isExplosive: 0
 --- !u!50 &5407284676623376640
 Rigidbody2D:

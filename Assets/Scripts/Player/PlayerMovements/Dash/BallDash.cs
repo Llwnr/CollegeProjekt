@@ -216,7 +216,9 @@ public class BallDash : MonoBehaviour, ISaveable
         }
         if(extraForce > maxExtraForce+buffedMaxExtraForce) extraForce = maxExtraForce+buffedMaxExtraForce;
 
-        //Shake camera a little when charging
+        //Shake camera a little when charging and stop when at max charge
+        if(IsAtMaxCharge()) return;
+        
         CinemachineShake.instance.ShakeCamera(0.25f, 0.1f);
     }
 

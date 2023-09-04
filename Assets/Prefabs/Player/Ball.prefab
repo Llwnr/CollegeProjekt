@@ -169,7 +169,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 630134bb299f2aa449556e8105704ab6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,8 +190,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ff709f3871c7eb4ba36a9231d2971af, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b939a836efde0d14f953e4f1ff5b06e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -482,22 +482,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ddb0aa9a5f6f44a88e2f31ea96425e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxs: []
-  maxChargeSfxs: []
+  sfxs:
+  - Guid:
+      Data1: -1592381043
+      Data2: 1170797099
+      Data3: 1295922623
+      Data4: 1487427088
+    Path: event:/8BitCharge
+  - Guid:
+      Data1: 984978527
+      Data2: 1297781270
+      Data3: -745235052
+      Data4: -1949213788
+    Path: event:/Sfx2
+  maxChargeSfxs:
+  - Guid:
+      Data1: 982247562
+      Data2: 1149013838
+      Data3: 1464141467
+      Data4: -1982733442
+    Path: event:/ReachedMaxCharge
+  - Guid:
+      Data1: -954397210
+      Data2: 1168173771
+      Data3: -1095203181
+      Data4: 742308992
+    Path: event:/MaxChargeSfx2
   sfx:
     Guid:
       Data1: -1592381043
       Data2: 1170797099
       Data3: 1295922623
       Data4: 1487427088
-    Path: event:/DashCharging/8BitCharge
+    Path: event:/8BitCharge
   maxChargeReachedSfx:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 982247562
+      Data2: 1149013838
+      Data3: 1464141467
+      Data4: -1982733442
+    Path: event:/DashCharging/ReachedMaxCharge
 --- !u!114 &8715619341348339716
 MonoBehaviour:
   m_ObjectHideFlags: 0

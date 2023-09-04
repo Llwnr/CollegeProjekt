@@ -212,8 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0}
-  offsetMultiplier: 3
-  lerpSpeed: 9.5
+  offsetMultiplier: 1.8
+  lerpSpeed: 7
 --- !u!114 &6026448433643643068
 MonoBehaviour:
   m_ObjectHideFlags: 0
